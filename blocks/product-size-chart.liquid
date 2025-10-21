@@ -338,21 +338,49 @@
     }
   }
 
-  /* Animation for dialog */
-  .dialog {
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+  /* Smooth modal animations */
+  .size-chart-dialog {
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .dialog[open] {
+  .size-chart-dialog:not(.dialog-opening) {
+    opacity: 0;
+    transform: scale(0.95) translateY(-8px);
+  }
+
+  .size-chart-dialog.dialog-opening {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(0);
   }
 
-  .dialog.dialog-closing {
+  .size-chart-dialog.dialog-closing {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(-8px);
+  }
+
+  .size-chart-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .size-chart-dialog:not(.dialog-opening)::backdrop {
+    opacity: 0;
+  }
+
+  .size-chart-dialog.dialog-opening::backdrop {
+    opacity: 1;
+  }
+
+  .size-chart-dialog.dialog-closing::backdrop {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .size-chart-dialog,
+    .size-chart-dialog::backdrop {
+      transition: none !important;
+    }
   }
 
   /* RTE Content Spacing */

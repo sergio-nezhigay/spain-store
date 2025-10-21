@@ -19,7 +19,7 @@ export class SizeChartComponent extends Component {
   }
 
   /**
-   * Opens the size chart modal.
+   * Opens the size chart modal with smooth animation.
    *
    * Delegates to the nested dialog-component's showDialog method.
    */
@@ -32,7 +32,17 @@ export class SizeChartComponent extends Component {
     }
 
     if (typeof dialog.showDialog === 'function') {
+      const dialogElement = dialog.querySelector('dialog');
+
+      // Open the dialog
       dialog.showDialog();
+
+      // Trigger animation on next frame
+      if (dialogElement) {
+        requestAnimationFrame(() => {
+          dialogElement.classList.add('dialog-opening');
+        });
+      }
     } else {
       console.error('Size chart: showDialog method not found on dialog-component');
     }
@@ -52,6 +62,13 @@ export class SizeChartComponent extends Component {
     }
 
     if (typeof dialog.closeDialog === 'function') {
+      const dialogElement = dialog.querySelector('dialog');
+
+      // Remove opening class before close animation starts
+      if (dialogElement) {
+        dialogElement.classList.remove('dialog-opening');
+      }
+
       dialog.closeDialog();
     } else {
       console.error('Size chart: closeDialog method not found on dialog-component');
