@@ -1,0 +1,12 @@
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2 2L12 12" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2 2L2 12L12 12" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2 4L4 4" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+  <path d="M2 6L3 6" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+  <path d="M2 8L4 8" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+  <path d="M2 10L3 10" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+  <path d="M4 12L4 10" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+  <path d="M6 12L6 11" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+  <path d="M8 12L8 10" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+  <path d="M10 12L10 11" stroke="currentColor" stroke-width="var(--icon-stroke-width)" stroke-linecap="round"/>
+</svg>

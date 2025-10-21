@@ -212,18 +212,33 @@
       endif
 
       if size_chart_content != blank
-        assign inline_link_text = settings.inline_size_chart_text | default: 'products.product.size_chart.inline_link' | t
+        if settings.inline_size_chart_text != blank
+          assign inline_link_text = settings.inline_size_chart_text
+        else
+          assign inline_link_text = 'products.product.size_chart.inline_link' | t
+        endif
       endif
     endif
   %}
 
   {% if size_chart_content != blank %}
-    <div class="size-chart-inline-link" id="size-chart-inline-{{ section.id }}">
+    {% liquid
+      if section.id != blank
+        assign modal_id = 'size-chart-inline-' | append: section.id
+      elsif block.id != blank
+        assign modal_id = 'size-chart-inline-' | append: block.id
+      else
+        assign modal_id = 'size-chart-inline-' | append: product_resource.id
+      endif
+    %}
+
+    <div class="size-chart-inline-link" id="{{ modal_id }}-wrapper">
       <button
         type="button"
         class="size-chart-inline-trigger"
-        on:click="size-chart-inline-modal-{{ section.id }}/openModal"
+        on:click="{{ modal_id }}/openModal"
         aria-label="{{ inline_link_text }}"
+        data-size-chart-id="{{ modal_id }}"
       >
         <span class="svg-wrapper size-chart-inline-icon">
           {{- 'icon-ruler.svg' | inline_asset_content -}}
@@ -231,7 +246,67 @@
         <span class="size-chart-inline-text">{{ inline_link_text }}</span>
       </button>
 
-      <size-chart-component id="size-chart-inline-modal-{{ section.id }}">
+      <script>
+        // Manual click handlers for inline size chart
+        (function() {
+          const modalId = '{{ modal_id }}';
+          const initClickHandlers = function() {
+            const openButton = document.querySelector('[data-size-chart-id="' + modalId + '"]');
+            const closeButton = document.querySelector('[data-size-chart-close-inline="' + modalId + '"]');
+            const component = document.getElementById(modalId);
+
+            console.log('[Size Chart Inline] Modal ID:', modalId);
+            console.log('[Size Chart Inline] Open button found:', !!openButton);
+            console.log('[Size Chart Inline] Close button found:', !!closeButton);
+            console.log('[Size Chart Inline] Component found:', !!component);
+
+            // Open button handler
+            if (openButton && component) {
+              openButton.addEventListener('click', function(e) {
+                console.log('[Size Chart Inline] Open button clicked!');
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (typeof component.openModal === 'function') {
+                  console.log('[Size Chart Inline] Calling openModal...');
+                  component.openModal();
+                } else {
+                  console.error('[Size Chart Inline] openModal not available');
+                }
+              });
+              console.log('[Size Chart Inline] Open handler attached');
+            } else {
+              if (!openButton) console.error('[Size Chart Inline] Open button not found');
+              if (!component) console.error('[Size Chart Inline] Component not found');
+            }
+
+            // Close button handler
+            if (closeButton && component) {
+              closeButton.addEventListener('click', function(e) {
+                console.log('[Size Chart Inline] Close button clicked!');
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (typeof component.closeModal === 'function') {
+                  console.log('[Size Chart Inline] Calling closeModal...');
+                  component.closeModal();
+                } else {
+                  console.error('[Size Chart Inline] closeModal not available');
+                }
+              });
+              console.log('[Size Chart Inline] Close handler attached');
+            }
+          };
+
+          // Try immediately, then also on DOMContentLoaded
+          initClickHandlers();
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initClickHandlers);
+          }
+        })();
+      </script>
+
+      <size-chart-component id="{{ modal_id }}">
         <dialog-component>
           <dialog ref="dialog" class="dialog size-chart-dialog">
             <div class="dialog__content">
@@ -239,6 +314,7 @@
                 type="button"
                 class="dialog__close"
                 on:click="closest dialog-component/closeDialog"
+                data-size-chart-close-inline="{{ modal_id }}"
                 aria-label="{{ 'products.product.size_chart.close' | t }}"
               >
                 <span class="svg-wrapper">
@@ -247,7 +323,13 @@
               </button>
 
               <div class="size-chart-content">
-                <h2 class="size-chart-title">{{ settings.inline_size_chart_modal_title | default: 'products.product.size_chart.title' | t }}</h2>
+                <h2 class="size-chart-title">
+                  {% if settings.inline_size_chart_modal_title != blank %}
+                    {{ settings.inline_size_chart_modal_title }}
+                  {% else %}
+                    {{ 'products.product.size_chart.title' | t }}
+                  {% endif %}
+                </h2>
                 <div class="size-chart-body rte">
                   {{ size_chart_content }}
                 </div>

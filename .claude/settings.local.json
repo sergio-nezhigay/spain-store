@@ -4,7 +4,8 @@
       "Bash(test:*)",
       "WebSearch",
       "WebFetch(domain:www.shopify.com)",
-      "Bash(shopify theme check:*)"
+      "Bash(shopify theme check:*)",
+      "Bash(npm run push:*)"
     ],
     "deny": [],
     "ask": []

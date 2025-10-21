@@ -20,7 +20,13 @@
 
   # Determine display mode
   assign display_mode = block_settings.display_mode
-  assign button_text = block_settings.button_text | default: 'products.product.size_chart.button' | t
+
+  if block_settings.button_text != blank
+    assign button_text = block_settings.button_text
+  else
+    assign button_text = 'products.product.size_chart.button' | t
+  endif
+
   assign show_icon = block_settings.show_icon
 %}
 
@@ -36,6 +42,7 @@
         type="button"
         class="size-chart-trigger size-chart-trigger--{{ block_settings.button_style }}"
         on:click="size-chart-{{ block.id }}/openModal"
+        data-size-chart-trigger="{{ block.id }}"
         aria-label="{{ button_text }}"
       >
         {% if show_icon %}
@@ -54,6 +61,7 @@
                 type="button"
                 class="dialog__close"
                 on:click="closest dialog-component/closeDialog"
+                data-size-chart-close="{{ block.id }}"
                 aria-label="{{ 'products.product.size_chart.close' | t }}"
               >
                 <span class="svg-wrapper">
@@ -62,7 +70,13 @@
               </button>
 
               <div class="size-chart-content">
-                <h2 class="size-chart-title">{{ block_settings.modal_title | default: 'products.product.size_chart.title' | t }}</h2>
+                <h2 class="size-chart-title">
+                  {% if block_settings.modal_title != blank %}
+                    {{ block_settings.modal_title }}
+                  {% else %}
+                    {{ 'products.product.size_chart.title' | t }}
+                  {% endif %}
+                </h2>
                 <div class="size-chart-body rte">
                   {{ size_chart_content }}
                 </div>
@@ -487,3 +501,63 @@
   ]
 }
 {% endschema %}
+
+<script>
+  // Manual click handlers for size chart buttons
+  (function() {
+    const blockId = '{{ block.id }}';
+    const initClickHandlers = function() {
+      const openButton = document.querySelector('[data-size-chart-trigger="' + blockId + '"]');
+      const closeButton = document.querySelector('[data-size-chart-close="' + blockId + '"]');
+      const component = document.getElementById('size-chart-' + blockId);
+
+      console.log('[Size Chart Block] Block ID:', blockId);
+      console.log('[Size Chart Block] Open button found:', !!openButton);
+      console.log('[Size Chart Block] Close button found:', !!closeButton);
+      console.log('[Size Chart Block] Component found:', !!component);
+
+      // Open button handler
+      if (openButton && component) {
+        openButton.addEventListener('click', function(e) {
+          console.log('[Size Chart Block] Open button clicked!');
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (typeof component.openModal === 'function') {
+            console.log('[Size Chart Block] Calling openModal...');
+            component.openModal();
+          } else {
+            console.error('[Size Chart Block] openModal method not found');
+          }
+        });
+        console.log('[Size Chart Block] Open handler attached');
+      } else {
+        if (!openButton) console.error('[Size Chart Block] Open button not found');
+        if (!component) console.error('[Size Chart Block] Component not found');
+      }
+
+      // Close button handler
+      if (closeButton && component) {
+        closeButton.addEventListener('click', function(e) {
+          console.log('[Size Chart Block] Close button clicked!');
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (typeof component.closeModal === 'function') {
+            console.log('[Size Chart Block] Calling closeModal...');
+            component.closeModal();
+          } else {
+            console.error('[Size Chart Block] closeModal method not found');
+          }
+        });
+        console.log('[Size Chart Block] Close handler attached');
+      }
+    };
+
+    // Try immediately, then also on DOMContentLoaded
+    initClickHandlers();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initClickHandlers);
+    }
+  })();
+</script>
