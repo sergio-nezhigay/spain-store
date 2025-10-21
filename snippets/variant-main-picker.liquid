@@ -204,14 +204,15 @@
     # Inline size chart link (shows near variant picker if enabled)
     if settings.show_inline_size_chart_link
       assign size_chart_content = ''
+      assign use_metafield = false
 
       if product_resource.metafields.custom.size_chart != blank
-        assign size_chart_content = product_resource.metafields.custom.size_chart
+        assign use_metafield = true
       elsif settings.global_size_chart_content != blank
         assign size_chart_content = settings.global_size_chart_content
       endif
 
-      if size_chart_content != blank
+      if use_metafield or size_chart_content != blank
         if settings.inline_size_chart_text != blank
           assign inline_link_text = settings.inline_size_chart_text
         else
@@ -221,7 +222,7 @@
     endif
   %}
 
-  {% if size_chart_content != blank %}
+  {% if use_metafield or size_chart_content != blank %}
     {% liquid
       if section.id != blank
         assign modal_id = 'size-chart-inline-' | append: section.id
@@ -306,7 +307,56 @@
                   {% endif %}
                 </h2>
                 <div class="size-chart-body rte">
-                  {{ size_chart_content }}
+                  {% if use_metafield %}
+                    {% assign metafield_value = product_resource.metafields.custom.size_chart.value %}
+                    {% for node in metafield_value.children %}
+                      {% if node.type == 'paragraph' %}
+                        <p>
+                          {% for child in node.children %}
+                            {% if child.type == 'text' %}
+                              {{ child.value }}
+                            {% endif %}
+                          {% endfor %}
+                        </p>
+                      {% elsif node.type == 'heading' %}
+                        <h{{ node.level }}>
+                          {% for child in node.children %}
+                            {% if child.type == 'text' %}
+                              {{ child.value }}
+                            {% endif %}
+                          {% endfor %}
+                        </h{{ node.level }}>
+                      {% elsif node.type == 'list' %}
+                        {% if node.listType == 'ordered' %}
+                          <ol>
+                            {% for item in node.children %}
+                              <li>
+                                {% for child in item.children %}
+                                  {% if child.type == 'text' %}
+                                    {{ child.value }}
+                                  {% endif %}
+                                {% endfor %}
+                              </li>
+                            {% endfor %}
+                          </ol>
+                        {% else %}
+                          <ul>
+                            {% for item in node.children %}
+                              <li>
+                                {% for child in item.children %}
+                                  {% if child.type == 'text' %}
+                                    {{ child.value }}
+                                  {% endif %}
+                                {% endfor %}
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    {{ size_chart_content }}
+                  {% endif %}
                 </div>
               </div>
             </div>
