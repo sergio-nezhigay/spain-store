@@ -9,12 +9,6 @@ import { Component } from '@theme/component';
  * @extends Component
  */
 export class SizeChartComponent extends Component {
-  connectedCallback() {
-    super.connectedCallback();
-    console.log('[Size Chart] Component connected:', this.id);
-    console.log('[Size Chart] Dialog component found:', !!this.dialogComponent);
-  }
-
   /**
    * Gets the dialog component element.
    *
@@ -30,25 +24,17 @@ export class SizeChartComponent extends Component {
    * Delegates to the nested dialog-component's showDialog method.
    */
   openModal() {
-    console.log('[Size Chart] openModal called on:', this.id);
     const dialog = this.dialogComponent;
 
     if (!dialog) {
-      console.error('[Size Chart] dialog-component not found inside:', this.id);
-      console.log('[Size Chart] Component HTML:', this.innerHTML.substring(0, 200));
+      console.error('Size chart: dialog-component not found');
       return;
     }
 
-    console.log('[Size Chart] Dialog component found:', dialog);
-    console.log('[Size Chart] showDialog method exists:', typeof dialog.showDialog);
-
     if (typeof dialog.showDialog === 'function') {
-      console.log('[Size Chart] Calling showDialog...');
       dialog.showDialog();
-      console.log('[Size Chart] showDialog called successfully');
     } else {
-      console.error('[Size Chart] showDialog method not found on dialog-component');
-      console.log('[Size Chart] Available methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(dialog)));
+      console.error('Size chart: showDialog method not found on dialog-component');
     }
   }
 
@@ -95,16 +81,4 @@ export class SizeChartComponent extends Component {
 
 if (!customElements.get('size-chart-component')) {
   customElements.define('size-chart-component', SizeChartComponent);
-  console.log('[Size Chart] Custom element registered: size-chart-component');
-} else {
-  console.warn('[Size Chart] Custom element already registered: size-chart-component');
 }
-
-// Debug: Log all size chart components on page load
-document.addEventListener('DOMContentLoaded', () => {
-  const sizeChartComponents = document.querySelectorAll('size-chart-component');
-  console.log('[Size Chart] Found', sizeChartComponents.length, 'size chart component(s) on page');
-  sizeChartComponents.forEach((comp, index) => {
-    console.log(`[Size Chart] Component ${index + 1}:`, comp.id);
-  });
-});

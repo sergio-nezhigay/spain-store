@@ -247,7 +247,7 @@
       </button>
 
       <script>
-        // Manual click handlers for inline size chart
+        // Inline size chart click handlers
         (function() {
           const modalId = '{{ modal_id }}';
           const initClickHandlers = function() {
@@ -255,50 +255,25 @@
             const closeButton = document.querySelector('[data-size-chart-close-inline="' + modalId + '"]');
             const component = document.getElementById(modalId);
 
-            console.log('[Size Chart Inline] Modal ID:', modalId);
-            console.log('[Size Chart Inline] Open button found:', !!openButton);
-            console.log('[Size Chart Inline] Close button found:', !!closeButton);
-            console.log('[Size Chart Inline] Component found:', !!component);
-
-            // Open button handler
             if (openButton && component) {
               openButton.addEventListener('click', function(e) {
-                console.log('[Size Chart Inline] Open button clicked!');
                 e.preventDefault();
-                e.stopPropagation();
-
                 if (typeof component.openModal === 'function') {
-                  console.log('[Size Chart Inline] Calling openModal...');
                   component.openModal();
-                } else {
-                  console.error('[Size Chart Inline] openModal not available');
                 }
               });
-              console.log('[Size Chart Inline] Open handler attached');
-            } else {
-              if (!openButton) console.error('[Size Chart Inline] Open button not found');
-              if (!component) console.error('[Size Chart Inline] Component not found');
             }
 
-            // Close button handler
             if (closeButton && component) {
               closeButton.addEventListener('click', function(e) {
-                console.log('[Size Chart Inline] Close button clicked!');
                 e.preventDefault();
-                e.stopPropagation();
-
                 if (typeof component.closeModal === 'function') {
-                  console.log('[Size Chart Inline] Calling closeModal...');
                   component.closeModal();
-                } else {
-                  console.error('[Size Chart Inline] closeModal not available');
                 }
               });
-              console.log('[Size Chart Inline] Close handler attached');
             }
           };
 
-          // Try immediately, then also on DOMContentLoaded
           initClickHandlers();
           if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initClickHandlers);
