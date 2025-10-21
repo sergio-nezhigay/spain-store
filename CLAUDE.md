@@ -164,3 +164,4 @@ this.refs.buttons        // Array of elements
 - Theme supports 30+ languages with full localization
 - Color schemes are fully customizable via theme settings
 - Supports customer accounts, search, localization, and cart features
+- use shopify theme check after changes
