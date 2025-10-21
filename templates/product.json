@@ -203,6 +203,22 @@
                 "price_tVjtKg"
               ]
             },
+            "product_size_chart_yHTaqz": {
+              "type": "product-size-chart",
+              "name": "t:names.product_size_chart",
+              "settings": {
+                "display_mode": "modal",
+                "button_text": "Size Guide",
+                "modal_title": "Size Chart",
+                "button_style": "link",
+                "show_icon": true,
+                "padding-block-start": 8,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "divider_VJhene": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -288,31 +304,15 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "product_size_chart_yHTaqz": {
-              "type": "product-size-chart",
-              "name": "t:names.product_size_chart",
-              "settings": {
-                "display_mode": "modal",
-                "button_text": "Size Guide",
-                "modal_title": "Size Chart",
-                "button_style": "link",
-                "show_icon": true,
-                "padding-block-start": 8,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "group_icgrde",
+            "product_size_chart_yHTaqz",
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "text_aEtTtq",
-            "product_size_chart_yHTaqz"
+            "text_aEtTtq"
           ]
         }
       },
