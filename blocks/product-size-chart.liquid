@@ -80,7 +80,7 @@
                 </h2>
                 <div class="size-chart-body rte">
                   {% if use_metafield %}
-                    {{ closest.product.metafields.custom.size_chart }}
+                    {{ closest.product.metafields.custom.size_chart | metafield_tag }}
                   {% else %}
                     {{ size_chart_content }}
                   {% endif %}
@@ -110,7 +110,7 @@
           <div class="details-content size-chart-content">
             <div class="size-chart-body rte">
               {% if use_metafield %}
-                {{ closest.product.metafields.custom.size_chart }}
+                {{ closest.product.metafields.custom.size_chart | metafield_tag }}
               {% else %}
                 {{ size_chart_content }}
               {% endif %}
