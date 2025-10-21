@@ -34,8 +34,18 @@ export class SizeChartComponent extends Component {
     if (typeof dialog.showDialog === 'function') {
       const dialogElement = dialog.querySelector('dialog');
 
+      // Ensure clean state: remove the class first
+      if (dialogElement) {
+        dialogElement.classList.remove('dialog-opening');
+      }
+
       // Open the dialog
       dialog.showDialog();
+
+      // Force reflow to ensure initial state is applied
+      if (dialogElement) {
+        void dialogElement.offsetHeight;
+      }
 
       // Trigger animation on next frame
       if (dialogElement) {
