@@ -76,6 +76,7 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 100,
     "variant_button_width": "default-width-buttons",
+    "global_size_chart_content": "<h1>Global size chart content</h1>",
     "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
