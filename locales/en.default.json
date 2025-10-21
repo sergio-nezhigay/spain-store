@@ -323,7 +323,13 @@
       "added_to_cart": "Added to cart",
       "add_to_cart_error": "Error adding to cart",
       "sold_out": "Sold out",
-      "unavailable": "Unavailable"
+      "unavailable": "Unavailable",
+      "size_chart": {
+        "button": "Size Guide",
+        "title": "Size Chart",
+        "close": "Close",
+        "inline_link": "View Size Guide"
+      }
     }
   }
 }

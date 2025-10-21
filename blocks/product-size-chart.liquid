@@ -1,0 +1,489 @@
+
+{% liquid
+  assign block_settings = block.settings
+
+  # Get size chart content from product metafield or global setting
+  assign size_chart_content = ''
+
+  if closest.product.metafields.custom.size_chart != blank
+    assign size_chart_content = closest.product.metafields.custom.size_chart
+  elsif settings.global_size_chart_content != blank
+    assign size_chart_content = settings.global_size_chart_content
+  endif
+
+  # Don't render if no content
+  if size_chart_content == blank
+    assign has_content = false
+  else
+    assign has_content = true
+  endif
+
+  # Determine display mode
+  assign display_mode = block_settings.display_mode
+  assign button_text = block_settings.button_text | default: 'products.product.size_chart.button' | t
+  assign show_icon = block_settings.show_icon
+%}
+
+{% if has_content %}
+  <div
+    class="size-chart-wrapper spacing-style"
+    style="{% render 'spacing-style', settings: block_settings %}"
+    {{ block.shopify_attributes }}
+  >
+    {% if display_mode == 'modal' %}
+      {%  comment  %} Modal Mode {% endcomment %}
+      <button
+        type="button"
+        class="size-chart-trigger size-chart-trigger--{{ block_settings.button_style }}"
+        on:click="size-chart-{{ block.id }}/openModal"
+        aria-label="{{ button_text }}"
+      >
+        {% if show_icon %}
+          <span class="svg-wrapper size-chart-icon">
+            {{- 'icon-ruler.svg' | inline_asset_content -}}
+          </span>
+        {% endif %}
+        <span class="size-chart-trigger__text">{{ button_text }}</span>
+      </button>
+
+      <size-chart-component id="size-chart-{{ block.id }}">
+        <dialog-component>
+          <dialog ref="dialog" class="dialog size-chart-dialog">
+            <div class="dialog__content">
+              <button
+                type="button"
+                class="dialog__close"
+                on:click="closest dialog-component/closeDialog"
+                aria-label="{{ 'products.product.size_chart.close' | t }}"
+              >
+                <span class="svg-wrapper">
+                  {{- 'icon-close.svg' | inline_asset_content -}}
+                </span>
+              </button>
+
+              <div class="size-chart-content">
+                <h2 class="size-chart-title">{{ block_settings.modal_title | default: 'products.product.size_chart.title' | t }}</h2>
+                <div class="size-chart-body rte">
+                  {{ size_chart_content }}
+                </div>
+              </div>
+            </div>
+          </dialog>
+        </dialog-component>
+      </size-chart-component>
+
+    {% elsif display_mode == 'accordion' %}
+      {% comment %} Accordion Mode {% endcomment %}
+      <accordion-custom class="size-chart-accordion">
+        <details class="details">
+          <summary class="details__header size-chart-summary">
+            {% if show_icon %}
+              <span class="svg-wrapper size-chart-icon">
+                {{- 'icon-ruler.svg' | inline_asset_content -}}
+              </span>
+            {% endif %}
+            {{ button_text }}
+            <span class="svg-wrapper icon-caret icon-animated">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </summary>
+
+          <div class="details-content size-chart-content">
+            <div class="size-chart-body rte">
+              {{ size_chart_content }}
+            </div>
+          </div>
+        </details>
+      </accordion-custom>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  /* Size Chart Wrapper */
+  .size-chart-wrapper {
+    width: 100%;
+  }
+
+  /* Trigger Button Styles */
+  .size-chart-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--color-foreground);
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+  }
+
+  .size-chart-trigger:hover {
+    opacity: 0.7;
+  }
+
+  .size-chart-trigger:focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 2px;
+  }
+
+  .size-chart-trigger--button {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-foreground);
+    color: var(--color-background);
+    border-radius: var(--border-radius, 0);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .size-chart-trigger--button:hover {
+    opacity: 0.9;
+  }
+
+  .size-chart-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .size-chart-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Modal Dialog Styles */
+  .size-chart-dialog {
+    max-width: 800px;
+    width: 90vw;
+    max-height: 90vh;
+    padding: 0;
+    border: none;
+    border-radius: var(--border-radius, 0);
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  .size-chart-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .dialog__content {
+    padding: 2rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .dialog__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    z-index: 1;
+  }
+
+  .dialog__close:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .dialog__close:focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 2px;
+  }
+
+  .dialog__close .svg-wrapper {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .size-chart-title {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  /* Accordion Styles */
+  .size-chart-accordion {
+    width: 100%;
+  }
+
+  .size-chart-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-weight: 500;
+    list-style: none;
+    user-select: none;
+  }
+
+  .size-chart-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .size-chart-summary .icon-caret {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .details[open] .size-chart-summary .icon-caret {
+    transform: rotate(180deg);
+  }
+
+  .size-chart-summary:hover {
+    opacity: 0.7;
+  }
+
+  .size-chart-summary:focus-visible {
+    outline: 2px solid var(--color-foreground);
+    outline-offset: 2px;
+  }
+
+  /* Content Styles */
+  .size-chart-content {
+    width: 100%;
+  }
+
+  .size-chart-body {
+    padding: 1rem 0;
+  }
+
+  /* Table Styles - Mobile First */
+  .size-chart-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.875rem;
+  }
+
+  .size-chart-body th,
+  .size-chart-body td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid var(--color-border, rgba(0, 0, 0, 0.1));
+  }
+
+  .size-chart-body th {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+  }
+
+  .size-chart-body tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  /* Mobile: Make tables scrollable horizontally */
+  @media screen and (max-width: 749px) {
+    .size-chart-body {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .size-chart-body table {
+      min-width: 500px;
+      font-size: 0.8125rem;
+    }
+
+    .size-chart-body th,
+    .size-chart-body td {
+      padding: 0.5rem;
+    }
+
+    .dialog__content {
+      padding: 1.5rem 1rem;
+    }
+
+    .size-chart-title {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* Desktop Styles */
+  @media screen and (min-width: 750px) {
+    .size-chart-dialog {
+      width: 80vw;
+    }
+
+    .size-chart-body table {
+      font-size: 1rem;
+    }
+  }
+
+  /* Animation for dialog */
+  .dialog {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .dialog.dialog-closing {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  /* RTE Content Spacing */
+  .size-chart-body.rte > *:first-child {
+    margin-top: 0;
+  }
+
+  .size-chart-body.rte > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .size-chart-body.rte img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .size-chart-body.rte p {
+    margin: 0.75rem 0;
+  }
+
+  .size-chart-body.rte ul,
+  .size-chart-body.rte ol {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .size-chart-body.rte li {
+    margin: 0.25rem 0;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.product_size_chart",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:content.size_chart_info"
+    },
+    {
+      "type": "select",
+      "id": "display_mode",
+      "label": "t:settings.display_mode",
+      "options": [
+        {
+          "value": "modal",
+          "label": "t:options.modal"
+        },
+        {
+          "value": "accordion",
+          "label": "t:options.accordion"
+        }
+      ],
+      "default": "modal",
+      "info": "t:info.size_chart_display_mode"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:settings.button_text",
+      "default": "Size Guide"
+    },
+    {
+      "type": "text",
+      "id": "modal_title",
+      "label": "t:settings.modal_title",
+      "default": "Size Chart",
+      "visible_if": "{{ block.settings.display_mode == 'modal' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "t:settings.button_style",
+      "options": [
+        {
+          "value": "link",
+          "label": "t:options.link"
+        },
+        {
+          "value": "button",
+          "label": "t:options.button"
+        }
+      ],
+      "default": "link",
+      "visible_if": "{{ block.settings.display_mode == 'modal' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "t:settings.show_icon",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.product_size_chart",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

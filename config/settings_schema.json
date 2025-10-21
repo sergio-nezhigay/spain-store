@@ -2284,5 +2284,49 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "t:names.size_chart",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:content.size_chart_settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:content.size_chart_description"
+      },
+      {
+        "type": "html",
+        "id": "global_size_chart_content",
+        "label": "t:settings.global_size_chart_content",
+        "info": "t:info.global_size_chart_content"
+      },
+      {
+        "type": "header",
+        "content": "t:content.inline_size_chart_link"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_inline_size_chart_link",
+        "label": "t:settings.show_inline_size_chart_link",
+        "info": "t:info.show_inline_size_chart_link",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "inline_size_chart_text",
+        "label": "t:settings.inline_size_chart_text",
+        "default": "Size Guide",
+        "visible_if": "{{ settings.show_inline_size_chart_link }}"
+      },
+      {
+        "type": "text",
+        "id": "inline_size_chart_modal_title",
+        "label": "t:settings.inline_size_chart_modal_title",
+        "default": "Size Chart",
+        "visible_if": "{{ settings.show_inline_size_chart_link }}"
+      }
+    ]
   }
 ]

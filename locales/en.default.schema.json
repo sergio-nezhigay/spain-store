@@ -125,6 +125,10 @@
     "section_size": "Section size",
     // Section header for width and height controls
     "size": "Size",
+    "size_chart_settings": "Size Chart Settings",
+    "size_chart_description": "Configure size chart content that will be displayed on product pages. You can set a global size chart here, or add product-specific charts using metafields.",
+    "size_chart_info": "Information about size chart display options",
+    "inline_size_chart_link": "Inline Size Chart Link",
     "slideshow_width": "Slide width",
     "social_media": "Social media",
     "submissions_are_sent_to_store_email_address": "Submissions are sent to your store's [sender email address](https://admin.shopify.com/settings/notifications)",
@@ -214,7 +218,10 @@
     "video_autoplay": "Videos will be muted by default",
     "video_external": "Use a YouTube or Vimeo URL",
     "pills_usage": "Used for applied filters, discount codes, and search suggestions",
-    "media_type_info": "Features are populated from your menu links"
+    "media_type_info": "Features are populated from your menu links",
+    "global_size_chart_content": "Add HTML content for a size chart that will be used across all products. Products can override this with their own size chart using the product.metafields.custom.size_chart metafield.",
+    "show_inline_size_chart_link": "When enabled, a size guide link will appear near the variant picker on product pages. Requires size chart content to be configured.",
+    "size_chart_display_mode": "Choose how the size chart should be displayed: as a modal overlay or as an inline accordion"
   },
   "names": {
     "product_title": "Product title",
@@ -357,6 +364,7 @@
     "product_price": "Price",
     "product_recommendations": "Recommended products",
     "product_review_stars": "Review stars",
+    "product_size_chart": "Size chart",
     "product_variant_picker": "Variant picker",
     "products_carousel": "Featured collection: Carousel",
     "products_editorial": "Featured collection: Editorial",
@@ -375,6 +383,7 @@
     "selected_variants": "Selected variants",
     "shop_the_look": "Shop the look",
     "size": "Size",
+    "size_chart": "Size Chart",
     "slide": "Slide",
     "slideshow": "Slideshow",
     "slideshow_controls": "Slideshow controls",
@@ -405,6 +414,7 @@
   "options": {
     "above_carousel": "Above carousel",
     "accent": "Accent",
+    "accordion": "Accordion",
     "adapt_to_image": "Adapt to image",
     "all": "All",
     "always": "Always",
@@ -1046,6 +1056,15 @@
     // Font size or element dimensions setting
     "size": "Size",
     "size_mobile": "Mobile size",
+    "global_size_chart_content": "Global size chart content",
+    "show_inline_size_chart_link": "Show size guide link near variant picker",
+    "inline_size_chart_text": "Size guide link text",
+    "inline_size_chart_modal_title": "Size guide modal title",
+    "display_mode": "Display mode",
+    "button_text": "Button text",
+    "modal_title": "Modal title",
+    "button_style": "Button style",
+    "show_icon": "Show icon",
     "slide_spacing": "Slide gap",
     "slide_width": "Slide width",
     "slideshow_fullwidth": "Full width slides",

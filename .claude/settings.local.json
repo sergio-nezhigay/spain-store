@@ -3,7 +3,8 @@
     "allow": [
       "Bash(test:*)",
       "WebSearch",
-      "WebFetch(domain:www.shopify.com)"
+      "WebFetch(domain:www.shopify.com)",
+      "Bash(shopify theme check:*)"
     ],
     "deny": [],
     "ask": []
