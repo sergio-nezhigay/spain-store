@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "WebSearch",
+      "WebFetch(domain:www.shopify.com)"
     ],
     "deny": [],
     "ask": []
