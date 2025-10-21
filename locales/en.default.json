@@ -104,6 +104,12 @@
     "view_store_information": "View store information",
     "sort": "Sort"
   },
+  "breadcrumbs": {
+    "navigation": "Breadcrumb",
+    "home": "Home",
+    "search": "Search Results",
+    "collections": "Collections"
+  },
   "blocks": {
     "contact_form": {
       "name": "Name",

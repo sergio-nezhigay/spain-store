@@ -1,0 +1,337 @@
+{%- doc -%}
+  Renders breadcrumb navigation with Schema.org structured data for SEO.
+
+  @param {boolean} [show_on_home] - Whether to show breadcrumbs on the homepage. Defaults to false.
+  @param {string} [separator_style] - Style of separator: 'chevron', 'slash', or 'arrow'. Defaults to 'chevron'.
+  @param {string} [color_scheme] - Color scheme to apply. Defaults to inheriting from parent.
+  @param {boolean} [hide_current_page] - Whether to hide the current page in breadcrumbs. Defaults to false.
+{%- enddoc -%}
+
+{% liquid
+  # Don't show on homepage unless explicitly requested
+  assign show_breadcrumbs = true
+  if template.name == 'index' and show_on_home != true
+    assign show_breadcrumbs = false
+  endif
+
+  assign separator_icon = separator_style | default: 'chevron'
+
+  # Apply color scheme class if specified
+  assign color_class = ''
+  if color_scheme != blank
+    assign color_class = ' color-' | append: color_scheme
+  endif
+%}
+
+{% if show_breadcrumbs %}
+  {%- # Build breadcrumb data for Schema.org -%}
+  {%- capture schema_items -%}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": {{ 'breadcrumbs.home' | t | json }},
+      "item": {{ routes.root_url | prepend: request.origin | json }}
+    }
+    {%- case template.name -%}
+      {%- when 'product' -%}
+        {%- liquid
+          assign breadcrumb_collection = null
+          if collection
+            assign breadcrumb_collection = collection
+          elsif product.collections.size > 0
+            assign breadcrumb_collection = product.collections.first
+            for coll in product.collections
+              if coll.handle == 'all' or coll.handle contains 'all-products'
+                assign breadcrumb_collection = coll
+                break
+              endif
+            endfor
+          endif
+        -%}
+        {%- if breadcrumb_collection -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ breadcrumb_collection.title | json }},
+            "item": {{ breadcrumb_collection.url | prepend: request.origin | json }}
+          }
+          ,{
+            "@type": "ListItem",
+            "position": 3,
+            "name": {{ product.title | json }},
+            "item": {{ product.url | prepend: request.origin | json }}
+          }
+        {%- else -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ product.title | json }},
+            "item": {{ product.url | prepend: request.origin | json }}
+          }
+        {%- endif -%}
+      {%- when 'collection' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ collection.title | json }},
+          "item": {{ collection.url | prepend: request.origin | json }}
+        }
+      {%- when 'article' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ blog.title | json }},
+          "item": {{ blog.url | prepend: request.origin | json }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ article.title | json }},
+          "item": {{ article.url | prepend: request.origin | json }}
+        }
+      {%- when 'page' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | json }},
+          "item": {{ page.url | prepend: request.origin | json }}
+        }
+      {%- when 'search' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ 'breadcrumbs.search' | t | json }},
+          "item": {{ routes.search_url | prepend: request.origin | json }}
+        }
+      {%- when 'blog' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ blog.title | json }},
+          "item": {{ blog.url | prepend: request.origin | json }}
+        }
+      {%- when 'list-collections' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ 'breadcrumbs.collections' | t | json }},
+          "item": {{ routes.collections_url | prepend: request.origin | json }}
+        }
+    {%- endcase -%}
+  {%- endcapture -%}
+
+  {%- # Schema.org structured data for SEO -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{{ schema_items }}]
+    }
+  </script>
+
+  <nav class="breadcrumbs{{ color_class }}" aria-label="{{ 'breadcrumbs.navigation' | t }}">
+    <ol class="breadcrumbs__list">
+      {%- # Home link -%}
+      <li class="breadcrumbs__item">
+        <a href="{{ routes.root_url }}" class="breadcrumbs__link">
+          {{- 'breadcrumbs.home' | t -}}
+        </a>
+        <span class="breadcrumbs__separator" aria-hidden="true">
+          {%- case separator_icon -%}
+            {%- when 'slash' -%}/
+            {%- when 'arrow' -%}→
+            {%- else -%}›
+          {%- endcase -%}
+        </span>
+      </li>
+
+      {%- case template.name -%}
+        {%- when 'product' -%}
+          {%- liquid
+            assign breadcrumb_collection = null
+            if collection
+              assign breadcrumb_collection = collection
+            elsif product.collections.size > 0
+              assign breadcrumb_collection = product.collections.first
+              for coll in product.collections
+                if coll.handle == 'all' or coll.handle contains 'all-products'
+                  assign breadcrumb_collection = coll
+                  break
+                endif
+              endfor
+            endif
+          -%}
+
+          {%- if breadcrumb_collection -%}
+            <li class="breadcrumbs__item">
+              <a href="{{ breadcrumb_collection.url }}" class="breadcrumbs__link">
+                {{- breadcrumb_collection.title -}}
+              </a>
+              <span class="breadcrumbs__separator" aria-hidden="true">
+                {%- case separator_icon -%}
+                  {%- when 'slash' -%}/
+                  {%- when 'arrow' -%}→
+                  {%- else -%}›
+                {%- endcase -%}
+              </span>
+            </li>
+          {%- endif -%}
+
+          {%- unless hide_current_page -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">
+                {{- product.title -}}
+              </span>
+            </li>
+          {%- endunless -%}
+
+        {%- when 'collection' -%}
+          {%- unless hide_current_page -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">
+                {{- collection.title -}}
+              </span>
+            </li>
+          {%- endunless -%}
+
+        {%- when 'article' -%}
+          <li class="breadcrumbs__item">
+            <a href="{{ blog.url }}" class="breadcrumbs__link">
+              {{- blog.title -}}
+            </a>
+            <span class="breadcrumbs__separator" aria-hidden="true">
+              {%- case separator_icon -%}
+                {%- when 'slash' -%}/
+                {%- when 'arrow' -%}→
+                {%- else -%}›
+              {%- endcase -%}
+            </span>
+          </li>
+          {%- unless hide_current_page -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">
+                {{- article.title -}}
+              </span>
+            </li>
+          {%- endunless -%}
+
+        {%- when 'page' -%}
+          {%- unless hide_current_page -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">
+                {{- page.title -}}
+              </span>
+            </li>
+          {%- endunless -%}
+
+        {%- when 'search' -%}
+          {%- unless hide_current_page -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">
+                {{- 'breadcrumbs.search' | t -}}
+              </span>
+            </li>
+          {%- endunless -%}
+
+        {%- when 'blog' -%}
+          {%- unless hide_current_page -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">
+                {{- blog.title -}}
+              </span>
+            </li>
+          {%- endunless -%}
+
+        {%- when 'list-collections' -%}
+          {%- unless hide_current_page -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">
+                {{- 'breadcrumbs.collections' | t -}}
+              </span>
+            </li>
+          {%- endunless -%}
+      {%- endcase -%}
+    </ol>
+  </nav>
+{% endif %}
+
+{% stylesheet %}
+  .breadcrumbs {
+    padding-block: var(--padding-xs, 12px);
+    padding-inline: 0;
+  }
+
+  .breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-2xs, 8px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  @media screen and (max-width: 749px) {
+    .breadcrumbs__list {
+      font-size: 0.8125rem;
+    }
+  }
+
+  .breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-2xs, 8px);
+  }
+
+  .breadcrumbs__link {
+    color: var(--color-foreground);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    opacity: 0.7;
+  }
+
+  .breadcrumbs__link:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .breadcrumbs__link--current {
+    color: var(--color-foreground);
+    opacity: 1;
+    font-weight: 500;
+  }
+
+  .breadcrumbs__separator {
+    color: var(--color-foreground);
+    opacity: 0.5;
+    user-select: none;
+    font-size: 1.125em;
+    line-height: 1;
+  }
+
+  /* Responsive: Hide all but last two items on very small screens */
+  @media screen and (max-width: 480px) {
+    .breadcrumbs__item:not(:nth-last-child(-n+2)) {
+      display: none;
+    }
+
+    /* Show ellipsis for hidden items */
+    .breadcrumbs__list::before {
+      content: '...';
+      opacity: 0.7;
+      margin-inline-end: var(--gap-2xs, 8px);
+    }
+
+    /* Don't show ellipsis if only 2 or fewer items */
+    .breadcrumbs__item:first-child:nth-last-child(-n+2) ~ .breadcrumbs__item,
+    .breadcrumbs__item:first-child:nth-last-child(-n+2) {
+      display: flex;
+    }
+
+    .breadcrumbs__list:has(.breadcrumbs__item:first-child:nth-last-child(-n+2))::before {
+      content: none;
+    }
+  }
+{% endstylesheet %}
