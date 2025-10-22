@@ -66,6 +66,23 @@
     text-transform: var(--summary-font-case);
     min-height: var(--minimum-touch-target);
   }
+
+  /* Nested accordion styles - remove borders and add indentation */
+  .accordion .accordion {
+    padding-inline-start: 12px;
+  }
+
+  /* Remove top/bottom borders from nested accordions */
+  .accordion .accordion.border-style {
+    --style-border-width: 0;
+  }
+
+  /* Remove divider borders from nested accordion items */
+  .accordion .accordion.accordion--dividers accordion-custom:not(:first-child) .details,
+  .accordion .accordion.accordion--dividers accordion-custom:first-child .details,
+  .accordion .accordion.accordion--dividers accordion-custom:last-child .details {
+    border: none;
+  }
 {% endstylesheet %}
 
 {% schema %}
