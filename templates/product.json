@@ -514,12 +514,53 @@
                   "block_order": [
                     "text_zJJC7T"
                   ]
+                },
+                "accordion_row_FAQ": {
+                  "type": "_accordion-row",
+                  "name": "FAQ",
+                  "settings": {
+                    "heading": "FAQ",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_FAQ_content": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<h5><strong>What materials are used in your garments?</strong></h5><p>We use a carefully curated selection of premium fabrics including 100% organic cotton, soft bamboo blends, and sustainable materials. Each product page lists the specific fabric composition and care instructions for that item.</p><h5><strong>How do I find my perfect size?</strong></h5><p>Use our detailed size guide above to find your measurements. We provide comprehensive sizing charts including bust, waist, hip, and length measurements. If you're between sizes, we recommend sizing up for a more relaxed fit or down for a closer fit.</p><h5><strong>How should I care for my garments?</strong></h5><p>Most items can be machine washed cold on a gentle cycle and laid flat to dry. We recommend turning garments inside out before washing to preserve colors and prints. Always check the care label for specific instructions as some pieces may require hand washing or dry cleaning.</p><h5><strong>When will my order arrive?</strong></h5><p>Standard shipping takes 5-7 business days. Express shipping (2-3 business days) is available at checkout. You'll receive a tracking number via email once your order ships so you can monitor its progress.</p><h5><strong>Do you offer gift wrapping?</strong></h5><p>Yes! We offer complimentary gift wrapping at checkout. Your items will be beautifully wrapped in our signature packaging with a personalized message card if you'd like to include one.</p><h5><strong>What's your sustainability commitment?</strong></h5><p>We're committed to ethical and sustainable fashion. We work with certified suppliers, use eco-friendly packaging, and ensure fair labor practices throughout our supply chain. Learn more on our <a href=\"/pages/sustainability\"><strong>Sustainability page</strong></a>.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_FAQ_content"
+                  ]
                 }
               },
               "block_order": [
                 "accordion_row_9ApaB4",
                 "accordion_row_hbXdjp",
-                "accordion_row_HbccyD"
+                "accordion_row_HbccyD",
+                "accordion_row_FAQ"
               ]
             }
           },
