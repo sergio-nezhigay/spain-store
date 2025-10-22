@@ -283,6 +283,7 @@
               "type": "payment-icons",
               "name": "Payment icons",
               "settings": {
+                "mode": "manual",
                 "horizontal_alignment": "center",
                 "gap": 8,
                 "padding-block-start": 20,
