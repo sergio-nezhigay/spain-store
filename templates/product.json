@@ -664,8 +664,7 @@
         }
       },
       "block_order": [
-        "text_complementary",
-        "static-product-card-complementary"
+        "text_complementary"
       ],
       "name": "Frequently Bought Together",
       "settings": {
@@ -806,8 +805,7 @@
         }
       },
       "block_order": [
-        "text_cbcgyb",
-        "static-product-card"
+        "text_cbcgyb"
       ],
       "name": "t:names.product_recommendations",
       "settings": {
