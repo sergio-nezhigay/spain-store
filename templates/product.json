@@ -286,12 +286,70 @@
                 "mode": "manual",
                 "horizontal_alignment": "center",
                 "gap": 8,
-                "padding-block-start": 20,
-                "padding-block-end": 12,
+                "padding-block-start": 10,
+                "padding-block-end": 10,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "payment_icon_JT3n6T": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/money.png",
+                    "label": "PayPal",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_fnjd4n": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/round.png",
+                    "label": "MasterCard",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_7naVWp": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/google-pay.png",
+                    "label": "Google Pay",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_ChtCFA": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/western-union.png",
+                    "label": "Western Union",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_gnCtrM": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/visa.png",
+                    "label": "Visa",
+                    "height": 30
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "payment_icon_JT3n6T",
+                "payment_icon_fnjd4n",
+                "payment_icon_7naVWp",
+                "payment_icon_ChtCFA",
+                "payment_icon_gnCtrM"
+              ]
             },
             "accordion_pxbKn9": {
               "type": "accordion",
