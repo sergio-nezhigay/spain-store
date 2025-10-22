@@ -87,16 +87,43 @@
   /* Make nested accordion headers look more clickable */
   .accordion .accordion .details__header {
     cursor: pointer;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+    position: relative;
+    padding-inline-end: 24px;
+    transition: color 0.2s ease;
   }
 
+  /* Add chevron indicator for nested accordion items */
+  .accordion .accordion .details__header::after {
+    content: '›';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+  }
+
+  /* Rotate chevron when accordion is open */
+  .accordion .accordion details[open] .details__header::after {
+    transform: translateY(-50%) rotate(90deg);
+    opacity: 0.7;
+  }
+
+  /* Hover state - make both text and chevron interactive */
   .accordion .accordion .details__header:hover {
     color: var(--color-link);
-    text-decoration: underline;
+  }
+
+  .accordion .accordion .details__header:hover::after {
+    color: var(--color-link);
+    opacity: 1;
   }
 
   .accordion .accordion .details__header:active {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 {% endstylesheet %}
 
