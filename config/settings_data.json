@@ -79,6 +79,25 @@
     "variant_button_width": "default-width-buttons",
     "global_size_chart_content": "<h2 style=\"text-align:center; margin-bottom:1rem;\">Size Guide</h2>\n\n<p style=\"text-align:center; color:#555; margin-bottom:2rem;\">\nFind your perfect fit using the measurements below.\n</p>\n\n<table style=\"width:100%; border-collapse:collapse; text-align:center; font-size:0.95rem;\">\n  <thead style=\"background:#f6f6f6;\">\n    <tr>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Size</th>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Chest (cm)</th>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Waist (cm)</th>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Hips (cm)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">XS</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">84–88</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">68–72</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">86–90</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">S</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">88–94</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">72–78</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">90–96</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">M</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">94–100</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">78–84</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">96–102</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">L</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">100–108</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">84–92</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">102–110</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">XL</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">108–116</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">92–100</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">110–118</td>\n    </tr>\n  </tbody>\n</table>\n\n<p style=\"font-size:0.9rem; color:#666; margin-top:1.5rem;\">\n💡 Tip: If you’re between two sizes, choose the larger one for a more relaxed fit.\n</p>",
     "content_for_index": [],
+    "blocks": {
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "124348908681409149": {
+        "type": "shopify://apps/simple-bundles-kits/blocks/simple-bundles-v2/e553276b-36b2-446d-b80a-aa47fe5f96ac",
+        "disabled": false,
+        "settings": {
+          "select_placeholder": "Please select an option",
+          "disable_oos_options": true,
+          "show_price_variance": true,
+          "rank_options_by_price_diff": true,
+          "custom_css": "",
+          "custom_js": ""
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
