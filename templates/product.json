@@ -530,7 +530,7 @@
                       "name": "FAQ Items",
                       "settings": {
                         "icon": "caret",
-                        "dividers": true,
+                        "dividers": false,
                         "type_preset": "body",
                         "inherit_color_scheme": true,
                         "color_scheme": "",
@@ -549,7 +549,7 @@
                           "settings": {
                             "heading": "What materials are used?",
                             "open_by_default": false,
-                            "icon": "none",
+                            "icon": "leather",
                             "width": 20
                           },
                           "blocks": {
@@ -588,7 +588,7 @@
                           "settings": {
                             "heading": "How do I find my size?",
                             "open_by_default": false,
-                            "icon": "none",
+                            "icon": "ruler",
                             "width": 20
                           },
                           "blocks": {
@@ -627,7 +627,7 @@
                           "settings": {
                             "heading": "How to care for garments?",
                             "open_by_default": false,
-                            "icon": "none",
+                            "icon": "washing",
                             "width": 20
                           },
                           "blocks": {
@@ -666,7 +666,7 @@
                           "settings": {
                             "heading": "When will my order arrive?",
                             "open_by_default": false,
-                            "icon": "none",
+                            "icon": "truck",
                             "width": 20
                           },
                           "blocks": {
