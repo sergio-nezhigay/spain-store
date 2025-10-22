@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "logo_height": 36,
+    "logo": "shopify://shop_images/door-company-logo.jpg",
+    "logo_height": 53,
     "logo_height_mobile": 28,
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",

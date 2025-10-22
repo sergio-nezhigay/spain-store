@@ -4284,3 +4284,17 @@ text-component {
   }
 }
 
+/* ============================================
+   Judge.me Product Reviews
+   ============================================ */
+
+#judgeme_product_reviews {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--padding-section-horizontal, 1rem);
+}
+
+.jdgm-rev-widg__title {
+  text-align: left;
+}
+
