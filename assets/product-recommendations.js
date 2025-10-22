@@ -65,6 +65,13 @@ class ProductRecommendations extends HTMLElement {
     const { productId, recommendationsPerformed, sectionId, intent } = this.dataset;
     const id = this.id;
 
+    console.log('[Product Recommendations] Loading recommendations:', {
+      productId,
+      sectionId,
+      intent,
+      elementId: id
+    });
+
     if (!productId || !id) {
       throw new Error('Product ID and an ID attribute are required');
     }
@@ -72,12 +79,19 @@ class ProductRecommendations extends HTMLElement {
     // If the recommendations have already been loaded, accounts for the case where the Theme Editor
     // is loaded the section from the editor's visual preview context.
     if (recommendationsPerformed === 'true') {
+      console.log('[Product Recommendations] Already loaded, skipping');
       return;
     }
 
     this.#fetchCachedRecommendations(productId, sectionId, intent)
       .then((result) => {
         if (!result.success) {
+          console.error('[Product Recommendations] API request failed:', {
+            status: result.status,
+            productId,
+            sectionId,
+            intent
+          });
           // The Theme Editor will place a section element element in the DOM whose section_id is not available
           // to the Section Renderer API. In this case, we can safely ignore the error.
           if (!Shopify.designMode) {
@@ -91,13 +105,20 @@ class ProductRecommendations extends HTMLElement {
         const recommendations = html.querySelector(`product-recommendations[id="${id}"]`);
 
         if (recommendations?.innerHTML && recommendations.innerHTML.trim().length) {
+          console.log('[Product Recommendations] Successfully loaded recommendations');
           this.dataset.recommendationsPerformed = 'true';
           this.innerHTML = recommendations.innerHTML;
         } else {
+          console.warn('[Product Recommendations] No recommendations in response:', {
+            hasRecommendationsElement: !!recommendations,
+            htmlLength: recommendations?.innerHTML?.length || 0,
+            responseDataLength: result.data?.length || 0
+          });
           this.#handleError(new Error('No recommendations available'));
         }
       })
       .catch((e) => {
+        console.error('[Product Recommendations] Fetch error:', e);
         this.#handleError(e);
       });
   }
@@ -112,8 +133,11 @@ class ProductRecommendations extends HTMLElement {
   async #fetchCachedRecommendations(productId, sectionId, intent) {
     const url = `${this.dataset.url}&product_id=${productId}&section_id=${sectionId}&intent=${intent}`;
 
+    console.log('[Product Recommendations] Fetching from URL:', url);
+
     const cachedResponse = this.#cachedRecommendations[url];
     if (cachedResponse) {
+      console.log('[Product Recommendations] Using cached response');
       return { success: true, data: cachedResponse };
     }
 
@@ -122,11 +146,14 @@ class ProductRecommendations extends HTMLElement {
 
     try {
       const response = await fetch(url, { signal: this.#activeFetch.signal });
+      console.log('[Product Recommendations] API Response status:', response.status);
+
       if (!response.ok) {
         return { success: false, status: response.status };
       }
 
       const text = await response.text();
+      console.log('[Product Recommendations] Response length:', text.length, 'characters');
       this.#cachedRecommendations[url] = text;
       return { success: true, data: text };
     } finally {
@@ -139,9 +166,14 @@ class ProductRecommendations extends HTMLElement {
    * @param {Error} error
    */
   #handleError(error) {
-    console.error('Product recommendations error:', error.message);
+    console.error('[Product Recommendations] Error:', {
+      message: error.message,
+      productId: this.dataset.productId,
+      sectionId: this.dataset.sectionId,
+      intent: this.dataset.intent
+    });
     this.classList.add('hidden');
-    this.dataset.error = 'Error loading product recommendations';
+    this.dataset.error = error.message;
   }
 }
 
