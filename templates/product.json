@@ -474,11 +474,52 @@
                   "block_order": [
                     "text_pYenbB"
                   ]
+                },
+                "accordion_row_HbccyD": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Shipping & Returns",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_zJJC7T": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<h5><strong>Canada</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ CAD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li><strong>Free in-store pickup</strong> available in <strong>Montréal</strong> and <strong>Toronto</strong><br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> PST/HST applied by province<br/></li><li><strong>No customs or import fees</strong> — orders ship from <strong>our Canadian warehouse</strong><br/></li></ul><h5><strong>United States</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ USD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> VAT applied by state<br/></li><li><strong>No surprise fees</strong> — customs and import charges are <strong>included</strong><br/></li></ul><h5><strong>International </strong></h5><p>For international shipping details, <a href=\"#\"><strong>click here</strong></a>.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_zJJC7T"
+                  ]
                 }
               },
               "block_order": [
                 "accordion_row_9ApaB4",
-                "accordion_row_hbXdjp"
+                "accordion_row_hbXdjp",
+                "accordion_row_HbccyD"
               ]
             }
           },
