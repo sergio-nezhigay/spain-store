@@ -5,7 +5,8 @@
       "WebSearch",
       "WebFetch(domain:www.shopify.com)",
       "Bash(shopify theme check:*)",
-      "Bash(npm run push:*)"
+      "Bash(npm run push:*)",
+      "mcp__ide__getDiagnostics"
     ],
     "deny": [],
     "ask": []
