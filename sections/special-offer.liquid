@@ -12,8 +12,9 @@
 
 <div
   id="SpecialOffer-{{ section.id }}"
-  class="special-offer color-{{ section.settings.color_scheme }}"
+  class="special-offer section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} spacing-style"
   style="
+    {% render 'spacing-style', settings: section.settings %}
     --special-offer-border-style: {{ section.settings.border }};
     --special-offer-border-width: {{ section.settings.border_width }}px;
     --special-offer-border-opacity: {{ section.settings.border_opacity }}%;
@@ -26,10 +27,7 @@
     {% endif %}
   "
 >
-  <div
-    class="special-offer__container spacing-style section section--{{ section.settings.section_width }}"
-    style="{% render 'spacing-style', settings: section.settings %}"
-  >
+  <div class="special-offer__container">
     <div class="special-offer__media-wrapper">
       {% liquid
         if section.settings.toggle_overlay
@@ -173,16 +171,21 @@
   .special-offer {
     position: relative;
     min-height: var(--special-offer-min-height);
+    overflow: hidden;
+    border: var(--special-offer-border-width) var(--special-offer-border-style) rgb(var(--color-border-rgb) / var(--special-offer-border-opacity));
   }
 
   .special-offer__container {
     position: relative;
-    overflow: hidden;
-    border: var(--special-offer-border-width) var(--special-offer-border-style) rgb(var(--color-border-rgb) / var(--special-offer-border-opacity));
     min-height: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-column: 1 / -1;
+  }
+
+  .section--page-width .special-offer__container {
+    grid-column: 2;
   }
 
   .special-offer__media-wrapper {
@@ -221,7 +224,7 @@
   }
 
   .section--page-width .special-offer__content-wrapper {
-    padding-inline: 0;
+    padding-inline: var(--page-margin);
   }
 
   .special-offer__content {
