@@ -27,7 +27,7 @@
   "
 >
   <div
-    class="special-offer__container spacing-style section section--full-width"
+    class="special-offer__container spacing-style section section--{{ section.settings.section_width }}"
     style="{% render 'spacing-style', settings: section.settings %}"
   >
     <div class="special-offer__media-wrapper">
@@ -82,7 +82,7 @@
       {% endif %}
     </div>
 
-    <div class="special-offer__content-wrapper section-content-wrapper {{ section.settings.section_width }}">
+    <div class="special-offer__content-wrapper section-content-wrapper">
       <special-offer-component
         class="special-offer__content{% if section.settings.text_shadow %} special-offer__content--text-shadow{% endif %}"
         data-promo-code="{{ section.settings.promo_code }}"
@@ -220,8 +220,8 @@
     padding: var(--page-margin);
   }
 
-  .special-offer__content-wrapper.page-width {
-    max-width: var(--page-width);
+  .section--page-width .special-offer__content-wrapper {
+    padding-inline: 0;
   }
 
   .special-offer__content {
@@ -612,7 +612,7 @@
     {
       "type": "select",
       "id": "section_width",
-      "label": "Content width",
+      "label": "Section width",
       "options": [
         {
           "value": "page-width",
@@ -623,7 +623,8 @@
           "label": "Full width"
         }
       ],
-      "default": "page-width"
+      "default": "page-width",
+      "info": "Controls the width of the entire banner including background"
     },
     {
       "type": "select",
