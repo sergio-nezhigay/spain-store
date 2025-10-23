@@ -18,7 +18,7 @@
   assign columns = 3
 %}
 
-<div class="cart-drawer-recommendations__content" data-debug-performed="{{ recommendations.performed }}" data-debug-count="{{ recommendations.products_count }}" data-debug-size="{{ recommendations.products.size }}">
+<div class="cart-drawer-recommendations__content">
   {%- if recommendations.performed -%}
     {% if recommendations.products_count > 0 %}
       <div class="cart-drawer-recommendations__grid">

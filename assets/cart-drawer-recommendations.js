@@ -64,11 +64,8 @@ class CartDrawerRecommendations extends HTMLElement {
       const cartResponse = await fetch('/cart.js');
       const cart = await cartResponse.json();
 
-      console.log('Cart drawer recommendations: Cart data', cart);
-
       // If cart is empty, hide recommendations
       if (!cart.items || cart.items.length === 0) {
-        console.log('Cart drawer recommendations: Cart is empty, hiding');
         this.classList.add('hidden');
         return;
       }
@@ -77,11 +74,8 @@ class CartDrawerRecommendations extends HTMLElement {
       const firstItem = cart.items[0];
       const productId = firstItem.product_id;
 
-      console.log('Cart drawer recommendations: Product ID', productId);
-
       // If product ID hasn't changed, don't reload
       if (this.#currentProductId === String(productId)) {
-        console.log('Cart drawer recommendations: Product ID unchanged, skipping');
         return;
       }
 
@@ -94,10 +88,7 @@ class CartDrawerRecommendations extends HTMLElement {
       // Fetch recommendations
       const result = await this.#fetchCachedRecommendations(productId);
 
-      console.log('Cart drawer recommendations: Fetch result', result);
-
       if (!result.success) {
-        console.log('Cart drawer recommendations: Fetch failed, hiding');
         this.classList.add('hidden');
         return;
       }
@@ -106,31 +97,21 @@ class CartDrawerRecommendations extends HTMLElement {
       const parser = new DOMParser();
       const doc = parser.parseFromString(result.data, 'text/html');
 
-      console.log('Cart drawer recommendations: Parsed HTML', doc.body.innerHTML);
-
       // Look for the recommendations content in the parsed section
       const recommendationsContent = doc.querySelector('.cart-drawer-recommendations__content');
       const existingContent = this.querySelector('.cart-drawer-recommendations__content');
 
       if (recommendationsContent && existingContent) {
-        console.log('Cart drawer recommendations: Found content, updating');
-        console.log('Cart drawer recommendations: Debug - performed:', recommendationsContent.dataset.debugPerformed);
-        console.log('Cart drawer recommendations: Debug - count:', recommendationsContent.dataset.debugCount);
-        console.log('Cart drawer recommendations: Debug - size:', recommendationsContent.dataset.debugSize);
-
         existingContent.innerHTML = recommendationsContent.innerHTML;
 
         // Check if there are actual products (not just skeleton)
         const hasProducts = recommendationsContent.querySelector('.cart-drawer-recommendations__item');
         if (hasProducts) {
-          console.log('Cart drawer recommendations: Has products, showing');
           this.classList.remove('hidden');
         } else {
-          console.log('Cart drawer recommendations: No products found, hiding');
           this.classList.add('hidden');
         }
       } else {
-        console.log('Cart drawer recommendations: Content not found, hiding');
         this.classList.add('hidden');
       }
     } catch (error) {
@@ -174,12 +155,9 @@ class CartDrawerRecommendations extends HTMLElement {
 
     const url = `${baseUrl}?limit=${limit}&product_id=${productId}&section_id=${sectionId}&intent=${intent}`;
 
-    console.log('Cart drawer recommendations: Fetching from URL', url);
-
     // Check cache
     const cachedResponse = this.#cachedRecommendations[url];
     if (cachedResponse) {
-      console.log('Cart drawer recommendations: Using cached response');
       return { success: true, data: cachedResponse };
     }
 
@@ -189,24 +167,19 @@ class CartDrawerRecommendations extends HTMLElement {
 
     try {
       const response = await fetch(url, { signal: this.#activeFetch.signal });
-      console.log('Cart drawer recommendations: Fetch response status', response.status);
 
       if (!response.ok) {
-        console.log('Cart drawer recommendations: Response not OK');
         return { success: false, status: response.status };
       }
 
       const text = await response.text();
-      console.log('Cart drawer recommendations: Response text length', text.length);
 
       this.#cachedRecommendations[url] = text;
       return { success: true, data: text };
     } catch (error) {
       if (error.name === 'AbortError') {
-        console.log('Cart drawer recommendations: Fetch aborted');
         return { success: false, status: 0 };
       }
-      console.log('Cart drawer recommendations: Fetch error', error);
       throw error;
     } finally {
       this.#activeFetch = null;
