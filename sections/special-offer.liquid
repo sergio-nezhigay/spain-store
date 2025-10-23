@@ -4,11 +4,6 @@
     assign fetch_priority = 'high'
   endif
 
-  assign has_media = false
-  if section.settings.image != blank or section.settings.video != blank
-    assign has_media = true
-  endif
-
   assign media_width_desktop = '100vw'
   assign media_width_mobile = '100vw'
   assign sizes = '(min-width: 750px) ' | append: media_width_desktop | append: ', ' | append: media_width_mobile
@@ -89,7 +84,7 @@
 
     <div class="special-offer__content-wrapper section-content-wrapper {{ section.settings.section_width }}">
       <special-offer-component
-        class="special-offer__content"
+        class="special-offer__content{% if section.settings.text_shadow %} special-offer__content--text-shadow{% endif %}"
         data-promo-code="{{ section.settings.promo_code }}"
       >
         <div class="special-offer__form-container" ref="formContainer">
@@ -237,14 +232,22 @@
     gap: var(--gap-lg);
   }
 
+  .special-offer__content--text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
   .special-offer__heading {
     margin: 0;
-    color: var(--color-foreground-heading);
+    color: var(--color-foreground);
   }
 
   .special-offer__description {
     color: var(--color-foreground);
     max-width: 600px;
+  }
+
+  .special-offer__description * {
+    color: inherit;
   }
 
   .special-offer__form {
@@ -336,7 +339,7 @@
 
   .special-offer__success-heading {
     margin: 0;
-    color: var(--color-foreground-heading);
+    color: var(--color-foreground);
   }
 
   .special-offer__success-message {
@@ -668,7 +671,15 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
-      "default": "scheme-1"
+      "default": "scheme-1",
+      "info": "Choose a color scheme that contrasts with your background image. Use light schemes for dark backgrounds and dark schemes for light backgrounds."
+    },
+    {
+      "type": "checkbox",
+      "id": "text_shadow",
+      "label": "Add text shadow",
+      "default": false,
+      "info": "Adds a subtle shadow to text for better readability on busy backgrounds"
     },
     {
       "type": "select",
@@ -734,7 +745,13 @@
   "presets": [
     {
       "name": "Special Offer",
-      "category": "Promotional"
+      "category": "Promotional",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#00000066",
+        "text_shadow": true
+      }
     }
   ]
 }

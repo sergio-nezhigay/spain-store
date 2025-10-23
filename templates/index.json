@@ -452,6 +452,38 @@
         "padding-block-end": 48
       }
     },
+    "special_offer_iTQNeh": {
+      "type": "special-offer",
+      "name": "Special Offer",
+      "settings": {
+        "heading": "Get 10% Off Your First Order!",
+        "heading_preset": "h1",
+        "description": "<p>Subscribe to our newsletter and receive an exclusive promo code!</p>",
+        "description_preset": "paragraph",
+        "promo_code": "WELCOME10",
+        "input_placeholder": "Enter your email",
+        "button_label": "Get My Code",
+        "button_style": "button",
+        "success_heading": "Thank You!",
+        "success_message": "Here's your exclusive promo code:",
+        "copy_button_label": "Copy Code",
+        "media_type": "image",
+        "image": "shopify://shop_images/gift-card.jpg",
+        "toggle_overlay": true,
+        "overlay_color": "#0000005b",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "section_width": "page-width",
+        "section_height": "medium",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    },
     "product_list_kdpwgB": {
       "type": "product-list",
       "blocks": {
@@ -793,6 +825,7 @@
     "hero_jVaWmY",
     "collection_list_Nzk4tQ",
     "product_list_fa6P9H",
+    "special_offer_iTQNeh",
     "product_list_kdpwgB",
     "featured_blog_posts_QkFayD"
   ]
