@@ -1819,6 +1819,124 @@
         "step": 1,
         "unit": "px",
         "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Cart Drawer Delivery Information"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_delivery_info_1",
+        "label": "Show delivery message 1",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "cart_delivery_icon_1",
+        "label": "Icon 1",
+        "options": [
+          {
+            "value": "truck",
+            "label": "Shipping truck"
+          },
+          {
+            "value": "clock",
+            "label": "Clock"
+          },
+          {
+            "value": "check",
+            "label": "Checkmark"
+          },
+          {
+            "value": "box",
+            "label": "Package box"
+          }
+        ],
+        "default": "truck",
+        "visible_if": "{{ settings.show_cart_delivery_info_1 == true }}"
+      },
+      {
+        "type": "text",
+        "id": "cart_delivery_text_1",
+        "label": "Message 1",
+        "default": "Free shipping on orders over €50",
+        "visible_if": "{{ settings.show_cart_delivery_info_1 == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_delivery_info_2",
+        "label": "Show delivery message 2",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "cart_delivery_icon_2",
+        "label": "Icon 2",
+        "options": [
+          {
+            "value": "truck",
+            "label": "Shipping truck"
+          },
+          {
+            "value": "clock",
+            "label": "Clock"
+          },
+          {
+            "value": "check",
+            "label": "Checkmark"
+          },
+          {
+            "value": "box",
+            "label": "Package box"
+          }
+        ],
+        "default": "clock",
+        "visible_if": "{{ settings.show_cart_delivery_info_2 == true }}"
+      },
+      {
+        "type": "text",
+        "id": "cart_delivery_text_2",
+        "label": "Message 2",
+        "default": "Delivery in 3-5 business days",
+        "visible_if": "{{ settings.show_cart_delivery_info_2 == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_delivery_info_3",
+        "label": "Show delivery message 3",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "cart_delivery_icon_3",
+        "label": "Icon 3",
+        "options": [
+          {
+            "value": "truck",
+            "label": "Shipping truck"
+          },
+          {
+            "value": "clock",
+            "label": "Clock"
+          },
+          {
+            "value": "check",
+            "label": "Checkmark"
+          },
+          {
+            "value": "box",
+            "label": "Package box"
+          }
+        ],
+        "default": "check",
+        "visible_if": "{{ settings.show_cart_delivery_info_3 == true }}"
+      },
+      {
+        "type": "text",
+        "id": "cart_delivery_text_3",
+        "label": "Message 3",
+        "default": "Easy 30-day returns",
+        "visible_if": "{{ settings.show_cart_delivery_info_3 == true }}"
       }
     ]
   },

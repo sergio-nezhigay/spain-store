@@ -97,15 +97,17 @@ class CartDrawerRecommendations extends HTMLElement {
       const parser = new DOMParser();
       const doc = parser.parseFromString(result.data, 'text/html');
 
-      // Look for the recommendations content in the parsed section
-      const recommendationsContent = doc.querySelector('.cart-drawer-recommendations__content');
+      // Get the section content (it's the direct child of the shopify-section div)
+      const section = doc.querySelector('.shopify-section');
       const existingContent = this.querySelector('.cart-drawer-recommendations__content');
 
-      if (recommendationsContent && existingContent) {
-        existingContent.innerHTML = recommendationsContent.innerHTML;
+      if (section && existingContent) {
+        // Get the inner HTML of the section (which is the grid or skeleton)
+        const sectionContent = section.innerHTML.trim();
+        existingContent.innerHTML = sectionContent;
 
         // Check if there are actual products (not just skeleton)
-        const hasProducts = recommendationsContent.querySelector('.cart-drawer-recommendations__item');
+        const hasProducts = existingContent.querySelector('.cart-drawer-recommendations__item');
         if (hasProducts) {
           this.classList.remove('hidden');
         } else {
