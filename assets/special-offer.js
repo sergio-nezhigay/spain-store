@@ -15,10 +15,15 @@ class SpecialOfferComponent extends Component {
   connectedCallback() {
     super.connectedCallback();
 
+    console.log('SpecialOfferComponent connected');
+
     // Find the form and add submit handler
     const form = this.querySelector('form');
+    console.log('Form found:', form);
+
     if (form) {
       form.addEventListener('submit', this.handleSubmit);
+      console.log('Submit handler attached');
     }
   }
 
@@ -36,13 +41,17 @@ class SpecialOfferComponent extends Component {
    * @param {Event} event
    */
   async handleSubmit(event) {
+    console.log('handleSubmit called', event);
     event.preventDefault();
+    console.log('preventDefault called');
 
     const form = /** @type {HTMLFormElement} */ (event.target);
     const emailInput = /** @type {HTMLInputElement} */ (this.refs.emailInput);
     const submitButton = /** @type {HTMLButtonElement} */ (this.refs.submitButton);
     const errorMessage = /** @type {HTMLElement} */ (this.refs.errorMessage);
     const errorText = /** @type {HTMLElement} */ (this.refs.errorText);
+
+    console.log('Refs:', {emailInput, submitButton, errorMessage, errorText});
 
     if (!emailInput || !emailInput.value) {
       this.showError('Please enter a valid email address');
