@@ -186,7 +186,7 @@
       ],
       "name": "Frequently Bought Together",
       "settings": {
-        "product": "{{ cart.items.first.product }}",
+        "product": "",
         "recommendation_type": "complementary",
         "layout_type": "grid",
         "carousel_on_mobile": false,
