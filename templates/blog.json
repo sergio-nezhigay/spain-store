@@ -16,7 +16,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
-            "text": "<p>{{ closest.blog.title }}</p>",
+            "text": "<p>Blogs</p>",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -80,6 +80,23 @@
                 "alignment": "left",
                 "show_alignment": false,
                 "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "content": {
+              "type": "_blog-post-description",
+              "static": true,
+              "settings": {
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 16,
                 "padding-block-end": 0
               },
               "blocks": {}
