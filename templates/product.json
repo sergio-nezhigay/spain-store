@@ -312,12 +312,32 @@
                   },
                   "blocks": {}
                 },
+                "payment_icon_gnCtrM": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/visa.png",
+                    "label": "Visa",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
                 "payment_icon_7naVWp": {
                   "type": "_payment-icon",
                   "name": "Payment icon",
                   "settings": {
                     "image": "shopify://shop_images/google-pay.png",
                     "label": "Google Pay",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_hwtwP7": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/5968279.png",
+                    "label": "Apple pay",
                     "height": 30
                   },
                   "blocks": {}
@@ -332,12 +352,22 @@
                   },
                   "blocks": {}
                 },
-                "payment_icon_gnCtrM": {
+                "payment_icon_XbCzBb": {
                   "type": "_payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/visa.png",
-                    "label": "Visa",
+                    "image": "shopify://shop_images/825539.png",
+                    "label": "American Express",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_EnE7UP": {
+                  "type": "_payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/39073-klarna-logo-icon-vector-icon-vector-eps.png",
+                    "label": "Klarna",
                     "height": 30
                   },
                   "blocks": {}
@@ -346,9 +376,12 @@
               "block_order": [
                 "payment_icon_JT3n6T",
                 "payment_icon_fnjd4n",
+                "payment_icon_gnCtrM",
                 "payment_icon_7naVWp",
+                "payment_icon_hwtwP7",
                 "payment_icon_ChtCFA",
-                "payment_icon_gnCtrM"
+                "payment_icon_XbCzBb",
+                "payment_icon_EnE7UP"
               ]
             },
             "accordion_pxbKn9": {

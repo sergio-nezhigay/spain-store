@@ -6,7 +6,9 @@
       "WebFetch(domain:www.shopify.com)",
       "Bash(shopify theme check:*)",
       "Bash(npm run push:*)",
-      "mcp__ide__getDiagnostics"
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:community.shopify.dev)",
+      "WebFetch(domain:medium.com)"
     ],
     "deny": [],
     "ask": []

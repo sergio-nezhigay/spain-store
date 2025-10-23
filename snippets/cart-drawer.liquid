@@ -14,6 +14,12 @@
   fetchpriority="low"
 ></script>
 
+<script
+  src="{{ 'cart-drawer-recommendations.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
 <cart-drawer-component
   class="cart-drawer"
   {{ block.shopify_attributes }}
@@ -106,6 +112,21 @@
               class="cart-drawer__items"
             >
               {% render 'cart-products' %}
+
+              {%- comment -%} Product Recommendations {%- endcomment -%}
+              <cart-drawer-recommendations
+                class="cart-drawer-recommendations"
+                data-url="{{ routes.product_recommendations_url }}"
+                data-section-id="cart-drawer-recommendations"
+                data-limit="3"
+              >
+                <div class="cart-drawer-recommendations__wrapper">
+                  <h3 class="cart-drawer-recommendations__heading">Frequently Bought Together</h3>
+                  <div class="cart-drawer-recommendations__content">
+                    {%- comment -%} Content loaded via JS {%- endcomment -%}
+                  </div>
+                </div>
+              </cart-drawer-recommendations>
             </scroll-hint>
 
             <div
@@ -177,5 +198,126 @@
     position: sticky;
     bottom: 0;
     z-index: 1;
+  }
+
+  /* Cart Drawer Recommendations */
+  .cart-drawer-recommendations {
+    display: block;
+    margin-top: var(--margin-2xl);
+  }
+
+  .cart-drawer-recommendations.hidden {
+    display: none;
+  }
+
+  .cart-drawer-recommendations__wrapper {
+    width: 100%;
+  }
+
+  .cart-drawer-recommendations__heading {
+    font-size: var(--cart-font-size--md);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--margin-md);
+    color: var(--color-foreground);
+  }
+
+  .cart-drawer-recommendations__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-md);
+    width: 100%;
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap-lg);
+    }
+  }
+
+  .cart-drawer-recommendations__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+    text-decoration: none;
+    color: var(--color-foreground);
+    transition: opacity var(--animation-speed) var(--animation-easing);
+  }
+
+  .cart-drawer-recommendations__item:hover {
+    opacity: var(--opacity-70);
+  }
+
+  .cart-drawer-recommendations__image {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--style-border-radius-cards);
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+  }
+
+  .cart-drawer-recommendations__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cart-drawer-recommendations__placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10));
+  }
+
+  .cart-drawer-recommendations__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2xs);
+  }
+
+  .cart-drawer-recommendations__title {
+    font-size: var(--cart-font-size--sm);
+    font-weight: var(--font-weight-normal);
+    margin: 0;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .cart-drawer-recommendations__price {
+    font-size: var(--cart-font-size--sm);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .cart-drawer-recommendations__sale-price {
+    color: var(--color-sale);
+    margin-right: var(--margin-2xs);
+  }
+
+  .cart-drawer-recommendations__compare-price {
+    text-decoration: line-through;
+    opacity: var(--opacity-50);
+    font-size: var(--cart-font-size--xs);
+  }
+
+  /* Loading skeleton */
+  .cart-drawer-recommendations__skeleton-item {
+    aspect-ratio: 3 / 4;
+    background-color: rgb(var(--color-foreground-rgb) / var(--opacity-5));
+    border-radius: var(--style-border-radius-cards);
+    opacity: var(--skeleton-opacity);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      opacity: var(--skeleton-opacity);
+    }
+    50% {
+      opacity: calc(var(--skeleton-opacity) * 0.5);
+    }
+    100% {
+      opacity: var(--skeleton-opacity);
+    }
   }
 {% endstylesheet %}
