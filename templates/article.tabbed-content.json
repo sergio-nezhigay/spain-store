@@ -19,9 +19,7 @@
           }
         }
       },
-      "block_order": [
-        "breadcrumb_block"
-      ],
+      "block_order": ["breadcrumb_block"],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -131,10 +129,17 @@
         "padding-block-start": 40,
         "padding-block-end": 80
       }
+    },
+    "article_tabs": {
+      "type": "article-tabs",
+      "settings": {
+        "heading_alignment": "left",
+        "section_width": "1200px",
+        "color_scheme": "scheme-1",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
     }
   },
-  "order": [
-    "breadcrumb",
-    "section"
-  ]
+  "order": ["breadcrumb", "section", "article_tabs"]
 }

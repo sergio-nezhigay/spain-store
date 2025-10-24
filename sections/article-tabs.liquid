@@ -1,0 +1,278 @@
+{% comment %}
+  Article Tabs Section
+  Displays article metafields in tabbed format
+{% endcomment %}
+
+{% assign tab_1_title = article.metafields.custom.tab_1_title %}
+{% assign tab_1_content = article.metafields.custom.tab_1_content %}
+{% assign tab_2_title = article.metafields.custom.tab_2_title %}
+{% assign tab_2_content = article.metafields.custom.tab_2_content %}
+
+{% if tab_1_title or tab_2_title %}
+  <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+  <div class="section color-{{ section.settings.color_scheme }}">
+    <div
+      class="spacing-style section-content-wrapper"
+      style="
+        max-width: {{ section.settings.section_width }};
+        margin: 0 auto;
+        {% render 'spacing-style', settings: section.settings %}
+      "
+    >
+      {% if section.settings.heading != blank %}
+        <h2 class="h2" style="text-align: {{ section.settings.heading_alignment }}; margin-bottom: 24px;">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      <div class="article-tabs">
+        <div class="article-tabs__nav" role="tablist">
+          {% if tab_1_title %}
+            <button
+              class="article-tabs__tab article-tabs__tab--active"
+              role="tab"
+              aria-selected="true"
+              aria-controls="tab-panel-1"
+              id="tab-1"
+              ref="tabs[]"
+              on:click="toggleTab?index=0"
+            >
+              {{ tab_1_title }}
+            </button>
+          {% endif %}
+
+          {% if tab_2_title %}
+            <button
+              class="article-tabs__tab"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tab-panel-2"
+              id="tab-2"
+              ref="tabs[]"
+              on:click="toggleTab?index=1"
+            >
+              {{ tab_2_title }}
+            </button>
+          {% endif %}
+        </div>
+
+        <div class="article-tabs__content">
+          {% if tab_1_content %}
+            <div
+              class="article-tabs__panel article-tabs__panel--active"
+              role="tabpanel"
+              aria-labelledby="tab-1"
+              id="tab-panel-1"
+              ref="panels[]"
+            >
+              <div class="rte">
+                {{ article.metafields.custom.tab_1_content | metafield_tag }}
+              </div>
+            </div>
+          {% endif %}
+
+          {% if tab_2_content %}
+            <div
+              class="article-tabs__panel"
+              role="tabpanel"
+              aria-labelledby="tab-2"
+              id="tab-panel-2"
+              ref="panels[]"
+            >
+              <div class="rte">
+                {{ article.metafields.custom.tab_2_content | metafield_tag }}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .article-tabs {
+      width: 100%;
+    }
+
+    .article-tabs__nav {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid rgba(var(--color-foreground), 0.1);
+      margin-bottom: 24px;
+    }
+
+    .article-tabs__tab {
+      background: none;
+      border: none;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(var(--color-foreground), 0.6);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s ease;
+    }
+
+    .article-tabs__tab:hover {
+      color: rgba(var(--color-foreground), 0.8);
+    }
+
+    .article-tabs__tab--active {
+      color: rgb(var(--color-foreground));
+      border-bottom-color: rgb(var(--color-foreground));
+    }
+
+    .article-tabs__panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .article-tabs__panel--active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .article-tabs__panel .rte {
+      line-height: 1.6;
+    }
+
+    .article-tabs__panel .rte p {
+      margin-bottom: 16px;
+    }
+
+    .article-tabs__panel .rte strong {
+      font-weight: 600;
+    }
+
+    @media screen and (max-width: 768px) {
+      .article-tabs__tab {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <script>
+    // Simple tab switching without web components for now
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.article-tabs__tab');
+      const panels = document.querySelectorAll('.article-tabs__panel');
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', function() {
+          // Remove active class from all tabs and panels
+          tabs.forEach(t => {
+            t.classList.remove('article-tabs__tab--active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          panels.forEach(p => {
+            p.classList.remove('article-tabs__panel--active');
+          });
+
+          // Add active class to clicked tab and corresponding panel
+          tab.classList.add('article-tabs__tab--active');
+          tab.setAttribute('aria-selected', 'true');
+          if (panels[index]) {
+            panels[index].classList.add('article-tabs__panel--active');
+          }
+        });
+      });
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Article Tabs",
+  "class": "section-article-tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        {
+          "value": "100%",
+          "label": "Full width"
+        },
+        {
+          "value": "1200px",
+          "label": "Page width"
+        },
+        {
+          "value": "900px",
+          "label": "Narrow"
+        }
+      ],
+      "default": "1200px"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Tabs"
+    }
+  ]
+}
+{% endschema %}
