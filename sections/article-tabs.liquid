@@ -1,14 +1,19 @@
 {% comment %}
   Article Tabs Section
-  Displays article metafields in tabbed format
+  Displays article metafields in tabbed format (supports up to 5 tabs)
 {% endcomment %}
 
-{% assign tab_1_title = article.metafields.custom.tab_1_title %}
-{% assign tab_1_content = article.metafields.custom.tab_1_content %}
-{% assign tab_2_title = article.metafields.custom.tab_2_title %}
-{% assign tab_2_content = article.metafields.custom.tab_2_content %}
+{% comment %} Check if any tabs exist {% endcomment %}
+{% assign has_tabs = false %}
+{% for i in (1..5) %}
+  {% assign tab_key = 'tab_' | append: i | append: '_title' %}
+  {% if article.metafields.custom[tab_key] %}
+    {% assign has_tabs = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 
-{% if tab_1_title or tab_2_title %}
+{% if has_tabs %}
   <div class="section-background color-{{ section.settings.color_scheme }}"></div>
   <div class="section color-{{ section.settings.color_scheme }}">
     <div
@@ -27,63 +32,53 @@
 
       <div class="article-tabs">
         <div class="article-tabs__nav" role="tablist">
-          {% if tab_1_title %}
-            <button
-              class="article-tabs__tab article-tabs__tab--active"
-              role="tab"
-              aria-selected="true"
-              aria-controls="tab-panel-1"
-              id="tab-1"
-              ref="tabs[]"
-              on:click="toggleTab?index=0"
-            >
-              {{ tab_1_title }}
-            </button>
-          {% endif %}
+          {% assign first_tab = true %}
+          {% for i in (1..5) %}
+            {% assign title_key = 'tab_' | append: i | append: '_title' %}
+            {% assign tab_title = article.metafields.custom[title_key] %}
 
-          {% if tab_2_title %}
-            <button
-              class="article-tabs__tab"
-              role="tab"
-              aria-selected="false"
-              aria-controls="tab-panel-2"
-              id="tab-2"
-              ref="tabs[]"
-              on:click="toggleTab?index=1"
-            >
-              {{ tab_2_title }}
-            </button>
-          {% endif %}
+            {% if tab_title %}
+              <button
+                class="article-tabs__tab {% if first_tab %}article-tabs__tab--active{% endif %}"
+                role="tab"
+                aria-selected="{% if first_tab %}true{% else %}false{% endif %}"
+                aria-controls="tab-panel-{{ i }}"
+                id="tab-{{ i }}"
+                data-index="{{ forloop.index0 }}"
+              >
+                {{ tab_title }}
+              </button>
+              {% assign first_tab = false %}
+            {% endif %}
+          {% endfor %}
         </div>
 
         <div class="article-tabs__content">
-          {% if tab_1_content %}
-            <div
-              class="article-tabs__panel article-tabs__panel--active"
-              role="tabpanel"
-              aria-labelledby="tab-1"
-              id="tab-panel-1"
-              ref="panels[]"
-            >
-              <div class="rte">
-                {{ article.metafields.custom.tab_1_content | metafield_tag }}
-              </div>
-            </div>
-          {% endif %}
+          {% assign first_panel = true %}
+          {% for i in (1..5) %}
+            {% assign title_key = 'tab_' | append: i | append: '_title' %}
+            {% assign content_key = 'tab_' | append: i | append: '_content' %}
+            {% assign tab_title = article.metafields.custom[title_key] %}
+            {% assign tab_content = article.metafields.custom[content_key] %}
 
-          {% if tab_2_content %}
-            <div
-              class="article-tabs__panel"
-              role="tabpanel"
-              aria-labelledby="tab-2"
-              id="tab-panel-2"
-              ref="panels[]"
-            >
-              <div class="rte">
-                {{ article.metafields.custom.tab_2_content | metafield_tag }}
+            {% if tab_title %}
+              <div
+                class="article-tabs__panel {% if first_panel %}article-tabs__panel--active{% endif %}"
+                role="tabpanel"
+                aria-labelledby="tab-{{ i }}"
+                id="tab-panel-{{ i }}"
+              >
+                {% if tab_content %}
+                  <div class="rte">
+                    {{ article.metafields.custom[content_key] | metafield_tag }}
+                  </div>
+                {% else %}
+                  <p class="article-tabs__empty">No content available for this tab.</p>
+                {% endif %}
               </div>
-            </div>
-          {% endif %}
+              {% assign first_panel = false %}
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -92,50 +87,93 @@
   <style>
     .article-tabs {
       width: 100%;
+      background: rgba(var(--color-background), 1);
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(var(--color-foreground), 0.15);
+      overflow: hidden;
     }
 
     .article-tabs__nav {
       display: flex;
-      gap: 8px;
-      border-bottom: 2px solid rgba(var(--color-foreground), 0.1);
-      margin-bottom: 24px;
+      background: #f8f9fa;
+      border-bottom: 2px solid #e9ecef;
+      padding: 0 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .article-tabs__nav::-webkit-scrollbar {
+      display: none;
     }
 
     .article-tabs__tab {
-      background: none;
-      border: none;
-      padding: 12px 24px;
+      padding: 16px 28px;
       cursor: pointer;
+      border: none;
+      background: none;
       font-size: 16px;
       font-weight: 500;
-      color: rgba(var(--color-foreground), 0.6);
-      border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
-      transition: all 0.2s ease;
+      color: #6c757d;
+      position: relative;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .article-tabs__tab:hover {
-      color: rgba(var(--color-foreground), 0.8);
+      color: #667eea;
+      background: rgba(102, 126, 234, 0.1);
     }
 
     .article-tabs__tab--active {
-      color: rgb(var(--color-foreground));
-      border-bottom-color: rgb(var(--color-foreground));
+      color: #667eea;
+    }
+
+    .article-tabs__tab--active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #667eea;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    .article-tabs__tab:focus-visible {
+      outline: 2px solid #667eea;
+      outline-offset: -2px;
+    }
+
+    .article-tabs__content {
+      padding: 40px;
+      min-height: 200px;
     }
 
     .article-tabs__panel {
       display: none;
-      animation: fadeIn 0.3s ease;
     }
 
     .article-tabs__panel--active {
       display: block;
+      animation: fadeIn 0.4s ease;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(10px);
       }
       to {
         opacity: 1;
@@ -143,49 +181,203 @@
       }
     }
 
-    .article-tabs__panel .rte {
-      line-height: 1.6;
+    /* Blog-optimized RTE styles */
+    .article-tabs__panel .rte h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      font-weight: 600;
+      line-height: 1.3;
     }
 
-    .article-tabs__panel .rte p {
+    .article-tabs__panel .rte h3 {
+      color: #333;
+      margin-top: 28px;
       margin-bottom: 16px;
-    }
-
-    .article-tabs__panel .rte strong {
+      font-size: 1.4em;
       font-weight: 600;
     }
 
+    .article-tabs__panel .rte h4 {
+      color: #333;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    .article-tabs__panel .rte h2:first-child,
+    .article-tabs__panel .rte h3:first-child,
+    .article-tabs__panel .rte h4:first-child {
+      margin-top: 0;
+    }
+
+    .article-tabs__panel .rte p {
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .article-tabs__panel .rte p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-tabs__panel .rte strong,
+    .article-tabs__panel .rte b {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .article-tabs__panel .rte em,
+    .article-tabs__panel .rte i {
+      font-style: italic;
+    }
+
+    .article-tabs__panel .rte ul,
+    .article-tabs__panel .rte ol {
+      margin: 20px 0;
+      padding-left: 30px;
+    }
+
+    .article-tabs__panel .rte li {
+      margin-bottom: 10px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .article-tabs__panel .rte a {
+      color: #667eea;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease;
+    }
+
+    .article-tabs__panel .rte a:hover {
+      color: #764ba2;
+    }
+
+    .article-tabs__panel .rte blockquote {
+      margin: 20px 0;
+      padding-left: 20px;
+      border-left: 4px solid #667eea;
+      font-style: italic;
+      color: #555;
+    }
+
+    .article-tabs__panel .rte code {
+      background: #f8f9fa;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #333;
+    }
+
+    .article-tabs__panel .rte pre {
+      background: #f8f9fa;
+      border-left: 4px solid #667eea;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      overflow-x: auto;
+      line-height: 1.6;
+    }
+
+    .article-tabs__empty {
+      color: #999;
+      font-style: italic;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* Mobile optimizations */
     @media screen and (max-width: 768px) {
+      .article-tabs__nav {
+        padding: 0 10px;
+      }
+
       .article-tabs__tab {
-        padding: 10px 16px;
+        padding: 14px 20px;
         font-size: 14px;
+      }
+
+      .article-tabs__content {
+        padding: 25px;
+      }
+
+      .article-tabs__panel .rte {
+        font-size: 15px;
+      }
+
+      .article-tabs__panel .rte h2 {
+        font-size: 1.5em;
+      }
+
+      .article-tabs__panel .rte h3 {
+        font-size: 1.3em;
+      }
+
+      .article-tabs__panel .rte h4 {
+        font-size: 1.1em;
       }
     }
   </style>
 
   <script>
-    // Simple tab switching without web components for now
     document.addEventListener('DOMContentLoaded', function() {
-      const tabs = document.querySelectorAll('.article-tabs__tab');
-      const panels = document.querySelectorAll('.article-tabs__panel');
+      const tabContainers = document.querySelectorAll('.article-tabs');
 
-      tabs.forEach((tab, index) => {
-        tab.addEventListener('click', function() {
-          // Remove active class from all tabs and panels
-          tabs.forEach(t => {
-            t.classList.remove('article-tabs__tab--active');
-            t.setAttribute('aria-selected', 'false');
-          });
-          panels.forEach(p => {
-            p.classList.remove('article-tabs__panel--active');
-          });
+      tabContainers.forEach(container => {
+        const tabs = container.querySelectorAll('.article-tabs__tab');
+        const panels = container.querySelectorAll('.article-tabs__panel');
 
-          // Add active class to clicked tab and corresponding panel
-          tab.classList.add('article-tabs__tab--active');
-          tab.setAttribute('aria-selected', 'true');
-          if (panels[index]) {
-            panels[index].classList.add('article-tabs__panel--active');
-          }
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', function() {
+            // Remove active class from all tabs and panels
+            tabs.forEach(t => {
+              t.classList.remove('article-tabs__tab--active');
+              t.setAttribute('aria-selected', 'false');
+            });
+            panels.forEach(p => {
+              p.classList.remove('article-tabs__panel--active');
+            });
+
+            // Add active class to clicked tab and corresponding panel
+            tab.classList.add('article-tabs__tab--active');
+            tab.setAttribute('aria-selected', 'true');
+            if (panels[index]) {
+              panels[index].classList.add('article-tabs__panel--active');
+            }
+          });
+        });
+
+        // Keyboard navigation
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('keydown', function(e) {
+            let newIndex = index;
+
+            if (e.key === 'ArrowRight') {
+              newIndex = index + 1 < tabs.length ? index + 1 : 0;
+              e.preventDefault();
+            } else if (e.key === 'ArrowLeft') {
+              newIndex = index - 1 >= 0 ? index - 1 : tabs.length - 1;
+              e.preventDefault();
+            } else if (e.key === 'Home') {
+              newIndex = 0;
+              e.preventDefault();
+            } else if (e.key === 'End') {
+              newIndex = tabs.length - 1;
+              e.preventDefault();
+            } else {
+              return;
+            }
+
+            tabs[newIndex].click();
+            tabs[newIndex].focus();
+          });
         });
       });
     });
