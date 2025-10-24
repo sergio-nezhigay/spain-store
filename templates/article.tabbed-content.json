@@ -134,8 +134,8 @@
       "type": "article-tabs",
       "settings": {
         "heading_alignment": "left",
-        "section_width": "1200px",
         "color_scheme": "scheme-1",
+        "section_width": "page-width",
         "padding-block-start": 40,
         "padding-block-end": 40
       }
