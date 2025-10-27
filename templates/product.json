@@ -21,8 +21,12 @@
           "blocks": {}
         }
       },
-      "block_order": ["custom_liquid_wYJ3by"],
-      "custom_css": [".layout-panel-flex--column {padding: 0 10px;}"],
+      "block_order": [
+        "custom_liquid_wYJ3by"
+      ],
+      "custom_css": [
+        ".layout-panel-flex--column {padding: 0 10px;}"
+      ],
       "name": "t:names.custom_section",
       "settings": {
         "content_direction": "column",
@@ -203,7 +207,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_xrnftG", "price_tVjtKg"]
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg"
+              ]
             },
             "xb_wishlist_button_wishlist_aypCyG": {
               "type": "shopify://apps/xb-wishlist/blocks/button_wishlist/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
@@ -274,7 +281,9 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["text_L4yfgX"]
+                  "block_order": [
+                    "text_L4yfgX"
+                  ]
                 },
                 "accordion_row_XDCrky": {
                   "type": "_accordion-row",
@@ -311,10 +320,15 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["text_xqghAN"]
+                  "block_order": [
+                    "text_xqghAN"
+                  ]
                 }
               },
-              "block_order": ["accordion_row_h6QJrN", "accordion_row_XDCrky"]
+              "block_order": [
+                "accordion_row_h6QJrN",
+                "accordion_row_XDCrky"
+              ]
             },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
@@ -392,8 +406,98 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {},
-              "block_order": []
+              "blocks": {
+                "payment_icon_g3MpKF": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/39073-klarna-logo-icon-vector-icon-vector-eps.png",
+                    "label": "Klarna",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_KfrWwk": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/5968279.png",
+                    "label": "Apple pay",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_RYEEch": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/825539.png",
+                    "label": "American Express",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_3a9nwR": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/round.png",
+                    "label": "M<astercard></astercard>",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_fq8rih": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/google-pay.png",
+                    "label": "Google Pay",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_gMYrtk": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/western-union.png",
+                    "label": "Western Union",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_4YezFA": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/money.png",
+                    "label": "PayPal",
+                    "height": 30
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_wxLYqd": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/visa.png",
+                    "label": "Visa",
+                    "height": 30
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "payment_icon_g3MpKF",
+                "payment_icon_KfrWwk",
+                "payment_icon_RYEEch",
+                "payment_icon_3a9nwR",
+                "payment_icon_fq8rih",
+                "payment_icon_gMYrtk",
+                "payment_icon_4YezFA",
+                "payment_icon_wxLYqd"
+              ]
             },
             "addons_product_cHejkz": {
               "type": "addons-product",
@@ -587,7 +691,9 @@
           ]
         }
       },
-      "block_order": ["text_cbcgyb"],
+      "block_order": [
+        "text_cbcgyb"
+      ],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -759,7 +865,9 @@
           }
         }
       },
-      "block_order": ["simple_bundles_kits_infinite_options_selector_BmNGdD"],
+      "block_order": [
+        "simple_bundles_kits_infinite_options_selector_BmNGdD"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -801,7 +909,9 @@
           }
         }
       },
-      "block_order": ["judge_me_reviews_review_widget_epnPJ7"],
+      "block_order": [
+        "judge_me_reviews_review_widget_epnPJ7"
+      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
