@@ -292,6 +292,9 @@
   data-presentation="{{ block_settings.media_presentation }}"
   {{ block.shopify_attributes }}
 >
+  {%- comment -%} Render bestseller badge on product page {%- endcomment -%}
+  {% render 'product-card-badges', product: selected_product %}
+
   {% capture slides %}
     {% for media in sorted_media %}
       {% capture children %}
@@ -578,6 +581,10 @@
     min-width: inherit;
     display: inherit;
     flex: inherit;
+  }
+
+  media-gallery {
+    position: relative;
   }
 
   @media screen and (max-width: 749px) {

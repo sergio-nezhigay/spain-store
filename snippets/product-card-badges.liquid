@@ -15,7 +15,21 @@
     --badge-font-family: var(--font-{{ settings.badge_font_family }}--family); --badge-font-weight: var(--font-{{ settings.badge_font_family }}--weight); --badge-text-transform: {{ settings.badge_text_transform }};
   "
 >
-  {%- if product.available == false or product.compare_at_price > product.price and product.available -%}
+  {%- comment -%} Check if product is in Bestseller collection {%- endcomment -%}
+  {%- assign is_bestseller = false -%}
+  {%- for collection in product.collections -%}
+    {%- if collection.handle == 'bestseller' -%}
+      {%- assign is_bestseller = true -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} Display badge with priority: bestseller > sold out > sale {%- endcomment -%}
+  {%- if is_bestseller -%}
+    <div class="product-badges__badge product-badges__badge--icon product-badges__badge--bestseller">
+      {{ settings.badge_bestseller_svg }}
+    </div>
+  {%- elsif product.available == false or product.compare_at_price > product.price and product.available -%}
     <div
       class="
         product-badges__badge product-badges__badge--rectangle
@@ -73,5 +87,25 @@
   .product-badges__badge--rectangle {
     padding-block: var(--badge-rectangle-padding-block);
     padding-inline: var(--badge-rectangle-padding-inline);
+  }
+
+  .product-badges__badge--icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 0.4rem;
+  }
+
+  .product-badges__badge--bestseller {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+  }
+
+  @media (min-width: 750px) {
+    .product-badges__badge--icon {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
   }
 {% endstylesheet %}
