@@ -47,24 +47,7 @@
         "header-logo": {
           "type": "_header-logo",
           "static": true,
-          "settings": {
-            "menu_handle": "collection",
-            "target_menu_item": "Home",
-            "max_items": 6,
-            "layout_type": "categories",
-            "featured_image": "shopify://shop_images/Gemini_Generated_Image_x4sw8ex4sw8ex4sw.png",
-            "featured_title": "New Collection",
-            "featured_text": "Discover our latest premium pieces",
-            "featured_alt": "Featured Product",
-            "featured_url": "#",
-            "cta_text": "Shop Now",
-            "enable_hover_effects": true,
-            "show_separators": true,
-            "animation_speed": 300,
-            "dropdown_width": 800,
-            "mobile_fullscreen": true,
-            "mobile_accordion": false
-          },
+          "settings": {},
           "blocks": {}
         },
         "header-menu": {
