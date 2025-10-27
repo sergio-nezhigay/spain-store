@@ -7,15 +7,14 @@
   {{ block.shopify_attributes }}
 >
   {%- if block_settings.image != blank -%}
-    {{
-      block_settings.image
-      | image_url: height: block_settings.height
-      | image_tag:
-        loading: 'lazy',
-        alt: block_settings.label,
-        height: block_settings.height,
-        class: 'payment-icons__custom-image'
-    }}
+    <img
+      src="{{ block_settings.image | img_url: '60x' }}"
+      width="30"
+      height="30"
+      alt="{{ block_settings.image.alt | default: block_settings.label | escape }}"
+      class="payment-icons__custom-image"
+    >
+
   {%- else -%}
     {%- if request.design_mode -%}
       <div class="payment-icons__placeholder">
@@ -33,7 +32,7 @@
 
   .payment-icons__custom-image {
     display: block;
-    height: auto;
+    height: 30px;
     max-height: 100%;
     width: auto;
     object-fit: contain;
@@ -69,16 +68,6 @@
       "label": "Icon label",
       "info": "e.g., 'Visa', 'Mastercard', 'PayPal' - used for accessibility",
       "default": "Payment method"
-    },
-    {
-      "type": "range",
-      "id": "height",
-      "label": "Icon height",
-      "min": 16,
-      "max": 60,
-      "step": 2,
-      "unit": "px",
-      "default": 30
     }
   ],
   "presets": [
