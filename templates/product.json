@@ -407,13 +407,12 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "payment_icon_g3MpKF": {
+                "payment_icon_wxLYqd": {
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/39073-klarna-logo-icon-vector-icon-vector-eps.png",
-                    "label": "Klarna",
-                    "height": 30
+                    "image": "shopify://shop_images/visa.svg",
+                    "label": "Visa"
                   },
                   "blocks": {}
                 },
@@ -421,9 +420,17 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/5968279.png",
-                    "label": "Apple pay",
-                    "height": 30
+                    "image": "shopify://shop_images/apple-pay.svg",
+                    "label": "Apple pay"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_iKLUx7": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/google-pay.svg",
+                    "label": "Google Pay"
                   },
                   "blocks": {}
                 },
@@ -431,9 +438,8 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/825539.png",
-                    "label": "American Express",
-                    "height": 30
+                    "image": "shopify://shop_images/american-express.svg",
+                    "label": "American Express"
                   },
                   "blocks": {}
                 },
@@ -441,19 +447,18 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/round.png",
-                    "label": "M<astercard></astercard>",
-                    "height": 30
+                    "image": "shopify://shop_images/mastercard.svg",
+                    "label": "M"
                   },
                   "blocks": {}
                 },
                 "payment_icon_fq8rih": {
                   "type": "payment-icon",
                   "name": "Payment icon",
+                  "disabled": true,
                   "settings": {
                     "image": "shopify://shop_images/google-pay.png",
-                    "label": "Google Pay",
-                    "height": 30
+                    "label": "Google Pay"
                   },
                   "blocks": {}
                 },
@@ -461,9 +466,17 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/western-union.png",
-                    "label": "Western Union",
-                    "height": 30
+                    "image": "shopify://shop_images/westernunion.svg",
+                    "label": "Western Union"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_g3MpKF": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/klarna.svg",
+                    "label": "Klarna"
                   },
                   "blocks": {}
                 },
@@ -471,32 +484,22 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/money.png",
-                    "label": "PayPal",
-                    "height": 30
-                  },
-                  "blocks": {}
-                },
-                "payment_icon_wxLYqd": {
-                  "type": "payment-icon",
-                  "name": "Payment icon",
-                  "settings": {
-                    "image": "shopify://shop_images/visa.png",
-                    "label": "Visa",
-                    "height": 30
+                    "image": "shopify://shop_images/paypal.svg",
+                    "label": "PayPal"
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
-                "payment_icon_g3MpKF",
+                "payment_icon_wxLYqd",
                 "payment_icon_KfrWwk",
+                "payment_icon_iKLUx7",
                 "payment_icon_RYEEch",
                 "payment_icon_3a9nwR",
                 "payment_icon_fq8rih",
                 "payment_icon_gMYrtk",
-                "payment_icon_4YezFA",
-                "payment_icon_wxLYqd"
+                "payment_icon_g3MpKF",
+                "payment_icon_4YezFA"
               ]
             },
             "addons_product_cHejkz": {
