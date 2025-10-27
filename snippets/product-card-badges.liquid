@@ -64,8 +64,8 @@
   }
 
   .product-badges--top-right {
-    top: calc(var(--badge-inset) + var(--padding-block-start));
-    right: calc(var(--badge-inset) + var(--padding-inline-start));
+    top: var(--y-mobile, 10px);
+    right: 10px;
   }
 
   .product-badges__badge {
@@ -97,7 +97,7 @@
   }
 
   .product-badges__badge--bestseller {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
     color: #1a1a1a;
     box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
   }
