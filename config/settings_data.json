@@ -9,8 +9,8 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/door-company-logo.jpg",
-    "logo_height": 53,
+    "logo": "shopify://shop_images/Header.jpg",
+    "logo_height": 60,
     "logo_height_mobile": 28,
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",
@@ -46,7 +46,7 @@
     "page_transition_enabled": false,
     "transition_to_main_product": false,
     "card_hover_effect": "none",
-    "badge_position": "top-left",
+    "badge_position": "top-right",
     "badge_corner_radius": 100,
     "badge_sale_color_scheme": "scheme-1",
     "badge_sold_out_color_scheme": "scheme-3",
@@ -58,7 +58,7 @@
     "cart_type": "drawer",
     "cart_price_font": "secondary",
     "show_cart_note": false,
-    "show_add_discount_code": false,
+    "show_add_discount_code": true,
     "drawer_drop_shadow": true,
     "icon_stroke": "default",
     "input_border_width": 1,
@@ -70,21 +70,16 @@
     "currency_code_enabled_cart_items": false,
     "product_corner_radius": 0,
     "card_corner_radius": 4,
-    "show_variant_image": true,
+    "show_variant_image": false,
     "variant_swatch_width": 34,
     "variant_swatch_height": 34,
     "variant_swatch_radius": 32,
     "variant_button_border_width": 1,
-    "variant_button_radius": 100,
-    "variant_button_width": "default-width-buttons",
+    "variant_button_radius": 14,
+    "variant_button_width": "equal-width-buttons",
     "global_size_chart_content": "<h2 style=\"text-align:center; margin-bottom:1rem;\">Size Guide</h2>\n\n<p style=\"text-align:center; color:#555; margin-bottom:2rem;\">\nFind your perfect fit using the measurements below.\n</p>\n\n<table style=\"width:100%; border-collapse:collapse; text-align:center; font-size:0.95rem;\">\n  <thead style=\"background:#f6f6f6;\">\n    <tr>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Size</th>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Chest (cm)</th>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Waist (cm)</th>\n      <th style=\"padding:10px; border:1px solid #ddd;\">Hips (cm)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">XS</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">84–88</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">68–72</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">86–90</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">S</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">88–94</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">72–78</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">90–96</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">M</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">94–100</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">78–84</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">96–102</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">L</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">100–108</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">84–92</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">102–110</td>\n    </tr>\n    <tr>\n      <td style=\"padding:10px; border:1px solid #ddd;\">XL</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">108–116</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">92–100</td>\n      <td style=\"padding:10px; border:1px solid #ddd;\">110–118</td>\n    </tr>\n  </tbody>\n</table>\n\n<p style=\"font-size:0.9rem; color:#666; margin-top:1.5rem;\">\n💡 Tip: If you’re between two sizes, choose the larger one for a more relaxed fit.\n</p>",
     "content_for_index": [],
     "blocks": {
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
       "124348908681409149": {
         "type": "shopify://apps/simple-bundles-kits/blocks/simple-bundles-v2/e553276b-36b2-446d-b80a-aa47fe5f96ac",
         "disabled": false,
@@ -97,21 +92,10 @@
           "custom_js": ""
         }
       },
-      "11413113034274116516": {
-        "type": "shopify://apps/xb-wishlist/blocks/wishlist_collection/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {
-          "selector_collection": "",
-          "icon_position": "top-right",
-          "custom_position": false,
-          "x_position": 0,
-          "y_position": 0,
-          "x_position-mobile": 0,
-          "y_position-mobile": 0,
-          "icon_size": 2,
-          "icon_color": "#ff0000",
-          "custom_placement": ""
-        }
+        "settings": {}
       },
       "12342438634123318931": {
         "type": "shopify://apps/xb-wishlist/blocks/xo-wishlist/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
@@ -141,13 +125,29 @@
           "notification_animation": "fade"
         }
       },
-      "8813414294664651821": {
-        "type": "shopify://apps/xb-wishlist/blocks/wishlist_float/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
+      "11413113034274116516": {
+        "type": "shopify://apps/xb-wishlist/blocks/wishlist_collection/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
         "disabled": false,
         "settings": {
+          "selector_collection": "",
+          "icon_position": "top-left",
+          "custom_position": false,
+          "x_position": 0,
+          "y_position": 0,
+          "x_position-mobile": 0,
+          "y_position-mobile": 0,
+          "icon_size": 1.4,
+          "icon_color": "#ffffff",
+          "custom_placement": ""
+        }
+      },
+      "8813414294664651821": {
+        "type": "shopify://apps/xb-wishlist/blocks/wishlist_float/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
+        "disabled": true,
+        "settings": {
           "style": "style-1",
-          "button_color": "#fff",
-          "button_bg-color": "#ff0000",
+          "button_color": "#ffffff",
+          "button_bg-color": "#ffffff",
           "float_position": "bottom-right",
           "custom_position": false,
           "x_position": 0,
@@ -314,7 +314,7 @@
       },
       "scheme-5": {
         "settings": {
-          "background": "#333333",
+          "background": "#000000",
           "foreground_heading": "#ffffff",
           "foreground": "#ffffff",
           "primary": "#ffffff",
@@ -333,7 +333,7 @@
           "secondary_button_hover_background": "#ffffff0a",
           "secondary_button_hover_text": "#ffffffed",
           "secondary_button_hover_border": "#ffffffb0",
-          "input_background": "#333333",
+          "input_background": "#000000",
           "input_text_color": "#ffffffed",
           "input_border_color": "#ffffffb0",
           "input_hover_background": "#ffffff0a",
@@ -418,6 +418,45 @@
           "variant_background_color": "#ffffff",
           "variant_text_color": "#000000",
           "variant_border_color": "#e6e6e6",
+          "variant_hover_background_color": "#f5f5f5",
+          "variant_hover_text_color": "#000000",
+          "variant_hover_border_color": "#e6e6e6",
+          "selected_variant_background_color": "#000000",
+          "selected_variant_text_color": "#ffffff",
+          "selected_variant_border_color": "#000000",
+          "selected_variant_hover_background_color": "#1a1a1a",
+          "selected_variant_hover_text_color": "#ffffff",
+          "selected_variant_hover_border_color": "#1a1a1a"
+        }
+      },
+      "scheme-464c1b1f-f7a6-465a-b55b-7369aaa0353e": {
+        "settings": {
+          "background": "#ffffff",
+          "foreground_heading": "#000000",
+          "foreground": "#000000cf",
+          "primary": "#000000cf",
+          "primary_hover": "#000000",
+          "border": "#0000000f",
+          "shadow": "#000000",
+          "primary_button_background": "#000000",
+          "primary_button_text": "#ffffff",
+          "primary_button_border": "#000000",
+          "primary_button_hover_background": "#333333",
+          "primary_button_hover_text": "#ffffff",
+          "primary_button_hover_border": "#000000",
+          "secondary_button_background": "rgba(0,0,0,0)",
+          "secondary_button_text": "#000000",
+          "secondary_button_border": "#000000",
+          "secondary_button_hover_background": "#fafafa",
+          "secondary_button_hover_text": "#333333",
+          "secondary_button_hover_border": "#333333",
+          "input_background": "#ffffffc7",
+          "input_text_color": "#333333",
+          "input_border_color": "#dfdfdf",
+          "input_hover_background": "#00000003",
+          "variant_background_color": "#ffffff",
+          "variant_text_color": "#000000",
+          "variant_border_color": "#00000021",
           "variant_hover_background_color": "#f5f5f5",
           "variant_hover_text_color": "#000000",
           "variant_hover_border_color": "#e6e6e6",

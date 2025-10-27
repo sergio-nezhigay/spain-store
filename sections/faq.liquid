@@ -1,0 +1,826 @@
+{% comment %}
+  ROCCO FAQ Section with Tabs
+  Customizable through Shopify Theme Editor
+{% endcomment %}
+
+<section class="rocco-faq" id="faq-{{ section.id }}">
+  <div class="faq-container">
+    
+    {% if section.settings.show_header %}
+    <div class="section-header">
+      <h2 class="section-title">{{ section.settings.section_title }}</h2>
+      {% if section.settings.section_subtitle != blank %}
+      <p class="section-subtitle">{{ section.settings.section_subtitle }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% assign categories = section.blocks | where: "type", "faq_category" %}
+    {% if categories.size > 0 %}
+    <div class="faq-tabs">
+      {% for category in categories %}
+        <button class="tab-button {% if forloop.first %}active{% endif %}" data-tab="category-{{ category.id }}">
+          {{ category.settings.category_title }}
+        </button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="faq-content">
+      {% assign current_category = nil %}
+      
+      {% for block in section.blocks %}
+        {% if block.type == 'faq_category' %}
+          {% if current_category != nil %}
+            </div></div> <!-- Close previous accordion and tab-content -->
+          {% endif %}
+          
+          {% assign current_category = block.id %}
+          <div class="tab-content {% if forloop.first %}active{% endif %}" data-content="category-{{ block.id }}">
+            <div class="faq-accordion">
+        {% elsif block.type == 'faq_item' %}
+          <div class="faq-item" {{ block.shopify_attributes }}>
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span class="question-text">{{ block.settings.question }}</span>
+              <span class="faq-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="icon-line horizontal" d="M4 10H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path class="icon-line vertical" d="M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-content">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      
+      {% if current_category != nil %}
+          </div></div> <!-- Close last accordion and tab-content -->
+      {% endif %}
+      
+      {% if categories.size == 0 %}
+        <div class="faq-accordion">
+          {% for block in section.blocks %}
+            {% if block.type == 'faq_item' %}
+              <div class="faq-item" {{ block.shopify_attributes }}>
+                <button class="faq-question" type="button" aria-expanded="false">
+                  <span class="question-text">{{ block.settings.question }}</span>
+                  <span class="faq-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="icon-line horizontal" d="M4 10H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      <path class="icon-line vertical" d="M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="faq-answer">
+                  <div class="faq-answer-content">
+                    {{ block.settings.answer }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.show_contact_cta %}
+      <div class="faq-cta">
+        <h3>{{ section.settings.cta_title }}</h3>
+        {% if section.settings.cta_text != blank %}
+        <p>{{ section.settings.cta_text }}</p>
+        {% endif %}
+        <a href="{{ section.settings.cta_link }}" class="btn-contact">{{ section.settings.cta_button_text }}</a>
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #faq-{{ section.id }} {
+    background-color: {{ section.settings.background_color }};
+    padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px;
+  }
+
+  #faq-{{ section.id }} .faq-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  #faq-{{ section.id }} .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  #faq-{{ section.id }} .section-title {
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: {{ section.settings.title_color }};
+    text-transform: uppercase;
+  }
+
+  #faq-{{ section.id }} .section-subtitle {
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    color: {{ section.settings.subtitle_color }};
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  #faq-{{ section.id }} .faq-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  #faq-{{ section.id }} .tab-button {
+    padding: 12px 30px;
+    background: transparent;
+    border: 2px solid {{ section.settings.tab_border_color }};
+    color: {{ section.settings.tab_text_color }};
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  #faq-{{ section.id }} .tab-button:hover {
+    background: {{ section.settings.tab_hover_background }};
+    border-color: {{ section.settings.tab_hover_border }};
+    color: {{ section.settings.tab_hover_text }};
+  }
+
+  #faq-{{ section.id }} .tab-button.active {
+    background: {{ section.settings.tab_active_background }};
+    border-color: {{ section.settings.tab_active_border }};
+    color: {{ section.settings.tab_active_text }};
+  }
+
+  #faq-{{ section.id }} .faq-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #faq-{{ section.id }} .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  #faq-{{ section.id }} .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #faq-{{ section.id }} .faq-accordion {
+    margin-bottom: 40px;
+  }
+
+  #faq-{{ section.id }} .faq-item {
+    background: {{ section.settings.item_background }};
+    border-radius: 2px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  #faq-{{ section.id }} .faq-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  #faq-{{ section.id }} .faq-question {
+    width: 100%;
+    padding: 25px 30px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+  }
+
+  #faq-{{ section.id }} .question-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: {{ section.settings.question_color }};
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    padding-right: 20px;
+  }
+
+  #faq-{{ section.id }} .faq-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: {{ section.settings.icon_color }};
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #faq-{{ section.id }} .faq-item.active .faq-icon {
+    transform: rotate(135deg);
+  }
+
+  #faq-{{ section.id }} .icon-line.vertical {
+    transition: opacity 0.3s ease;
+  }
+
+  #faq-{{ section.id }} .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #faq-{{ section.id }} .faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+  }
+
+  #faq-{{ section.id }} .faq-answer-content {
+    overflow: hidden;
+    padding: 0 30px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: {{ section.settings.answer_color }};
+    font-weight: 300;
+  }
+
+  #faq-{{ section.id }} .faq-item.active .faq-answer-content {
+    padding: 0 30px 25px;
+  }
+
+  #faq-{{ section.id }} .faq-answer-content p {
+    margin-bottom: 15px;
+  }
+
+  #faq-{{ section.id }} .faq-answer-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  #faq-{{ section.id }} .faq-answer-content a {
+    color: {{ section.settings.link_color }};
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+  }
+
+  #faq-{{ section.id }} .faq-answer-content a:hover {
+    opacity: 0.7;
+  }
+
+  #faq-{{ section.id }} .faq-cta {
+    text-align: center;
+    padding: 50px 30px;
+    background: {{ section.settings.item_background }};
+    border-radius: 2px;
+    margin-top: 50px;
+  }
+
+  #faq-{{ section.id }} .faq-cta h3 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    color: {{ section.settings.title_color }};
+  }
+
+  #faq-{{ section.id }} .faq-cta p {
+    font-size: 0.95rem;
+    color: {{ section.settings.subtitle_color }};
+    margin-bottom: 25px;
+    font-weight: 300;
+  }
+
+  #faq-{{ section.id }} .btn-contact {
+    display: inline-block;
+    padding: 14px 45px;
+    background: {{ section.settings.button_background }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid {{ section.settings.button_background }};
+  }
+
+  #faq-{{ section.id }} .btn-contact:hover {
+    background: {{ section.settings.button_hover_background }};
+    color: {{ section.settings.button_hover_text }};
+  }
+
+  @media (max-width: 768px) {
+    #faq-{{ section.id }} .faq-container {
+      padding: 0 20px;
+    }
+
+    #faq-{{ section.id }} .section-title {
+      font-size: 1.6rem;
+    }
+
+    #faq-{{ section.id }} .faq-tabs {
+      gap: 8px;
+    }
+
+    #faq-{{ section.id }} .tab-button {
+      padding: 10px 20px;
+      font-size: 0.85rem;
+    }
+
+    #faq-{{ section.id }} .faq-question {
+      padding: 20px;
+    }
+
+    #faq-{{ section.id }} .question-text {
+      font-size: 0.95rem;
+    }
+
+    #faq-{{ section.id }} .faq-answer-content {
+      font-size: 0.9rem;
+    }
+
+    #faq-{{ section.id }} .faq-item.active .faq-answer-content {
+      padding: 0 20px 20px;
+    }
+
+    #faq-{{ section.id }} .faq-cta {
+      padding: 35px 20px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const section = document.getElementById('faq-{{ section.id }}');
+    if (!section) return;
+    
+    // Tab functionality
+    const tabButtons = section.querySelectorAll('.tab-button');
+    const tabContents = section.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-tab');
+        
+        // Remove active class from all tabs and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked tab and corresponding content
+        this.classList.add('active');
+        const targetContent = section.querySelector(`[data-content="${targetTab}"]`);
+        if (targetContent) {
+          targetContent.classList.add('active');
+          
+          // Reset FAQ items in the new tab
+          const faqItems = targetContent.querySelectorAll('.faq-item');
+          faqItems.forEach(item => {
+            item.classList.remove('active');
+            item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          
+          // Open first item if setting is enabled
+          {% if section.settings.open_first_item %}
+          if (faqItems.length > 0) {
+            faqItems[0].classList.add('active');
+            faqItems[0].querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+          }
+          {% endif %}
+        }
+      });
+    });
+    
+    // FAQ accordion functionality
+    const allFaqItems = section.querySelectorAll('.faq-item');
+    
+    allFaqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isActive = item.classList.contains('active');
+        
+        // Find the current accordion (parent)
+        const accordion = item.closest('.faq-accordion');
+        if (!accordion) return;
+        
+        // Close all items in the same accordion
+        const accordionItems = accordion.querySelectorAll('.faq-item');
+        accordionItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        // Toggle clicked item
+        if (!isActive) {
+          item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+        } else {
+          item.classList.remove('active');
+          question.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    
+    // Open first item by default if enabled
+    {% if section.settings.open_first_item %}
+    const firstVisibleAccordion = section.querySelector('.tab-content.active .faq-accordion') || section.querySelector('.faq-accordion');
+    if (firstVisibleAccordion) {
+      const firstItem = firstVisibleAccordion.querySelector('.faq-item');
+      if (firstItem) {
+        firstItem.classList.add('active');
+        firstItem.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+      }
+    }
+    {% endif %}
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding Bottom",
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first_item",
+      "label": "Open First Item by Default",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show Section Header",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "Find answers to common questions about our products and services"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Font Size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Contact CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_cta",
+      "label": "Show Contact CTA",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_title",
+      "label": "CTA Title",
+      "default": "Still Have Questions?"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Our customer service team is here to help you"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Button Text",
+      "default": "Contact Us"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "item_background",
+      "label": "Item Background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "Question Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "Answer Color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Tab Colors"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab Text Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_border_color",
+      "label": "Tab Border Color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "tab_hover_background",
+      "label": "Tab Hover Background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "tab_hover_border",
+      "label": "Tab Hover Border",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_hover_text",
+      "label": "Tab Hover Text",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_background",
+      "label": "Tab Active Background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_border",
+      "label": "Tab Active Border",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_text",
+      "label": "Tab Active Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button Colors"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button Background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Button Hover Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text",
+      "label": "Button Hover Text Color",
+      "default": "#1a1a1a"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_category",
+      "name": "Category Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title",
+          "default": "General"
+        }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is your return policy?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>We offer a 30-day return policy on all unused items in their original packaging. Please contact our customer service team to initiate a return.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "blocks": [
+        {
+          "type": "faq_category",
+          "settings": {
+            "category_title": "Shipping"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Standard shipping typically takes 3-5 business days within the continental US. International shipping times vary by destination, usually 7-14 business days.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer international shipping?",
+            "answer": "<p>Yes, we ship to most countries worldwide. Shipping costs and delivery times vary by destination.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I track my order?",
+            "answer": "<p>Absolutely! Once your order ships, you'll receive a tracking number via email.</p>"
+          }
+        },
+        {
+          "type": "faq_category",
+          "settings": {
+            "category_title": "Returns"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a 30-day return policy on all unused items in their original packaging with tags attached.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I initiate a return?",
+            "answer": "<p>Contact our customer service team with your order number and we'll send you a prepaid return label.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I exchange an item?",
+            "answer": "<p>Yes! We're happy to exchange items for a different size or color within 30 days.</p>"
+          }
+        },
+        {
+          "type": "faq_category",
+          "settings": {
+            "category_title": "Products"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I find the right size?",
+            "answer": "<p>Each product page includes a detailed size chart. We recommend measuring yourself and comparing to our charts.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What materials are your products made from?",
+            "answer": "<p>We use premium, sustainable materials including organic cotton, linen, and recycled fabrics.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How should I care for my ROCCO items?",
+            "answer": "<p>Care instructions are included with each item. Generally, wash in cold water and hang to dry.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

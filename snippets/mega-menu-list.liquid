@@ -10,7 +10,6 @@
   @param {number} [content_aspect_ratio] - Aspect ratio for content images.
   @param {number} [image_border_radius] - Border radius for content images.
   @param {object} [section] - The section object.
-  @param {object} [block_settings] - The block settings object.
 
   @example
   {% render 'mega-menu-list', parent_link: link, id: 'MegaMenuList-1', grid_columns_count: 6, menu_content_type: 'featured_products' %}
@@ -347,39 +346,3 @@
       </ul>
     </span>
 {% endcase %}
-
-{% liquid
-  # Render brands section if enabled and applicable
-  if block_settings.show_brands
-    # Check if current menu item should show brands (Shop or Collections)
-    assign show_brands_for_menu = false
-    assign parent_handle = parent_link.handle | downcase
-    if parent_handle == 'shop' or parent_handle == 'collections'
-      assign show_brands_for_menu = true
-    endif
-  endif
-%}
-
-{% if show_brands_for_menu %}
-  <div class="mega-menu__brands">
-    <div class="mega-menu__brands-label paragraph">Shop by Brand:</div>
-    <div class="mega-menu__brands-grid">
-      {% for i in (1..10) %}
-        {% assign brand_image_key = 'brand_' | append: i | append: '_image' %}
-        {% assign brand_url_key = 'brand_' | append: i | append: '_url' %}
-        {% assign brand_image = block_settings[brand_image_key] %}
-        {% assign brand_url = block_settings[brand_url_key] %}
-
-        {% if brand_image != blank %}
-          <a
-            href="{{ brand_url | default: '#' }}"
-            class="mega-menu__brand-link"
-            {% if brand_url == blank %}disabled{% endif %}
-          >
-            {{ brand_image | image_url: width: 200 | image_tag: loading: 'lazy', class: 'mega-menu__brand-logo' }}
-          </a>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-{% endif %}

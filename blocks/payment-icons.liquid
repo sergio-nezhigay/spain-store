@@ -20,15 +20,11 @@
     class="payment-icons__list"
     role="list"
   >
-    {%- if block_settings.mode == 'manual' -%}
-      {% content_for 'blocks' %}
-    {%- else -%}
-      {%- for type in shop.enabled_payment_types -%}
-        <li class="payment-icons__item">
-          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-        </li>
-      {%- endfor -%}
-    {%- endif -%}
+    {%- for type in shop.enabled_payment_types -%}
+      <li class="payment-icons__item">
+        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+      </li>
+    {%- endfor -%}
   </ul>
 </div>
 
@@ -57,29 +53,7 @@
 {
   "name": "t:names.payment_icons",
   "tag": null,
-  "blocks": [
-    {
-      "type": "_payment-icon"
-    }
-  ],
   "settings": [
-    {
-      "type": "select",
-      "id": "mode",
-      "label": "Icon mode",
-      "info": "Choose automatic to show all enabled payment types, or manual to add custom icons",
-      "options": [
-        {
-          "value": "automatic",
-          "label": "Automatic (from Shopify settings)"
-        },
-        {
-          "value": "manual",
-          "label": "Manual (upload custom icons)"
-        }
-      ],
-      "default": "automatic"
-    },
     {
       "type": "select",
       "id": "horizontal_alignment",

@@ -104,12 +104,6 @@
     "view_store_information": "View store information",
     "sort": "Sort"
   },
-  "breadcrumbs": {
-    "navigation": "Breadcrumb",
-    "home": "Home",
-    "search": "Search Results",
-    "collections": "Collections"
-  },
   "blocks": {
     "contact_form": {
       "name": "Name",
@@ -323,13 +317,7 @@
       "added_to_cart": "Added to cart",
       "add_to_cart_error": "Error adding to cart",
       "sold_out": "Sold out",
-      "unavailable": "Unavailable",
-      "size_chart": {
-        "button": "Size Guide",
-        "title": "Size Chart",
-        "close": "Close",
-        "inline_link": "View Size Guide"
-      }
+      "unavailable": "Unavailable"
     }
   }
 }

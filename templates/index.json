@@ -9,6 +9,52 @@
  */
 {
   "sections": {
+    "main_baner_new_nebfwb": {
+      "type": "main-baner-new",
+      "name": "Hero Banner",
+      "settings": {
+        "section_height": 70,
+        "mobile_height": 70,
+        "content_width": 1200,
+        "text_alignment": "center",
+        "background_image": "shopify://shop_images/man-in-white-and-light-tan-outfit.jpg",
+        "background_video": "",
+        "show_overlay": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "show_badge": true,
+        "badge_text": "New Collections",
+        "badge_background": "#ffffff",
+        "badge_color": "#1a1a1a",
+        "hero_title": "Minimalist Elegance Redefined",
+        "title_font_size": 60,
+        "title_color": "#ffffff",
+        "hero_subtitle": "Discover our latest collection of premium essentials designed for the modern minimalist",
+        "subtitle_font_size": 18,
+        "subtitle_color": "#e0e0e0",
+        "show_cta": true,
+        "cta_primary_text": "Shop Now",
+        "cta_primary_link": "",
+        "primary_button_bg": "#ffffff",
+        "primary_button_text": "#1a1a1a",
+        "primary_button_hover_bg": "#1a1a1a",
+        "primary_button_hover_text": "#ffffff",
+        "show_secondary_cta": true,
+        "cta_secondary_text": "Learn More",
+        "cta_secondary_link": "",
+        "secondary_button_text": "#ffffff",
+        "secondary_button_border": "#ffffff",
+        "secondary_button_hover_bg": "#ffffff",
+        "secondary_button_hover_text": "#1a1a1a",
+        "show_features": true,
+        "feature_1": "Free Shipping",
+        "feature_2": "30-Day Returns",
+        "feature_3": "Premium Quality",
+        "features_color": "#ffffff",
+        "show_scroll_indicator": false,
+        "scroll_indicator_color": "#ffffff"
+      }
+    },
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
@@ -16,7 +62,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
+            "text": "<p>Meet us in Wonderland</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -58,10 +104,11 @@
         "text_YLPk4p",
         "button_H9gpTf"
       ],
+      "disabled": true,
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/black-and-blue-clothing-on-a-rack-in-a-sunlit-shop.jpg",
+        "image_1": "shopify://shop_images/man-in-white-and-light-tan-outfit.jpg",
         "media_type_2": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -87,10 +134,10 @@
         "padding-block-end": 72
       }
     },
-    "collection_list_Nzk4tQ": {
+    "collection_list_KAGYcX": {
       "type": "collection-list",
       "blocks": {
-        "group_rUC8mC": {
+        "group_jPiCNK": {
           "type": "group",
           "name": "t:names.header",
           "settings": {
@@ -130,7 +177,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_ndEcr4": {
+            "text_Y6Ttty": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -138,9 +185,9 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "2.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -158,7 +205,7 @@
             }
           },
           "block_order": [
-            "text_ndEcr4"
+            "text_Y6Ttty"
           ]
         },
         "static-collection-card": {
@@ -178,7 +225,7 @@
             "border_radius": 0
           },
           "blocks": {
-            "collection_title_JNRLgW": {
+            "collection_title_AyjCax": {
               "type": "collection-title",
               "name": "t:names.collection_title",
               "settings": {
@@ -222,12 +269,12 @@
             }
           },
           "block_order": [
-            "collection_title_JNRLgW"
+            "collection_title_AyjCax"
           ]
         }
       },
       "block_order": [
-        "group_rUC8mC"
+        "group_jPiCNK"
       ],
       "name": "t:names.collections_carousel",
       "settings": {
@@ -238,11 +285,14 @@
           "collection-1",
           "collection-2",
           "collection-3",
-          "collection-4"
+          "collection-4",
+          "collection-5",
+          "collection-6",
+          "new-arrivals"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "columns": 4,
+        "columns": 3,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
@@ -303,9 +353,9 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "",
+                "type_preset": "custom",
+                "font": "var(--font-heading--family)",
+                "font_size": "2.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -435,7 +485,7 @@
       "settings": {
         "collection": "best-selling",
         "layout_type": "carousel",
-        "carousel_on_mobile": false,
+        "carousel_on_mobile": true,
         "max_products": 8,
         "columns": 4,
         "mobile_columns": "2",
@@ -452,382 +502,284 @@
         "padding-block-end": 48
       }
     },
-    "special_offer_iTQNeh": {
-      "type": "special-offer",
-      "name": "Special Offer",
-      "settings": {
-        "heading": "Get 10% Off Your First Order!",
-        "heading_preset": "h1",
-        "description": "<p>Subscribe to our newsletter and receive an exclusive promo code!</p>",
-        "description_preset": "paragraph",
-        "promo_code": "WELCOME10",
-        "input_placeholder": "Enter your email",
-        "button_label": "Get My Code",
-        "button_style": "button",
-        "success_heading": "Thank You!",
-        "success_message": "Here's your exclusive promo code:",
-        "copy_button_label": "Copy Code",
-        "media_type": "image",
-        "image": "shopify://shop_images/gift-card.jpg",
-        "toggle_overlay": true,
-        "overlay_color": "#0000005c",
-        "overlay_style": "gradient",
-        "gradient_direction": "to top",
-        "section_width": "page-width",
-        "section_height": "custom",
-        "section_height_custom": 26,
-        "color_scheme": "scheme-6",
-        "text_shadow": true,
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "padding-block-start": 60,
-        "padding-block-end": 60
-      }
-    },
-    "product_list_kdpwgB": {
-      "type": "product-list",
+    "revies_custom_bpMWdQ": {
+      "type": "revies-custom",
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "review_HLzriq": {
+          "type": "review",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YPKPqF": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_zkWHAM": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YPKPqF",
-            "product_list_button_zkWHAM"
-          ]
+            "reviewer_name": "Michael R.",
+            "reviewer_initials": "MR",
+            "review_date": "2 weeks ago",
+            "rating": 5,
+            "review_title": "Exceptional Quality",
+            "review_text": "The Black Shirt Ripped is an absolute highlight in my wardrobe. The fabric is premium and the fit is perfect. You can immediately tell that every detail has been carefully considered.",
+            "product_name": "",
+            "show_verified": true
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "review_RdeiUM": {
+          "type": "review",
           "settings": {
-            "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_pFXaRg": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_qjEKdU": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_4PtBMM": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_pFXaRg",
-            "product_title_qjEKdU",
-            "price_4PtBMM"
-          ]
+            "reviewer_name": "Sarah L.",
+            "reviewer_initials": "SL",
+            "review_date": "1 month ago",
+            "rating": 5,
+            "review_title": "Perfect Summer Look",
+            "review_text": "The Burgundy Rose Shirt is simply beautiful. The color is even better than in the pictures and the craftsmanship is top-notch. I've already received multiple compliments.",
+            "product_name": "",
+            "show_verified": true
+          }
+        },
+        "review_rUTBi6": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "David K.",
+            "reviewer_initials": "DK",
+            "review_date": "3 weeks ago",
+            "rating": 5,
+            "review_title": "My New Favorite Set",
+            "review_text": "The Beige Set Short is perfect for warm days. Comfortable, stylish and versatile. The quality definitely justifies the price.",
+            "product_name": "",
+            "show_verified": true
+          }
+        },
+        "review_Bw9RHP": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Emma W.",
+            "reviewer_initials": "EW",
+            "review_date": "5 days ago",
+            "rating": 5,
+            "review_title": "Elegance Redefined",
+            "review_text": "Exceeded my expectations. The Black Set Long is elegant yet super comfortable. Perfect for transitioning from day to night. Lightning fast delivery!",
+            "product_name": "",
+            "show_verified": true
+          }
+        },
+        "review_kUiqiy": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "James P.",
+            "reviewer_initials": "JP",
+            "review_date": "2 months ago",
+            "rating": 5,
+            "review_title": "Highly Recommend!",
+            "review_text": "After a long search, I finally found the perfect brand. The Black Vest Ripped is a statement piece. The quality is exceptional and customer service was very helpful with sizing questions.",
+            "product_name": "",
+            "show_verified": true
+          }
+        },
+        "review_RXbFdw": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Sophie M.",
+            "reviewer_initials": "SM",
+            "review_date": "1 week ago",
+            "rating": 5,
+            "review_title": "Timeless Elegance",
+            "review_text": "I'm absolutely thrilled with the quality and design. The clothing feels luxurious and looks even better than expected. is definitely my new go-to brand for minimalist elegance.",
+            "product_name": "",
+            "show_verified": true
+          }
         }
       },
-      "name": "t:names.products_carousel",
+      "block_order": [
+        "review_HLzriq",
+        "review_RdeiUM",
+        "review_rUTBi6",
+        "review_Bw9RHP",
+        "review_kUiqiy",
+        "review_RXbFdw"
+      ],
+      "name": "Reviews Section",
       "settings": {
-        "collection": "new-arrivals",
-        "layout_type": "carousel",
-        "carousel_on_mobile": false,
-        "max_products": 10,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "container_width": 1400,
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "show_header": true,
+        "section_title": "Customer Reviews",
+        "title_font_size": 40,
+        "section_subtitle": "Discover what our customers say about their experience",
+        "subtitle_font_size": 16,
+        "show_rating_overview": true,
+        "average_rating": "5/5",
+        "total_reviews_text": "Based on 247 reviews",
+        "verified_text": "Verified Purchase",
+        "show_cta": false,
+        "cta_title": "Share Your Experience",
+        "cta_text": "Have you already shopped with us? We would love to hear from you!",
+        "cta_button_text": "Write a Review",
+        "cta_link": "",
+        "background_color": "#ffffff",
+        "card_background": "#f8f8f8",
+        "title_color": "#1a1a1a",
+        "subtitle_color": "#666666",
+        "text_color": "#1a1a1a",
+        "body_text_color": "#555555",
+        "secondary_text_color": "#999999",
+        "star_color": "#eab343",
+        "verified_color": "#4caf50",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#ffffff",
+        "button_hover_text": "#1a1a1a"
       }
     },
-    "featured_blog_posts_QkFayD": {
-      "type": "featured-blog-posts",
+    "instafeed_MEYRVB": {
+      "type": "instafeed",
       "blocks": {
-        "static-blog-title": {
-          "type": "_featured-blog-posts-title",
-          "name": "t:names.title",
-          "static": true,
+        "instagram_post_WgNGwE": {
+          "type": "instagram_post",
           "settings": {
-            "text": "<h3>Blogs</h3>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h3",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "post_image": "shopify://shop_images/dacbb031a69e815dc8fd656c4c404dc6.jpg",
+            "post_link": "",
+            "post_caption": "",
+            "show_likes": true,
+            "likes_count": "342",
+            "show_comments": true,
+            "comments_count": "18"
+          }
         },
-        "static-blog-post-card": {
-          "type": "_featured-blog-posts-card",
-          "name": "t:names.blog_card",
-          "static": true,
+        "instagram_post_URmLVC": {
+          "type": "instagram_post",
           "settings": {
-            "alignment": "left",
-            "gap": 8,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "image": {
-              "type": "_featured-blog-posts-image",
-              "static": true,
-              "settings": {
-                "image_ratio": "square",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0
-              },
-              "blocks": {}
-            },
-            "title": {
-              "type": "_heading",
-              "name": "t:names.title",
-              "static": true,
-              "settings": {
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "text": "<h4>{{ closest.article.title }}</h4>",
-                "read_only": false,
-                "alignment": "left",
-                "show_alignment": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "blog-post-info-text": {
-              "type": "_blog-post-info-text",
-              "name": "t:names.details",
-              "static": true,
-              "settings": {
-                "show_date": true,
-                "show_author": true,
-                "type_preset": "",
-                "alignment": "left",
-                "show_alignment": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            },
-            "blog-post-description": {
-              "type": "_blog-post-description",
-              "name": "t:names.excerpt",
-              "static": true,
-              "settings": {
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 8,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
+            "post_image": "shopify://shop_images/man-in-white-and-light-tan-outfit.jpg",
+            "post_link": "",
+            "post_caption": "Summer Collection",
+            "show_likes": true,
+            "likes_count": "521",
+            "show_comments": true,
+            "comments_count": "24"
+          }
+        },
+        "instagram_post_yDqQbF": {
+          "type": "instagram_post",
+          "settings": {
+            "post_image": "shopify://shop_images/ec121c5cec47dc6ce512e1e5862fd4cb.jpg",
+            "post_link": "",
+            "post_caption": "Minimalist Elegance",
+            "show_likes": true,
+            "likes_count": "289",
+            "show_comments": true,
+            "comments_count": "12"
+          }
+        },
+        "instagram_post_JpKprk": {
+          "type": "instagram_post",
+          "settings": {
+            "post_image": "shopify://shop_images/a7930a2cfed2d9204508734a17193253.jpg",
+            "post_link": "",
+            "post_caption": "New Arrivals",
+            "show_likes": true,
+            "likes_count": "456",
+            "show_comments": true,
+            "comments_count": "31"
+          }
+        },
+        "instagram_post_ca3D4R": {
+          "type": "instagram_post",
+          "settings": {
+            "post_image": "shopify://shop_images/51812075de1be1f079624d2bfeaea9cc.jpg",
+            "post_link": "",
+            "post_caption": "Behind The Scenes",
+            "show_likes": true,
+            "likes_count": "398",
+            "show_comments": true,
+            "comments_count": "22"
+          }
+        },
+        "instagram_post_fqJ8Ab": {
+          "type": "instagram_post",
+          "settings": {
+            "post_image": "shopify://shop_images/fcc53a12b634a525497ae19da7c9f855.jpg",
+            "post_link": "",
+            "post_caption": "Featured Style",
+            "show_likes": true,
+            "likes_count": "612",
+            "show_comments": true,
+            "comments_count": "45"
+          }
         }
       },
-      "name": "t:names.blog_posts_carousel",
+      "block_order": [
+        "instagram_post_WgNGwE",
+        "instagram_post_URmLVC",
+        "instagram_post_yDqQbF",
+        "instagram_post_JpKprk",
+        "instagram_post_ca3D4R",
+        "instagram_post_fqJ8Ab"
+      ],
+      "name": "Instagram Feed",
+      "settings": {
+        "container_width": 1400,
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "grid_gap": 20,
+        "show_header": true,
+        "section_title": "Follow Us",
+        "title_font_size": 36,
+        "section_subtitle": "Join our community on Instagram",
+        "subtitle_font_size": 16,
+        "instagram_handle": "yourinsthere",
+        "show_cta": true,
+        "cta_button_text": "Follow on Instagram",
+        "background_color": "#ffffff",
+        "title_color": "#1a1a1a",
+        "subtitle_color": "#666666",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#ffffff",
+        "button_hover_text": "#1a1a1a"
+      }
+    },
+    "blog_post_xUkiNi": {
+      "type": "blog-post",
+      "name": "Blog Posts",
       "settings": {
         "blog": "news",
-        "layout_type": "carousel",
-        "carousel_on_mobile": true,
-        "post_limit": 5,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 16,
-        "icons_style": "arrow",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "gap": 12,
-        "color_scheme": "",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "posts_to_show": 5,
+        "section_padding_top": 60,
+        "section_padding_bottom": 60,
+        "image_ratio": "1",
+        "show_header": true,
+        "section_title": "Latest Stories",
+        "title_font_size": 36,
+        "section_subtitle": "Discover the latest news, style tips and brand updates",
+        "subtitle_font_size": 16,
+        "show_date": true,
+        "date_format": "%B %d, %Y",
+        "show_excerpt": true,
+        "excerpt_length": 25,
+        "show_tags": true,
+        "show_read_more": true,
+        "read_more_text": "Read More",
+        "show_cta": true,
+        "cta_button_text": "View All Posts",
+        "background_color": "#ffffff",
+        "card_background": "#f8f8f8",
+        "title_color": "#1a1a1a",
+        "subtitle_color": "#666666",
+        "title_text_color": "#1a1a1a",
+        "meta_color": "#999999",
+        "excerpt_color": "#555555",
+        "tag_background": "#e8e8e8",
+        "tag_color": "#1a1a1a",
+        "link_color": "#1a1a1a",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#ffffff",
+        "button_hover_text": "#1a1a1a"
       }
     }
   },
   "order": [
+    "main_baner_new_nebfwb",
     "hero_jVaWmY",
-    "collection_list_Nzk4tQ",
+    "collection_list_KAGYcX",
     "product_list_fa6P9H",
-    "special_offer_iTQNeh",
-    "product_list_kdpwgB",
-    "featured_blog_posts_QkFayD"
+    "revies_custom_bpMWdQ",
+    "instafeed_MEYRVB",
+    "blog_post_xUkiNi"
   ]
 }
