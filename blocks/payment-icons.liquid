@@ -1,6 +1,4 @@
 
-{% assign block_settings = block.settings %}
-
 {%- assign block_settings = block.settings -%}
 
 <div
@@ -20,11 +18,15 @@
     class="payment-icons__list"
     role="list"
   >
-    {%- for type in shop.enabled_payment_types -%}
-      <li class="payment-icons__item">
-        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-      </li>
-    {%- endfor -%}
+    {%- if block_settings.mode == 'manual' -%}
+      {%- content_for 'blocks' -%}
+    {%- else -%}
+      {%- for type in shop.enabled_payment_types -%}
+        <li class="payment-icons__item">
+          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+        </li>
+      {%- endfor -%}
+    {%- endif -%}
   </ul>
 </div>
 
@@ -54,6 +56,23 @@
   "name": "t:names.payment_icons",
   "tag": null,
   "settings": [
+    {
+      "type": "select",
+      "id": "mode",
+      "label": "Display mode",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Automatic (shop payment types)"
+        },
+        {
+          "value": "manual",
+          "label": "Manual (custom icons)"
+        }
+      ],
+      "default": "auto",
+      "info": "Automatic shows your shop's enabled payment types. Manual lets you add custom payment icons."
+    },
     {
       "type": "select",
       "id": "horizontal_alignment",
@@ -131,6 +150,11 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "payment-icon"
     }
   ],
   "presets": [

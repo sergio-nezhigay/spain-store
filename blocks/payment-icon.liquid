@@ -1,0 +1,91 @@
+{% liquid
+  assign block_settings = block.settings
+%}
+
+<li
+  class="payment-icons__item payment-icons__item--custom"
+  {{ block.shopify_attributes }}
+>
+  {%- if block_settings.image != blank -%}
+    {{
+      block_settings.image
+      | image_url: height: block_settings.height
+      | image_tag:
+        loading: 'lazy',
+        alt: block_settings.label,
+        height: block_settings.height,
+        class: 'payment-icons__custom-image'
+    }}
+  {%- else -%}
+    {%- if request.design_mode -%}
+      <div class="payment-icons__placeholder">
+        <span>Upload icon</span>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+</li>
+
+{% stylesheet %}
+  .payment-icons__item--custom {
+    display: flex;
+    align-items: center;
+  }
+
+  .payment-icons__custom-image {
+    display: block;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .payment-icons__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-xs) var(--padding-sm);
+    border: 1px dashed var(--color-border);
+    border-radius: 4px;
+    font-size: var(--font-size--xs);
+    color: var(--color-foreground-secondary);
+    opacity: 0.6;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Payment icon",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Payment icon image",
+      "info": "Upload your payment method logo (e.g., Visa, Mastercard, PayPal)"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Icon label",
+      "info": "e.g., 'Visa', 'Mastercard', 'PayPal' - used for accessibility",
+      "default": "Payment method"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Icon height",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Payment icon",
+      "category": "t:categories.footer"
+    }
+  ]
+}
+{% endschema %}

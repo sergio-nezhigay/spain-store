@@ -21,12 +21,8 @@
           "blocks": {}
         }
       },
-      "block_order": [
-        "custom_liquid_wYJ3by"
-      ],
-      "custom_css": [
-        ".layout-panel-flex--column {padding: 0 10px;}"
-      ],
+      "block_order": ["custom_liquid_wYJ3by"],
+      "custom_css": [".layout-panel-flex--column {padding: 0 10px;}"],
       "name": "t:names.custom_section",
       "settings": {
         "content_direction": "column",
@@ -207,10 +203,7 @@
                   "blocks": {}
                 }
               },
-              "block_order": [
-                "text_xrnftG",
-                "price_tVjtKg"
-              ]
+              "block_order": ["text_xrnftG", "price_tVjtKg"]
             },
             "xb_wishlist_button_wishlist_aypCyG": {
               "type": "shopify://apps/xb-wishlist/blocks/button_wishlist/cc07f1e9-907b-431d-99f8-4fce3efa75f1",
@@ -281,9 +274,7 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": [
-                    "text_L4yfgX"
-                  ]
+                  "block_order": ["text_L4yfgX"]
                 },
                 "accordion_row_XDCrky": {
                   "type": "_accordion-row",
@@ -297,7 +288,7 @@
                     "text_xqghAN": {
                       "type": "text",
                       "settings": {
-                        "text": "<h5><strong>Canada</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ CAD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li><strong>Free in-store pickup</strong> available in <strong>Montréal</strong> and <strong>Toronto</strong><br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> PST/HST applied by province<br/></li><li><strong>No customs or import fees</strong> — orders ship from <strong>our Canadian warehouse</strong><br/></li></ul><h5><strong>United States</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ USD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> VAT applied by state<br/></li><li><strong>No surprise fees</strong> — customs and import charges are <strong>included</strong><br/></li></ul><h5><strong>International </strong></h5><p>For international shipping details, <a href=\"#\"><strong>click here</strong></a>.</p>",
+                        "text": "<h5><strong>Canada</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ CAD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li><strong>Free in-store pickup</strong> available in <strong>Montréal</strong> and <strong>Toronto</strong><br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> PST/HST applied by province<br/></li><li><strong>No customs or import fees</strong> — orders ship from <strong>our Canadian warehouse</strong><br/></li></ul><h5><strong>United States</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ USD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> VAT applied by state<br/></li><li><strong>No surprise fees</strong> — customs and import charges are <strong>included</strong></li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -320,15 +311,10 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": [
-                    "text_xqghAN"
-                  ]
+                  "block_order": ["text_xqghAN"]
                 }
               },
-              "block_order": [
-                "accordion_row_h6QJrN",
-                "accordion_row_XDCrky"
-              ]
+              "block_order": ["accordion_row_h6QJrN", "accordion_row_XDCrky"]
             },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
@@ -394,18 +380,20 @@
               },
               "block_order": []
             },
-            "payment_icons_PywHhK": {
+            "payment_icons_pAy1c0": {
               "type": "payment-icons",
-              "name": "t:names.payment_icons",
+              "name": "Payment icons",
               "settings": {
-                "horizontal_alignment": "flex-start",
-                "gap": 10,
+                "mode": "manual",
+                "horizontal_alignment": "center",
+                "gap": 8,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {},
+              "block_order": []
             },
             "addons_product_cHejkz": {
               "type": "addons-product",
@@ -462,7 +450,7 @@
             "variant_picker_R3rGDr",
             "product_size_chart_acHnde",
             "buy_buttons_eYQEYi",
-            "payment_icons_PywHhK",
+            "payment_icons_pAy1c0",
             "addons_product_cHejkz"
           ]
         }
@@ -599,9 +587,7 @@
           ]
         }
       },
-      "block_order": [
-        "text_cbcgyb"
-      ],
+      "block_order": ["text_cbcgyb"],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -773,9 +759,7 @@
           }
         }
       },
-      "block_order": [
-        "simple_bundles_kits_infinite_options_selector_BmNGdD"
-      ],
+      "block_order": ["simple_bundles_kits_infinite_options_selector_BmNGdD"],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -817,9 +801,7 @@
           }
         }
       },
-      "block_order": [
-        "judge_me_reviews_review_widget_epnPJ7"
-      ],
+      "block_order": ["judge_me_reviews_review_widget_epnPJ7"],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
