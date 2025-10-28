@@ -417,7 +417,7 @@
                       "type": "text",
                       "name": "Newsletter Heading",
                       "settings": {
-                        "text": "<h4><strong>Tragen Sie sich in unsere E-Mail-Liste ein</strong></h4>",
+                        "text": "<h4><strong>Sign up for our email list</strong></h4>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -443,7 +443,7 @@
                       "type": "text",
                       "name": "Newsletter Description",
                       "settings": {
-                        "text": "<p>Erhalten Sie exklusive Angebote und frühzeitigen Zugang zu neuen Produkten.</p>",
+                        "text": "<p>Get exclusive offers and early access to new products.</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -481,7 +481,7 @@
                         "input_type_preset": "paragraph",
                         "style_class": "button",
                         "display_type": "text",
-                        "label": "Registrieren",
+                        "label": "Subscribe",
                         "integrated_button": false,
                         "button_type_preset": "paragraph",
                         "padding-block-start": 0,
