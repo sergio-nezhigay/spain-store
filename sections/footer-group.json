@@ -25,7 +25,7 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 48,
+            "gap": 30,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -158,7 +158,7 @@
                       "type": "text",
                       "name": "Contact Information",
                       "settings": {
-                        "text": "<p><strong>Contact Us</strong></p><p>123 Store Street<br/>Madrid, Spain 28001</p><p>Email: info@spain-store.com<br/>Phone: +34 123 456 789</p><p>Mon-Fri: 9:00 - 18:00<br/>Sat: 10:00 - 14:00</p>",
+                        "text": "<p><strong>Contact Us</strong><br/>    <a href=\"https://www.google.com/maps?q=123+Store+Street,+Madrid,+Spain+28001\" target=\"_blank\"><br/>      123 Store Street Madrid, Spain 28001</a></p><p>Email: <a href=\"mailto:info@spain-store.com\">info@spain-store.com</a><br/>Phone: <a href=\"tel:+34123456789\">+34 123 456 789</a><br/></p><p>Mon–Fri: 9:00 – 18:00<br/>Sat: 10:00 – 14:00<br/>  </p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -226,45 +226,19 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "heading_shop": {
-                      "type": "text",
-                      "name": "Shop Heading",
-                      "settings": {
-                        "text": "<p><strong>SHOP</strong></p>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.875rem",
-                        "line_height": "normal",
-                        "letter_spacing": "0.1em",
-                        "case": "uppercase",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    },
                     "menu_shop": {
                       "type": "menu",
                       "name": "Shop Menu",
                       "settings": {
                         "menu": "main-menu",
-                        "heading": "",
+                        "heading": "Shop",
                         "menu_spacing": 12,
                         "show_as_accordion": true,
                         "accordion_icon": "caret",
                         "accordion_dividers": false,
                         "inherit_color_scheme": true,
                         "color_scheme": "",
-                        "heading_preset": "h3",
+                        "heading_preset": "h4",
                         "link_preset": "paragraph",
                         "padding-block-start": 0,
                         "padding-block-end": 0,
@@ -275,7 +249,6 @@
                     }
                   },
                   "block_order": [
-                    "heading_shop",
                     "menu_shop"
                   ]
                 },
@@ -290,7 +263,7 @@
                     "align_baseline": false,
                     "horizontal_alignment_flex_direction_column": "flex-start",
                     "vertical_alignment_flex_direction_column": "center",
-                    "gap": 16,
+                    "gap": 24,
                     "width": "custom",
                     "custom_width": 15,
                     "width_mobile": "fill",
@@ -322,12 +295,13 @@
                     "heading_company": {
                       "type": "text",
                       "name": "Company Heading",
+                      "disabled": true,
                       "settings": {
-                        "text": "<p><strong>COMPANY</strong></p>",
+                        "text": "<p><strong>Company</strong></p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
-                        "type_preset": "rte",
+                        "type_preset": "h4",
                         "font": "var(--font-body--family)",
                         "font_size": "0.875rem",
                         "line_height": "normal",
@@ -338,7 +312,7 @@
                         "background": false,
                         "background_color": "#00000026",
                         "corner_radius": 0,
-                        "padding-block-start": 0,
+                        "padding-block-start": 10,
                         "padding-block-end": 0,
                         "padding-inline-start": 0,
                         "padding-inline-end": 0
@@ -350,14 +324,14 @@
                       "name": "Company Menu",
                       "settings": {
                         "menu": "footer",
-                        "heading": "",
+                        "heading": "Company",
                         "menu_spacing": 12,
                         "show_as_accordion": true,
                         "accordion_icon": "caret",
                         "accordion_dividers": false,
                         "inherit_color_scheme": true,
                         "color_scheme": "",
-                        "heading_preset": "h3",
+                        "heading_preset": "h4",
                         "link_preset": "paragraph",
                         "padding-block-start": 0,
                         "padding-block-end": 0,
@@ -385,7 +359,7 @@
                         "background": false,
                         "background_color": "#00000026",
                         "corner_radius": 0,
-                        "padding-block-start": 8,
+                        "padding-block-start": 0,
                         "padding-block-end": 0,
                         "padding-inline-start": 0,
                         "padding-inline-end": 0
@@ -433,7 +407,7 @@
                     "link": "",
                     "open_in_new_tab": false,
                     "placeholder": "",
-                    "padding-block-start": 0,
+                    "padding-block-start": 10,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
@@ -666,13 +640,17 @@
       "block_order": [
         "group_main_container"
       ],
+      "custom_css": [
+        "a {color: white; text-decoration: none; transition: color 0.2s ease;}",
+        "a:hover {color: #ccc; /* light grey hover */ text-decoration: underline;}"
+      ],
       "name": "t:names.footer",
       "settings": {
         "section_width": "page-width",
         "gap": 40,
         "color_scheme": "scheme-5",
         "padding-block-start": 60,
-        "padding-block-end": 50
+        "padding-block-end": 40
       }
     },
     "footer_utilities_jLGE8U": {
@@ -727,7 +705,7 @@
         "divider_thickness": 1,
         "color_scheme": "scheme-5",
         "padding-block-start": 30,
-        "padding-block-end": 48
+        "padding-block-end": 30
       }
     }
   },
