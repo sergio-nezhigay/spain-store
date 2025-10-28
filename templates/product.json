@@ -411,7 +411,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/visa.svg",
+                    "image": "shopify://shop_images/visa-classic-svgrepo-com.svg",
                     "label": "Visa"
                   },
                   "blocks": {}
@@ -420,7 +420,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/apple-pay.svg",
+                    "image": "shopify://shop_images/apple-pay-svgrepo-com_2.svg",
                     "label": "Apple pay"
                   },
                   "blocks": {}
@@ -429,7 +429,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/google-pay.svg",
+                    "image": "shopify://shop_images/google-pay-svgrepo-com.svg",
                     "label": "Google Pay"
                   },
                   "blocks": {}
@@ -438,7 +438,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/american-express.svg",
+                    "image": "shopify://shop_images/american-express-svgrepo-com.svg",
                     "label": "American Express"
                   },
                   "blocks": {}
@@ -447,7 +447,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/mastercard.svg",
+                    "image": "shopify://shop_images/mastercard-full-svgrepo-com_1.svg",
                     "label": "M"
                   },
                   "blocks": {}
@@ -457,7 +457,7 @@
                   "name": "Payment icon",
                   "disabled": true,
                   "settings": {
-                    "image": "shopify://shop_images/google-pay.png",
+                    "image": "shopify://shop_images/google-pay-svgrepo-com.svg",
                     "label": "Google Pay"
                   },
                   "blocks": {}
@@ -466,7 +466,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/westernunion.svg",
+                    "image": "shopify://shop_images/western-union-svgrepo-com.svg",
                     "label": "Western Union"
                   },
                   "blocks": {}
@@ -475,7 +475,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/klarna.svg",
+                    "image": "shopify://shop_images/klarna-svgrepo-com.svg",
                     "label": "Klarna"
                   },
                   "blocks": {}
@@ -484,7 +484,7 @@
                   "type": "payment-icon",
                   "name": "Payment icon",
                   "settings": {
-                    "image": "shopify://shop_images/paypal.svg",
+                    "image": "shopify://shop_images/paypal-svgrepo-com_1.svg",
                     "label": "PayPal"
                   },
                   "blocks": {}

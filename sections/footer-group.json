@@ -572,7 +572,7 @@
               "type": "payment-icon",
               "name": "Payment icon",
               "settings": {
-                "image": "shopify://shop_images/visa.svg",
+                "image": "shopify://shop_images/visa-classic-svgrepo-com.svg",
                 "label": "Payment method"
               },
               "blocks": {}
@@ -581,7 +581,7 @@
               "type": "payment-icon",
               "name": "Payment icon",
               "settings": {
-                "image": "shopify://shop_images/mastercard.svg",
+                "image": "shopify://shop_images/mastercard-full-svgrepo-com_1.svg",
                 "label": "Payment method"
               },
               "blocks": {}
