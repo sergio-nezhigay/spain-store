@@ -98,8 +98,15 @@
                   "type": "logo",
                   "name": "Store Logo",
                   "settings": {
-                    "width_desktop": 120,
-                    "width_mobile": 100,
+                    "inverse": false,
+                    "font": "heading",
+                    "unit": "percent",
+                    "percent_width": 100,
+                    "pixel_height": 48,
+                    "custom_mobile_size": false,
+                    "unit_mobile": "percent",
+                    "percent_width_mobile": 100,
+                    "pixel_height_mobile": 120,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -516,17 +523,98 @@
           "type": "payment-icons",
           "name": "Payment Methods",
           "settings": {
-            "show_payment_icons": "auto",
-            "payment_icons": [],
-            "size": 40,
+            "mode": "auto",
+            "horizontal_alignment": "flex-start",
             "gap": 12,
-            "opacity": 60,
             "padding-block-start": 30,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "payment_icon_f6R99r": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/google-pay.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_nndmVT": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/westernunion.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_RFbh9a": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/paypal.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_6ETQXa": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/visa.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_d76HD3": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/mastercard.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_EkhET3": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/american-express.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_fkeNgE": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/apple-pay.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_4NjUWb": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/klarna.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "payment_icon_f6R99r",
+            "payment_icon_nndmVT",
+            "payment_icon_RFbh9a",
+            "payment_icon_6ETQXa",
+            "payment_icon_d76HD3",
+            "payment_icon_EkhET3",
+            "payment_icon_fkeNgE",
+            "payment_icon_4NjUWb"
+          ]
         }
       },
       "block_order": [
