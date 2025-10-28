@@ -523,7 +523,7 @@
           "type": "payment-icons",
           "name": "Payment Methods",
           "settings": {
-            "mode": "auto",
+            "mode": "manual",
             "horizontal_alignment": "flex-start",
             "gap": 12,
             "padding-block-start": 30,
@@ -536,7 +536,16 @@
               "type": "payment-icon",
               "name": "Payment icon",
               "settings": {
-                "image": "shopify://shop_images/google-pay.svg",
+                "image": "shopify://shop_images/google-pay-svgrepo-com.svg",
+                "label": "Payment method"
+              },
+              "blocks": {}
+            },
+            "payment_icon_fkeNgE": {
+              "type": "payment-icon",
+              "name": "Payment icon",
+              "settings": {
+                "image": "shopify://shop_images/apple-pay-svgrepo-com_2.svg",
                 "label": "Payment method"
               },
               "blocks": {}
@@ -545,7 +554,7 @@
               "type": "payment-icon",
               "name": "Payment icon",
               "settings": {
-                "image": "shopify://shop_images/westernunion.svg",
+                "image": "shopify://shop_images/western-union-svgrepo-com.svg",
                 "label": "Payment method"
               },
               "blocks": {}
@@ -554,7 +563,7 @@
               "type": "payment-icon",
               "name": "Payment icon",
               "settings": {
-                "image": "shopify://shop_images/paypal.svg",
+                "image": "shopify://shop_images/paypal-svgrepo-com_1.svg",
                 "label": "Payment method"
               },
               "blocks": {}
@@ -581,16 +590,7 @@
               "type": "payment-icon",
               "name": "Payment icon",
               "settings": {
-                "image": "shopify://shop_images/american-express.svg",
-                "label": "Payment method"
-              },
-              "blocks": {}
-            },
-            "payment_icon_fkeNgE": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/apple-pay.svg",
+                "image": "shopify://shop_images/american-express-svgrepo-com.svg",
                 "label": "Payment method"
               },
               "blocks": {}
@@ -599,7 +599,7 @@
               "type": "payment-icon",
               "name": "Payment icon",
               "settings": {
-                "image": "shopify://shop_images/klarna.svg",
+                "image": "shopify://shop_images/klarna-svgrepo-com.svg",
                 "label": "Payment method"
               },
               "blocks": {}
@@ -607,12 +607,12 @@
           },
           "block_order": [
             "payment_icon_f6R99r",
+            "payment_icon_fkeNgE",
             "payment_icon_nndmVT",
             "payment_icon_RFbh9a",
             "payment_icon_6ETQXa",
             "payment_icon_d76HD3",
             "payment_icon_EkhET3",
-            "payment_icon_fkeNgE",
             "payment_icon_4NjUWb"
           ]
         }
