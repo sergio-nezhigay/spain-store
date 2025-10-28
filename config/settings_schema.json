@@ -1528,11 +1528,11 @@
         "content": "Bestseller Badge"
       },
       {
-        "type": "textarea",
-        "id": "badge_bestseller_svg",
-        "label": "Bestseller Icon SVG",
-        "default": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\"/></svg>",
-        "info": "SVG code for the bestseller badge icon. Products in the 'Bestseller' collection will display this icon."
+        "type": "text",
+        "id": "badge_bestseller_text",
+        "label": "Bestseller Badge Text",
+        "default": "Bestseller",
+        "info": "Text displayed on the bestseller badge. Products in the 'Bestseller' collection will display this text badge."
       }
     ]
   },
