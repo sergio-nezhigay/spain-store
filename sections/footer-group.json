@@ -20,12 +20,12 @@
           "settings": {
             "content_direction": "row",
             "vertical_on_mobile": true,
-            "horizontal_alignment": "space-between",
+            "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 40,
+            "gap": 48,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -67,7 +67,7 @@
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 20,
                 "width": "fill",
-                "custom_width": 25,
+                "custom_width": 22,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -159,7 +159,7 @@
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 16,
                 "width": "fill",
-                "custom_width": 20,
+                "custom_width": 16,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -252,7 +252,7 @@
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 16,
                 "width": "fill",
-                "custom_width": 20,
+                "custom_width": 18,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -372,7 +372,7 @@
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 16,
                 "width": "fill",
-                "custom_width": 35,
+                "custom_width": 44,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -526,7 +526,7 @@
             "mode": "manual",
             "horizontal_alignment": "flex-start",
             "gap": 12,
-            "padding-block-start": 30,
+            "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -624,10 +624,10 @@
       "name": "t:names.footer",
       "settings": {
         "section_width": "page-width",
-        "gap": 30,
+        "gap": 40,
         "color_scheme": "scheme-5",
         "padding-block-start": 60,
-        "padding-block-end": 40
+        "padding-block-end": 50
       }
     },
     "footer_utilities_jLGE8U": {
