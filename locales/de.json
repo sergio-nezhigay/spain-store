@@ -237,7 +237,13 @@
     "recipient_form_fields_hidden": "Empfängerformularfelder sind jetzt ausgeblendet.",
     "recipient_form_error": "Beim Absenden des Formulars ist ein Fehler aufgetreten.",
     "product_custom_property_character_count": "{{ used_chars }}/{{ max_chars }} Zeichen verwendet",
-    "terms_and_policies": "Geschäftsbedingungen und Richtlinien"
+    "terms_and_policies": "Geschäftsbedingungen und Richtlinien",
+    "pagination": {
+      "nav_label": "Seitennavigation",
+      "previous": "Vorherige",
+      "next": "Nächste",
+      "page": "Seite {{ page }}"
+    }
   },
   "gift_cards": {
     "issued": {

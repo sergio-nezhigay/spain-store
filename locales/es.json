@@ -242,7 +242,13 @@
     "recipient_form_fields_hidden": "Los campos de destinatario en el formulario ya no son visibles",
     "recipient_form_error": "Hubo un error al enviar el formulario",
     "product_custom_property_character_count": "{{ used_chars }} de {{ max_chars }} caracteres utilizados",
-    "terms_and_policies": "Términos y políticas"
+    "terms_and_policies": "Términos y políticas",
+    "pagination": {
+      "nav_label": "Navegación por paginación",
+      "previous": "Anterior",
+      "next": "Próximo",
+      "page": "Página {{ page }}"
+    }
   },
   "gift_cards": {
     "issued": {
