@@ -18,7 +18,7 @@
           "type": "group",
           "name": "Main Footer Container",
           "settings": {
-            "content_direction": "row",
+            "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-start",
@@ -54,7 +54,47 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "column_1_brand": {
+            "columns_row": {
+              "type": "group",
+              "name": "Columns Row",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "flex-start",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 48,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "column_1_brand": {
               "type": "group",
               "name": "Column 1: Brand & Contact",
               "settings": {
@@ -66,8 +106,8 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 20,
-                "width": "fill",
-                "custom_width": 22,
+                "width": "custom",
+                "custom_width": 30,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -158,8 +198,8 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 16,
-                "width": "fill",
-                "custom_width": 16,
+                "width": "custom",
+                "custom_width": 15,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -251,8 +291,8 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 16,
-                "width": "fill",
-                "custom_width": 18,
+                "width": "custom",
+                "custom_width": 15,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -371,8 +411,8 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 16,
-                "width": "fill",
-                "custom_width": 44,
+                "width": "custom",
+                "custom_width": 40,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -511,115 +551,120 @@
                 "text_newsletter_privacy"
               ]
             }
-          },
-          "block_order": [
-            "column_1_brand",
-            "column_2_shop",
-            "column_3_company",
-            "column_4_newsletter"
-          ]
-        },
-        "payment_icons_block": {
-          "type": "payment-icons",
-          "name": "Payment Methods",
-          "settings": {
-            "mode": "manual",
-            "horizontal_alignment": "flex-start",
-            "gap": 12,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "payment_icon_f6R99r": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/google-pay-svgrepo-com.svg",
-                "label": "Payment method"
               },
-              "blocks": {}
+              "block_order": [
+                "column_1_brand",
+                "column_2_shop",
+                "column_3_company",
+                "column_4_newsletter"
+              ]
             },
-            "payment_icon_fkeNgE": {
-              "type": "payment-icon",
-              "name": "Payment icon",
+            "payment_icons_block": {
+              "type": "payment-icons",
+              "name": "Payment Methods",
               "settings": {
-                "image": "shopify://shop_images/apple-pay-svgrepo-com_2.svg",
-                "label": "Payment method"
+                "mode": "manual",
+                "horizontal_alignment": "flex-start",
+                "gap": 12,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
-              "blocks": {}
-            },
-            "payment_icon_nndmVT": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/western-union-svgrepo-com.svg",
-                "label": "Payment method"
+              "blocks": {
+                "payment_icon_f6R99r": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/google-pay-svgrepo-com.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_fkeNgE": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/apple-pay-svgrepo-com_2.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_nndmVT": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/western-union-svgrepo-com.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_RFbh9a": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/paypal-svgrepo-com_1.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_6ETQXa": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/visa-classic-svgrepo-com.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_d76HD3": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/mastercard-full-svgrepo-com_1.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_EkhET3": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/american-express-svgrepo-com.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                },
+                "payment_icon_4NjUWb": {
+                  "type": "payment-icon",
+                  "name": "Payment icon",
+                  "settings": {
+                    "image": "shopify://shop_images/klarna-svgrepo-com.svg",
+                    "label": "Payment method"
+                  },
+                  "blocks": {}
+                }
               },
-              "blocks": {}
-            },
-            "payment_icon_RFbh9a": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/paypal-svgrepo-com_1.svg",
-                "label": "Payment method"
-              },
-              "blocks": {}
-            },
-            "payment_icon_6ETQXa": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/visa-classic-svgrepo-com.svg",
-                "label": "Payment method"
-              },
-              "blocks": {}
-            },
-            "payment_icon_d76HD3": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/mastercard-full-svgrepo-com_1.svg",
-                "label": "Payment method"
-              },
-              "blocks": {}
-            },
-            "payment_icon_EkhET3": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/american-express-svgrepo-com.svg",
-                "label": "Payment method"
-              },
-              "blocks": {}
-            },
-            "payment_icon_4NjUWb": {
-              "type": "payment-icon",
-              "name": "Payment icon",
-              "settings": {
-                "image": "shopify://shop_images/klarna-svgrepo-com.svg",
-                "label": "Payment method"
-              },
-              "blocks": {}
+              "block_order": [
+                "payment_icon_f6R99r",
+                "payment_icon_fkeNgE",
+                "payment_icon_nndmVT",
+                "payment_icon_RFbh9a",
+                "payment_icon_6ETQXa",
+                "payment_icon_d76HD3",
+                "payment_icon_EkhET3",
+                "payment_icon_4NjUWb"
+              ]
             }
           },
           "block_order": [
-            "payment_icon_f6R99r",
-            "payment_icon_fkeNgE",
-            "payment_icon_nndmVT",
-            "payment_icon_RFbh9a",
-            "payment_icon_6ETQXa",
-            "payment_icon_d76HD3",
-            "payment_icon_EkhET3",
-            "payment_icon_4NjUWb"
+            "columns_row",
+            "payment_icons_block"
           ]
         }
       },
       "block_order": [
-        "group_main_container",
-        "payment_icons_block"
+        "group_main_container"
       ],
       "name": "t:names.footer",
       "settings": {
