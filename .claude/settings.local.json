@@ -11,7 +11,9 @@
       "WebFetch(domain:medium.com)",
       "Bash(npx -y typescript@latest tsc:*)",
       "Bash(npx @shopify/cli theme push:*)",
-      "Bash(npx @shopify/cli theme check:*)"
+      "Bash(npx @shopify/cli theme check:*)",
+      "WebFetch(domain:www.dropbox.com)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []
