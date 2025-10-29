@@ -7,10 +7,13 @@
   {{ block.shopify_attributes }}
 >
   {%- if block_settings.image != blank -%}
+    {%- liquid
+      assign icon_size_double = settings.payment_icon_size | times: 2
+    -%}
     <div class="image-wrapper">
       {{
         block_settings.image
-        | image_url: width: 60, height: 60
+        | image_url: width: icon_size_double, height: icon_size_double
         | image_tag: alt: block_settings.image.alt
         | default: block_settings.label, class: 'payment-icons__custom-image'
       }}
@@ -25,7 +28,7 @@
   {%- endif -%}
 </li>
 
-{% stylesheet %}
+<style>
   .payment-icons__item--custom {
     display: flex;
     align-items: center;
@@ -39,8 +42,8 @@
   }
 
   .image-wrapper {
-    height: 30px;
-    width: 30px;
+    height: {{ settings.payment_icon_size }}px;
+    width: {{ settings.payment_icon_size }}px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +60,7 @@
     color: var(--color-foreground-secondary);
     opacity: 0.6;
   }
-{% endstylesheet %}
+</style>
 
 {% schema %}
 {

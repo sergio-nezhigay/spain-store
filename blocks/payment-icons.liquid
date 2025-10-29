@@ -10,6 +10,7 @@
     {% render 'spacing-padding', settings: block_settings %}
     --icon-gap: {{ block_settings.gap }}px;
     --alignment: {{ block_settings.horizontal_alignment }};
+    --payment-icon-size: {{ settings.payment_icon_size }}px;
   "
   {{ block.shopify_attributes }}
 >
@@ -48,6 +49,11 @@
   .payment-icons__item {
     display: flex;
     align-items: center;
+  }
+
+  .payment-icons__item .icon {
+    height: var(--payment-icon-size);
+    width: auto;
   }
 {% endstylesheet %}
 

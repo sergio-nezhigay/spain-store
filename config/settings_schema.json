@@ -2028,6 +2028,21 @@
           }
         ],
         "default": "default"
+      },
+      {
+        "type": "header",
+        "content": "Payment Icons"
+      },
+      {
+        "type": "range",
+        "id": "payment_icon_size",
+        "label": "Payment icon size",
+        "min": 30,
+        "max": 60,
+        "step": 2,
+        "unit": "px",
+        "default": 44,
+        "info": "Controls the size of payment icons in the footer"
       }
     ]
   },
