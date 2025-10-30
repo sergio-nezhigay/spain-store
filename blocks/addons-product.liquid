@@ -1,7 +1,7 @@
+{% assign addon_products = product.metafields.custom.addon_products.value %}
+
+{% if addon_products != blank and addon_products.size > 0 %}
 <div class="product-addons" id="addons-{{ block.id }}" data-product-id="{{ product.id }}">
-  {% assign addon_products = product.metafields.custom.addon_products.value %}
-  
-  {% if addon_products != blank and addon_products.size > 0 %}
   <div class="addons-container">
     <div class="addons-header">
       <h3 class="addons-title">{{ block.settings.addon_title }}</h3>
@@ -24,9 +24,11 @@
             <div class="addon-inner">
               {% if addon.featured_image %}
               <div class="addon-image">
-                <img 
-                  src="{{ addon.featured_image | img_url: '400x400', crop: 'center' }}" 
+                <img
+                  src="{{ addon.featured_image | image_url: width: 400, height: 400, crop: 'center' }}"
                   alt="{{ addon.title | escape }}"
+                  width="400"
+                  height="400"
                   loading="lazy"
                 >
                 {% if addon_variant.compare_at_price > addon_variant.price %}
@@ -87,8 +89,8 @@
     </div>
     {% endif %}
   </div>
-  {% endif %}
 </div>
+{% endif %}
 
 <style>
   #addons-{{ block.id }} {
