@@ -137,10 +137,31 @@
 
   #faq-{{ section.id }} .faq-tabs {
     display: flex;
-    justify-content: center;
     gap: 10px;
     margin-bottom: 40px;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding: 0 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  #faq-{{ section.id }} .faq-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  @media (min-width: 769px) {
+    #faq-{{ section.id }} .faq-tabs {
+      justify-content: center;
+      flex-wrap: wrap;
+      overflow-x: visible;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   #faq-{{ section.id }} .tab-button {
@@ -155,6 +176,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 2px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    white-space: nowrap;
   }
 
   #faq-{{ section.id }} .tab-button:hover {
@@ -338,10 +362,6 @@
 
     #faq-{{ section.id }} .section-title {
       font-size: 1.6rem;
-    }
-
-    #faq-{{ section.id }} .faq-tabs {
-      gap: 8px;
     }
 
     #faq-{{ section.id }} .tab-button {
