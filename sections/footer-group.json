@@ -263,7 +263,7 @@
                     "align_baseline": false,
                     "horizontal_alignment_flex_direction_column": "flex-start",
                     "vertical_alignment_flex_direction_column": "center",
-                    "gap": 13,
+                    "gap": 8,
                     "width": "custom",
                     "custom_width": 15,
                     "width_mobile": "fill",
@@ -344,14 +344,14 @@
                       "type": "text",
                       "name": "Privacy Policies",
                       "settings": {
-                        "text": "<p><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Privacy Policy</a><br/><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms of Service</a><br/><a href=\"/policies/refund-policy\" title=\"Refund Policy\">Refund Policy</a></p>",
+                        "text": "<p><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Privacy Policy</a></p><p><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms of Service</a></p><p><a href=\"/policies/refund-policy\" title=\"Refund Policy\">Refund Policy</a></p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
                         "type_preset": "rte",
                         "font": "var(--font-body--family)",
                         "font_size": "0.875rem",
-                        "line_height": "1.8",
+                        "line_height": "1.6",
                         "letter_spacing": "normal",
                         "case": "none",
                         "wrap": "pretty",
@@ -642,7 +642,8 @@
       ],
       "custom_css": [
         "a {color: white; text-decoration: none; transition: color 0.2s ease;}",
-        "a:hover {color: #ccc; text-decoration: underline;}"
+        "a:hover {color: #ccc; text-decoration: underline;}",
+        ".text-block p,.text-block.p > * {margin-block: 5.5px;}"
       ],
       "name": "t:names.footer",
       "settings": {
