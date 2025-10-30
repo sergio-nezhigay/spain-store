@@ -17,7 +17,7 @@
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "<strong>Inspired by Marbella, perfected in Italy — experience the fusion.</strong>",
+            "text": "Free shipping on orders over <strong>50 €</strong> within the <strong>EU</strong>",
             "link": "",
             "font": "var(--font-subheading--family)",
             "font_size": "1rem",

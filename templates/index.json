@@ -47,9 +47,9 @@
         "secondary_button_hover_bg": "#ffffff",
         "secondary_button_hover_text": "#1a1a1a",
         "show_features": true,
-        "feature_1": "Free Shipping",
-        "feature_2": "30-Day Returns",
-        "feature_3": "Premium Quality",
+        "feature_1": "",
+        "feature_2": "",
+        "feature_3": "",
         "features_color": "#ffffff",
         "show_scroll_indicator": false,
         "scroll_indicator_color": "#ffffff"
@@ -733,8 +733,28 @@
         "button_hover_text": "#1a1a1a"
       }
     },
+    "special_offer_4hpghY": {
+      "type": "special-offer",
+      "name": "Special Offers (native)",
+      "settings": {
+        "heading": "Get 10% off your first order",
+        "subheading": "Subscribe and receive your exclusive promo code by email.",
+        "discount_code": "WELCOME10",
+        "copy_button_label": "Copy code",
+        "copied_feedback_label": "Copied",
+        "submit_button_label": "Get my code",
+        "email_placeholder": "Enter your email",
+        "success_message": "Thank you! Your discount code has been sent to your email.",
+        "legal_text": "By subscribing, you agree to receive marketing emails.",
+        "customer_tags": "newsletter,special-offers",
+        "bg_color": "#ffffff",
+        "card_bg": "#ffffff",
+        "section_padding": 80
+      }
+    },
     "blog_post_xUkiNi": {
       "type": "blog-post",
+      "disabled": true,
       "name": "Blog Posts",
       "settings": {
         "blog": "news",
@@ -780,6 +800,7 @@
     "product_list_fa6P9H",
     "revies_custom_bpMWdQ",
     "instafeed_MEYRVB",
+    "special_offer_4hpghY",
     "blog_post_xUkiNi"
   ]
 }
