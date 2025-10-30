@@ -184,6 +184,7 @@
 
   #reviews-{{ section.id }} .review-header {
     margin-bottom: 15px;
+    position: relative;
   }
 
   #reviews-{{ section.id }} .reviewer-info {
@@ -237,6 +238,14 @@
     gap: 2px;
     font-size: 14px;
     color: {{ section.settings.star_color }};
+  }
+
+  @media (min-width: 769px) {
+    #reviews-{{ section.id }} .review-stars {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   #reviews-{{ section.id }} .review-content {
