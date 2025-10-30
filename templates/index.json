@@ -11,6 +11,11 @@
   "sections": {
     "main_baner_new_nebfwb": {
       "type": "main-baner-new",
+      "custom_css": [
+        ".btn-primary,.btn-secondary {margin: 0 auto;}",
+        ".hero-badge {padding: 5px 16px;}",
+        "@media (max-width: 767px) {.hero-subtitle {font-size: 14px; } .btn-primary, .btn-secondary {padding: 10px !important; max-width: 180px; }}"
+      ],
       "name": "Hero Banner",
       "settings": {
         "section_height": 70,
@@ -34,14 +39,14 @@
         "subtitle_color": "#e0e0e0",
         "show_cta": true,
         "cta_primary_text": "Shop Now",
-        "cta_primary_link": "",
+        "cta_primary_link": "shopify://collections/woman",
         "primary_button_bg": "#ffffff",
         "primary_button_text": "#1a1a1a",
         "primary_button_hover_bg": "#1a1a1a",
         "primary_button_hover_text": "#ffffff",
         "show_secondary_cta": true,
         "cta_secondary_text": "Learn More",
-        "cta_secondary_link": "",
+        "cta_secondary_link": "shopify://collections/bestseller",
         "secondary_button_text": "#ffffff",
         "secondary_button_border": "#ffffff",
         "secondary_button_hover_bg": "#ffffff",
