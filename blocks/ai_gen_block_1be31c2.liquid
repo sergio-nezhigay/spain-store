@@ -50,13 +50,18 @@
 
   @media screen and (max-width: 749px) {
     .ai-benefits-container-{{ ai_gen_id }} {
-      grid-template-columns: 1fr;
-      gap: {{ block.settings.gap | times: 1.5 }}px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: {{ block.settings.gap }}px;
+      padding: 0 10px;
     }
 
     .ai-benefit-icon-{{ ai_gen_id }} {
-      width: {{ block.settings.icon_size | times: 0.8 }}px;
-      height: {{ block.settings.icon_size | times: 0.8 }}px;
+      width: {{ block.settings.icon_size | times: 0.7 }}px;
+      height: {{ block.settings.icon_size | times: 0.7 }}px;
+    }
+
+    .ai-benefit-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.85 }}px;
     }
   }
 {% endstyle %}
