@@ -47,18 +47,18 @@
                     {% endif %}
                   </div>
                   <div class="reviewer-details">
+                    <div class="review-stars">
+                      {% for i in (1..5) %}
+                        {% if i <= block.settings.rating %}
+                          ★
+                        {% else %}
+                          ☆
+                        {% endif %}
+                      {% endfor %}
+                    </div>
                     <h4>{{ block.settings.reviewer_name }}</h4>
                     <div class="review-date">{{ block.settings.review_date }}</div>
                   </div>
-                </div>
-                <div class="review-stars">
-                  {% for i in (1..5) %}
-                    {% if i <= block.settings.rating %}
-                      ★
-                    {% else %}
-                      ☆
-                    {% endif %}
-                  {% endfor %}
                 </div>
               </div>
               <div class="review-content">
@@ -183,16 +183,13 @@
   }
 
   #reviews-{{ section.id }} .review-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
     margin-bottom: 15px;
   }
 
   #reviews-{{ section.id }} .reviewer-info {
     display: flex;
     gap: 12px;
-    align-items: center;
+    align-items: flex-start;
   }
 
   #reviews-{{ section.id }} .reviewer-avatar {
@@ -216,11 +213,17 @@
     object-fit: cover;
   }
 
+  #reviews-{{ section.id }} .reviewer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
   #reviews-{{ section.id }} .reviewer-details h4 {
     font-size: 0.95rem;
     font-weight: 500;
     color: {{ section.settings.text_color }};
-    margin-bottom: 2px;
+    margin: 0;
   }
 
   #reviews-{{ section.id }} .review-date {
