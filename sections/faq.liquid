@@ -110,7 +110,7 @@
   }
 
   #faq-{{ section.id }} .faq-container {
-    max-width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
   }
@@ -155,6 +155,12 @@
 
   #faq-{{ section.id }} .faq-tabs::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
+  }
+
+  @media (min-width: 1441px) {
+    #faq-{{ section.id }} .faq-container {
+      padding: 0;
+    }
   }
 
   @media (min-width: 769px) {
