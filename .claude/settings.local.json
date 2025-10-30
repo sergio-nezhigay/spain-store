@@ -13,7 +13,13 @@
       "Bash(npx @shopify/cli theme push:*)",
       "Bash(npx @shopify/cli theme check:*)",
       "WebFetch(domain:www.dropbox.com)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npx -y @modelcontextprotocol/inspector list-servers)",
+      "Bash(npm search:*)",
+      "Bash(echo:*)",
+      "Bash(ls:*)",
+      "Read(//c/Users/user/.claude/**)",
+      "Read(//c/Users/user/AppData/Roaming/Claude/**)"
     ],
     "deny": [],
     "ask": []
