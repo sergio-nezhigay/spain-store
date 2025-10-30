@@ -5,36 +5,37 @@
 
 <section class="rocco-faq" id="faq-{{ section.id }}">
   <div class="faq-container">
-    
     {% if section.settings.show_header %}
-    <div class="section-header">
-      <h2 class="section-title">{{ section.settings.section_title }}</h2>
-      {% if section.settings.section_subtitle != blank %}
-      <p class="section-subtitle">{{ section.settings.section_subtitle }}</p>
-      {% endif %}
-    </div>
+      <div class="section-header">
+        <h2 class="section-title">{{ section.settings.section_title }}</h2>
+        {% if section.settings.section_subtitle != blank %}
+          <p class="section-subtitle">{{ section.settings.section_subtitle }}</p>
+        {% endif %}
+      </div>
     {% endif %}
 
-    {% assign categories = section.blocks | where: "type", "faq_category" %}
+    {% assign categories = section.blocks | where: 'type', 'faq_category' %}
     {% if categories.size > 0 %}
-    <div class="faq-tabs">
-      {% for category in categories %}
-        <button class="tab-button {% if forloop.first %}active{% endif %}" data-tab="category-{{ category.id }}">
-          {{ category.settings.category_title }}
-        </button>
-      {% endfor %}
-    </div>
+      <div class="faq-tabs">
+        {% for category in categories %}
+          <button class="tab-button {% if forloop.first %}active{% endif %}" data-tab="category-{{ category.id }}">
+            {{ category.settings.category_title }}
+          </button>
+        {% endfor %}
+      </div>
     {% endif %}
 
     <div class="faq-content">
-      {% assign current_category = nil %}
-      
+      {% assign current_category = null %}
+
       {% for block in section.blocks %}
         {% if block.type == 'faq_category' %}
-          {% if current_category != nil %}
-            </div></div> <!-- Close previous accordion and tab-content -->
+          {% if current_category != null %}
+            </div>
+            </div>
+            <!-- Close previous accordion and tab-content -->
           {% endif %}
-          
+
           {% assign current_category = block.id %}
           <div class="tab-content {% if forloop.first %}active{% endif %}" data-content="category-{{ block.id }}">
             <div class="faq-accordion">
@@ -57,11 +58,13 @@
           </div>
         {% endif %}
       {% endfor %}
-      
-      {% if current_category != nil %}
-          </div></div> <!-- Close last accordion and tab-content -->
+
+      {% if current_category != null %}
+        </div>
+        </div>
+        <!-- Close last accordion and tab-content -->
       {% endif %}
-      
+
       {% if categories.size == 0 %}
         <div class="faq-accordion">
           {% for block in section.blocks %}
@@ -88,16 +91,15 @@
       {% endif %}
 
       {% if section.settings.show_contact_cta %}
-      <div class="faq-cta">
-        <h3>{{ section.settings.cta_title }}</h3>
-        {% if section.settings.cta_text != blank %}
-        <p>{{ section.settings.cta_text }}</p>
-        {% endif %}
-        <a href="{{ section.settings.cta_link }}" class="btn-contact">{{ section.settings.cta_button_text }}</a>
-      </div>
+        <div class="faq-cta">
+          <h3>{{ section.settings.cta_title }}</h3>
+          {% if section.settings.cta_text != blank %}
+            <p>{{ section.settings.cta_text }}</p>
+          {% endif %}
+          <a href="{{ section.settings.cta_link }}" class="btn-contact">{{ section.settings.cta_button_text }}</a>
+        </div>
       {% endif %}
     </div>
-
   </div>
 </section>
 
@@ -115,16 +117,16 @@
 
   #faq-{{ section.id }} .section-header {
     text-align: center;
-    margin-bottom: 50px;
+      margin-bottom: 24px;
   }
 
   #faq-{{ section.id }} .section-title {
     font-size: {{ section.settings.title_font_size }}px;
-    font-weight: 300;
-    letter-spacing: 2px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
     margin-bottom: 15px;
     color: {{ section.settings.title_color }};
-    text-transform: uppercase;
+        text-align: left;
   }
 
   #faq-{{ section.id }} .section-subtitle {
@@ -132,7 +134,7 @@
     color: {{ section.settings.subtitle_color }};
     font-weight: 300;
     max-width: 600px;
-    margin: 0 auto;
+    text-align: left;
   }
 
   #faq-{{ section.id }} .faq-tabs {
@@ -194,7 +196,7 @@
   }
 
   #faq-{{ section.id }} .faq-content {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
   }
 
@@ -395,32 +397,32 @@
   (function() {
     const section = document.getElementById('faq-{{ section.id }}');
     if (!section) return;
-    
+
     // Tab functionality
     const tabButtons = section.querySelectorAll('.tab-button');
     const tabContents = section.querySelectorAll('.tab-content');
-    
+
     tabButtons.forEach(button => {
       button.addEventListener('click', function() {
         const targetTab = this.getAttribute('data-tab');
-        
+
         // Remove active class from all tabs and contents
         tabButtons.forEach(btn => btn.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-        
+
         // Add active class to clicked tab and corresponding content
         this.classList.add('active');
         const targetContent = section.querySelector(`[data-content="${targetTab}"]`);
         if (targetContent) {
           targetContent.classList.add('active');
-          
+
           // Reset FAQ items in the new tab
           const faqItems = targetContent.querySelectorAll('.faq-item');
           faqItems.forEach(item => {
             item.classList.remove('active');
             item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
           });
-          
+
           // Open first item if setting is enabled
           {% if section.settings.open_first_item %}
           if (faqItems.length > 0) {
@@ -431,21 +433,21 @@
         }
       });
     });
-    
+
     // FAQ accordion functionality
     const allFaqItems = section.querySelectorAll('.faq-item');
-    
+
     allFaqItems.forEach(item => {
       const question = item.querySelector('.faq-question');
-      
+
       question.addEventListener('click', function(e) {
         e.preventDefault();
         const isActive = item.classList.contains('active');
-        
+
         // Find the current accordion (parent)
         const accordion = item.closest('.faq-accordion');
         if (!accordion) return;
-        
+
         // Close all items in the same accordion
         const accordionItems = accordion.querySelectorAll('.faq-item');
         accordionItems.forEach(otherItem => {
@@ -454,7 +456,7 @@
             otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
           }
         });
-        
+
         // Toggle clicked item
         if (!isActive) {
           item.classList.add('active');
@@ -465,7 +467,7 @@
         }
       });
     });
-    
+
     // Open first item by default if enabled
     {% if section.settings.open_first_item %}
     const firstVisibleAccordion = section.querySelector('.tab-content.active .faq-accordion') || section.querySelector('.faq-accordion');
