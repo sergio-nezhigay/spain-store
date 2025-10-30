@@ -39,14 +39,28 @@
     object-fit: contain;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
+    width: 100%;
+    height: auto;
   }
 
   .image-wrapper {
-    height: {{ settings.payment_icon_size }}px;
-    width: {{ settings.payment_icon_size }}px;
+    width: 100%;
+    max-height: {{ settings.payment_icon_size }}px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .image-wrapper {
+      height: {{ settings.payment_icon_size }}px;
+      width: {{ settings.payment_icon_size }}px;
+    }
+
+    .payment-icons__custom-image {
+      width: auto;
+      height: auto;
+    }
   }
 
   .payment-icons__placeholder {
