@@ -4473,10 +4473,16 @@ text-component {
 }
 
 .jdgm-rev-widg.jdgm--js {
-  padding-top: 40px !important;
-  padding-bottom: 40px !important;
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
   padding-left: 0;
   padding-right: 0;
+}
+@media (max-width: 749px) {
+  .jdgm-rev-widg.jdgm--js {
+    padding-top: calc(48px * 0.7) !important;
+    padding-bottom: calc(48px * 0.7) !important;
+  }
 }
 
 .jdgm-rev-widg__title {
@@ -4532,4 +4538,8 @@ button,
 .email-signup__button:hover {
   /*background-color: #151515 !important;*/
   border-color: white !important;
+}
+
+.product-details .group-block {
+  padding-bottom: 0 !important;
 }
