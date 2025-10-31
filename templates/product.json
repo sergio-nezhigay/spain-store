@@ -843,8 +843,8 @@
       ],
       "name": "FAQ Section",
       "settings": {
-        "section_padding_top": 50,
-        "section_padding_bottom": 50,
+        "section_padding_top": 48,
+        "section_padding_bottom": 48,
         "open_first_item": true,
         "show_header": true,
         "section_title": "Frequently Asked Questions",
