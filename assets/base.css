@@ -4493,16 +4493,12 @@ text-component {
 }
 
 .jdgm-write-rev-link:hover,
-.add-to-cart-button:hover {
+.add-to-cart-button:hover,
+.shopify-payment-button__button:hover,
+.submit-button:hover {
   background-color: white !important;
   color: #1a1a1a !important;
   border-color: #1a1a1a !important;
-}
-
-.email-signup__button {
-  /*border-radius: 0 !important;*/
-  text-transform: uppercase !important;
-  letter-spacing: 1px;
 }
 
 button,
@@ -4516,6 +4512,16 @@ button,
   letter-spacing: 1px !important;
 }
 
+.email-signup__button {
+  border-width: 2px !important;
+  border-style: solid !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border-color: transparent !important;
+  transition: all 0.3s;
+}
+
 .email-signup__button:hover {
-  background-color: #151515 !important;
+  /*background-color: #151515 !important;*/
+  border-color: white !important;
 }
