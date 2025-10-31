@@ -1,101 +1,110 @@
 {% assign addon_products = product.metafields.custom.addon_products.value %}
 
 {% if addon_products.size > 0 %}
-<div class="product-addons" id="addons-{{ block.id }}" data-product-id="{{ product.id }}">
-  <div class="addons-container">
-    <div class="addons-header">
-      <h3 class="addons-title">{{ block.settings.addon_title }}</h3>
-      {% if block.settings.addon_subtitle != blank %}
-      <p class="addons-subtitle">{{ block.settings.addon_subtitle }}</p>
-      {% endif %}
-    </div>
-
-    <div class="addons-slider-wrapper">
-      <button class="addons-nav addons-prev" aria-label="Previous">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-
-      <div class="addons-slider">
-        {% for addon in addon_products %}
-          {% assign addon_variant = addon.selected_or_first_available_variant %}
-          <div class="addon-card" data-index="{{ forloop.index0 }}">
-            <div class="addon-inner">
-              {% if addon.featured_image %}
-              <div class="addon-image">
-                <img
-                  src="{{ addon.featured_image | image_url: width: 400, height: 400, crop: 'center' }}"
-                  alt="{{ addon.title | escape }}"
-                  width="400"
-                  height="400"
-                  loading="lazy"
-                >
-                {% if addon_variant.compare_at_price > addon_variant.price %}
-                <span class="sale-badge">
-                  -{{ addon_variant.compare_at_price | minus: addon_variant.price | times: 100 | divided_by: addon_variant.compare_at_price }}%
-                </span>
-                {% endif %}
-              </div>
-              {% endif %}
-
-              <div class="addon-info">
-                <h4 class="addon-name">{{ addon.title }}</h4>
-                
-                <div class="addon-price-wrapper">
-                  {% if addon_variant.compare_at_price > addon_variant.price %}
-                    <span class="addon-price sale">{{ addon_variant.price | money }}</span>
-                    <span class="addon-price-compare">{{ addon_variant.compare_at_price | money }}</span>
-                  {% else %}
-                    <span class="addon-price">{{ addon_variant.price | money }}</span>
-                  {% endif %}
-                </div>
-
-                <button 
-                  class="addon-add-btn" 
-                  data-variant-id="{{ addon_variant.id }}"
-                  data-product-title="{{ addon.title | escape }}"
-                  {% unless addon_variant.available %}disabled{% endunless %}
-                >
-                  {% if addon_variant.available %}
-                    <span class="btn-content">
-                      <span class="btn-icon">+</span>
-                      <span class="btn-text">{{ block.settings.add_button_text }}</span>
-                    </span>
-                    <span class="btn-added">{{ block.settings.added_button_text }}</span>
-                  {% else %}
-                    <span class="btn-text">{{ block.settings.unavailable_button_text }}</span>
-                  {% endif %}
-                </button>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
+  <div class="product-addons" id="addons-{{ block.id }}" data-product-id="{{ product.id }}">
+    <div class="addons-container">
+      <div class="addons-header">
+        <h3 class="addons-title">{{ block.settings.addon_title }}</h3>
+        {% if block.settings.addon_subtitle != blank %}
+          <p class="addons-subtitle">{{ block.settings.addon_subtitle }}</p>
+        {% endif %}
       </div>
 
-      <button class="addons-nav addons-next" aria-label="Next">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
+      <div class="addons-slider-wrapper">
+        <button class="addons-nav addons-prev" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
 
-    {% if block.settings.show_addon_notification %}
-    <div class="addon-notification hidden">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="notification-text"></span>
+        <div class="addons-slider">
+          {% for addon in addon_products %}
+            {% assign addon_variant = addon.selected_or_first_available_variant %}
+            <div class="addon-card" data-index="{{ forloop.index0 }}">
+              <div class="addon-inner">
+                {% if addon.featured_image %}
+                  <div class="addon-image">
+                    <img
+                      src="{{ addon.featured_image | image_url: width: 400, height: 400, crop: 'center' }}"
+                      alt="{{ addon.title | escape }}"
+                      width="400"
+                      height="400"
+                      loading="lazy"
+                    >
+                    {% if addon_variant.compare_at_price > addon_variant.price %}
+                      <span class="sale-badge">
+                        -
+                        {{-
+                          addon_variant.compare_at_price
+                          | minus: addon_variant.price
+                          | times: 100
+                          | divided_by: addon_variant.compare_at_price
+                        -}}
+                        %
+                      </span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                <div class="addon-info">
+                  <h4 class="addon-name">{{ addon.title }}</h4>
+
+                  <div class="addon-price-wrapper">
+                    {% if addon_variant.compare_at_price > addon_variant.price %}
+                      <span class="addon-price sale">{{ addon_variant.price | money }}</span>
+                      <span class="addon-price-compare">{{ addon_variant.compare_at_price | money }}</span>
+                    {% else %}
+                      <span class="addon-price">{{ addon_variant.price | money }}</span>
+                    {% endif %}
+                  </div>
+
+                  <button
+                    class="addon-add-btn"
+                    data-variant-id="{{ addon_variant.id }}"
+                    data-product-title="{{ addon.title | escape }}"
+                    {% unless addon_variant.available %}
+                      disabled
+                    {% endunless %}
+                  >
+                    {% if addon_variant.available %}
+                      <span class="btn-content">
+                        <span class="btn-icon">+</span>
+                        <span class="btn-text">{{ block.settings.add_button_text }}</span>
+                      </span>
+                      <span class="btn-added">{{ block.settings.added_button_text }}</span>
+                    {% else %}
+                      <span class="btn-text">{{ block.settings.unavailable_button_text }}</span>
+                    {% endif %}
+                  </button>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <button class="addons-nav addons-next" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      {% if block.settings.show_addon_notification %}
+        <div class="addon-notification hidden">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="notification-text"></span>
+        </div>
+      {% endif %}
     </div>
-    {% endif %}
   </div>
-</div>
 {% endif %}
 
 <style>
   /* Hide parent block wrapper if no content exists */
-  .shopify-block:has(#addons-{{ block.id }}:empty),
-  .shopify-block:not(:has(#addons-{{ block.id }})) {
+  .product-details .shopify-block:has(#addons-{{ block.id }}:empty),
+  .product-details .shopify-block:not(:has(#addons-{{ block.id }})) {
     display: none;
   }
 
@@ -445,157 +454,157 @@
 </style>
 
 <script>
-(function() {
-  const block = document.getElementById('addons-{{ block.id }}');
-  if (!block) return;
+  (function () {
+    const block = document.getElementById('addons-{{ block.id }}');
+    if (!block) return;
 
-  const slider = block.querySelector('.addons-slider');
-  const cards = Array.from(block.querySelectorAll('.addon-card'));
-  const prevBtn = block.querySelector('.addons-prev');
-  const nextBtn = block.querySelector('.addons-next');
-  const addButtons = block.querySelectorAll('.addon-add-btn');
-  const notification = block.querySelector('.addon-notification');
+    const slider = block.querySelector('.addons-slider');
+    const cards = Array.from(block.querySelectorAll('.addon-card'));
+    const prevBtn = block.querySelector('.addons-prev');
+    const nextBtn = block.querySelector('.addons-next');
+    const addButtons = block.querySelectorAll('.addon-add-btn');
+    const notification = block.querySelector('.addon-notification');
 
-  let currentIndex = 0;
+    let currentIndex = 0;
 
-  function updateSlider() {
-    cards.forEach((card, index) => {
-      card.classList.remove('active', 'slide-left', 'slide-right');
-      
-      if (index === currentIndex) {
-        card.classList.add('active');
-      } else if (index < currentIndex) {
-        card.classList.add('slide-left');
-      } else {
-        card.classList.add('slide-right');
-      }
-    });
+    function updateSlider() {
+      cards.forEach((card, index) => {
+        card.classList.remove('active', 'slide-left', 'slide-right');
 
-    if (prevBtn) prevBtn.disabled = currentIndex === 0;
-    if (nextBtn) nextBtn.disabled = currentIndex === cards.length - 1;
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-      }
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < cards.length - 1) {
-        currentIndex++;
-        updateSlider();
-      }
-    });
-  }
-
-  async function updateHorizonCart() {
-    try {
-      const cartResponse = await fetch('/cart.js');
-      const cart = await cartResponse.json();
-      
-      const cartCountElements = document.querySelectorAll('.cart-count-bubble span, [data-cart-count], .cart-count');
-      cartCountElements.forEach(el => {
-        el.textContent = cart.item_count;
-        if (cart.item_count > 0) {
-          el.classList.remove('hidden');
-          const bubble = el.closest('.cart-count-bubble');
-          if (bubble) bubble.classList.remove('hidden');
+        if (index === currentIndex) {
+          card.classList.add('active');
+        } else if (index < currentIndex) {
+          card.classList.add('slide-left');
+        } else {
+          card.classList.add('slide-right');
         }
       });
 
-      const cartDrawer = document.querySelector('cart-drawer');
-      if (cartDrawer) {
-        cartDrawer.dispatchEvent(new Event('change'));
-        
-        const cartItems = cartDrawer.querySelector('.drawer__inner');
-        if (cartItems) {
-          const sectionsResponse = await fetch('/?sections=cart-drawer');
-          const sections = await sectionsResponse.json();
-          if (sections['cart-drawer']) {
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = sections['cart-drawer'];
-            const newContent = tempDiv.querySelector('.drawer__inner');
-            if (newContent) {
-              cartItems.innerHTML = newContent.innerHTML;
+      if (prevBtn) prevBtn.disabled = currentIndex === 0;
+      if (nextBtn) nextBtn.disabled = currentIndex === cards.length - 1;
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+          currentIndex++;
+          updateSlider();
+        }
+      });
+    }
+
+    async function updateHorizonCart() {
+      try {
+        const cartResponse = await fetch('/cart.js');
+        const cart = await cartResponse.json();
+
+        const cartCountElements = document.querySelectorAll('.cart-count-bubble span, [data-cart-count], .cart-count');
+        cartCountElements.forEach((el) => {
+          el.textContent = cart.item_count;
+          if (cart.item_count > 0) {
+            el.classList.remove('hidden');
+            const bubble = el.closest('.cart-count-bubble');
+            if (bubble) bubble.classList.remove('hidden');
+          }
+        });
+
+        const cartDrawer = document.querySelector('cart-drawer');
+        if (cartDrawer) {
+          cartDrawer.dispatchEvent(new Event('change'));
+
+          const cartItems = cartDrawer.querySelector('.drawer__inner');
+          if (cartItems) {
+            const sectionsResponse = await fetch('/?sections=cart-drawer');
+            const sections = await sectionsResponse.json();
+            if (sections['cart-drawer']) {
+              const tempDiv = document.createElement('div');
+              tempDiv.innerHTML = sections['cart-drawer'];
+              const newContent = tempDiv.querySelector('.drawer__inner');
+              if (newContent) {
+                cartItems.innerHTML = newContent.innerHTML;
+              }
             }
           }
         }
-      }
 
-      document.dispatchEvent(new CustomEvent('cart:refresh', {
-        bubbles: true,
-        detail: { cart: cart }
-      }));
-
-    } catch (error) {
-      console.error('Cart update error:', error);
-    }
-  }
-
-  addButtons.forEach(button => {
-    button.addEventListener('click', async function() {
-      if (this.disabled || this.classList.contains('loading') || this.classList.contains('in-cart')) return;
-
-      const variantId = this.dataset.variantId;
-      const productTitle = this.dataset.productTitle;
-      
-      this.classList.add('loading');
-
-      try {
-        const formData = new FormData();
-        formData.append('id', variantId);
-        formData.append('quantity', 1);
-
-        const response = await fetch('/cart/add.js', {
-          method: 'POST',
-          body: formData
-        });
-
-        if (!response.ok) throw new Error('Failed to add to cart');
-
-        this.classList.remove('loading');
-        this.classList.add('in-cart');
-        
-        if (notification) {
-          const notificationText = notification.querySelector('.notification-text');
-          notificationText.textContent = `${productTitle} {{ block.settings.addon_success_message }}`;
-          notification.classList.remove('hidden');
-          notification.classList.add('show');
-          
-          setTimeout(() => {
-            notification.classList.remove('show');
-            setTimeout(() => notification.classList.add('hidden'), 300);
-          }, 3000);
-        }
-
-        await updateHorizonCart();
-
+        document.dispatchEvent(
+          new CustomEvent('cart:refresh', {
+            bubbles: true,
+            detail: { cart: cart },
+          })
+        );
       } catch (error) {
-        console.error('Error:', error);
-        this.classList.remove('loading');
-        
-        if (notification) {
-          const notificationText = notification.querySelector('.notification-text');
-          notificationText.textContent = '{{ block.settings.addon_error_message }}';
-          notification.classList.remove('hidden');
-          notification.classList.add('show');
-          
-          setTimeout(() => {
-            notification.classList.remove('show');
-            setTimeout(() => notification.classList.add('hidden'), 300);
-          }, 3000);
-        }
+        console.error('Cart update error:', error);
       }
-    });
-  });
+    }
 
-  updateSlider();
-})();
+    addButtons.forEach((button) => {
+      button.addEventListener('click', async function () {
+        if (this.disabled || this.classList.contains('loading') || this.classList.contains('in-cart')) return;
+
+        const variantId = this.dataset.variantId;
+        const productTitle = this.dataset.productTitle;
+
+        this.classList.add('loading');
+
+        try {
+          const formData = new FormData();
+          formData.append('id', variantId);
+          formData.append('quantity', 1);
+
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            body: formData,
+          });
+
+          if (!response.ok) throw new Error('Failed to add to cart');
+
+          this.classList.remove('loading');
+          this.classList.add('in-cart');
+
+          if (notification) {
+            const notificationText = notification.querySelector('.notification-text');
+            notificationText.textContent = `${productTitle} {{ block.settings.addon_success_message }}`;
+            notification.classList.remove('hidden');
+            notification.classList.add('show');
+
+            setTimeout(() => {
+              notification.classList.remove('show');
+              setTimeout(() => notification.classList.add('hidden'), 300);
+            }, 3000);
+          }
+
+          await updateHorizonCart();
+        } catch (error) {
+          console.error('Error:', error);
+          this.classList.remove('loading');
+
+          if (notification) {
+            const notificationText = notification.querySelector('.notification-text');
+            notificationText.textContent = '{{ block.settings.addon_error_message }}';
+            notification.classList.remove('hidden');
+            notification.classList.add('show');
+
+            setTimeout(() => {
+              notification.classList.remove('show');
+              setTimeout(() => notification.classList.add('hidden'), 300);
+            }, 3000);
+          }
+        }
+      });
+    });
+
+    updateSlider();
+  })();
 </script>
 
 {% schema %}
