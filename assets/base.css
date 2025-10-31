@@ -4485,6 +4485,7 @@ text-component {
 }
 
 .jdgm-write-rev-link {
+  font-size: 14px !important;
   font-weight: 400 !important;
   padding: 14px 45px !important;
   background-color: #1a1a1a !important;
@@ -4495,10 +4496,17 @@ text-component {
 .jdgm-write-rev-link:hover,
 .add-to-cart-button:hover,
 .shopify-payment-button__button:hover,
-.submit-button:hover {
+.submit-button:hover,
+.cart__checkout-button:hover {
   background-color: white !important;
   color: #1a1a1a !important;
   border-color: #1a1a1a !important;
+}
+
+.tab-button:hover {
+  background-color: #1a1a1a !important;
+  color: white !important;
+  border-color: white !important;
 }
 
 button,
