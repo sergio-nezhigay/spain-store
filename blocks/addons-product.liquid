@@ -1,6 +1,6 @@
 {% assign addon_products = product.metafields.custom.addon_products.value %}
 
-{% if addon_products != blank and addon_products.size > 0 %}
+{% if addon_products.size > 0 %}
 <div class="product-addons" id="addons-{{ block.id }}" data-product-id="{{ product.id }}">
   <div class="addons-container">
     <div class="addons-header">
@@ -93,6 +93,12 @@
 {% endif %}
 
 <style>
+  /* Hide parent block wrapper if no content exists */
+  .shopify-block:has(#addons-{{ block.id }}:empty),
+  .shopify-block:not(:has(#addons-{{ block.id }})) {
+    display: none;
+  }
+
   #addons-{{ block.id }} {
     margin: {{ block.settings.addon_margin_top }}px 0 {{ block.settings.addon_margin_bottom }}px;
     padding: 0;
