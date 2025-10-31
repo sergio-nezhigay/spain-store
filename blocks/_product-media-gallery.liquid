@@ -295,6 +295,15 @@
   {%- comment -%} Render bestseller badge on product page {%- endcomment -%}
   {% render 'product-card-badges', product: selected_product %}
 
+  {%- comment -%} Render model information if available {%- endcomment -%}
+  {% if selected_product.metafields.custom.model_information != blank %}
+    <div class="product-model-info">
+      <div class="product-model-info__content">
+        {{ selected_product.metafields.custom.model_information }}
+      </div>
+    </div>
+  {% endif %}
+
   {% capture slides %}
     {% for media in sorted_media %}
       {% capture children %}
@@ -696,6 +705,53 @@
   .dialog-zoomed-gallery .product-media-container--model .product-media__image {
     /* Make the height match the height of the model-viewer */
     height: 100vh;
+  }
+
+  /* Model information overlay */
+  .product-model-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    max-width: 90%;
+    pointer-events: none;
+  }
+
+  .product-model-info__content {
+    background: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Mobile responsive adjustments */
+  @media screen and (max-width: 749px) {
+    .product-model-info {
+      bottom: 15px;
+      max-width: 85%;
+    }
+
+    .product-model-info__content {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+  }
+
+  /* Desktop adjustments */
+  @media screen and (min-width: 750px) {
+    .product-model-info {
+      bottom: 30px;
+    }
+
+    .product-model-info__content {
+      font-size: 15px;
+      padding: 12px 20px;
+    }
   }
 {% endstylesheet %}
 
