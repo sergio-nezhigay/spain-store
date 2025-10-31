@@ -69,7 +69,7 @@
             "large_first_image": false,
             "icons_style": "chevron_large",
             "slideshow_controls_style": "thumbnails",
-            "slideshow_mobile_controls_style": "counter",
+            "slideshow_mobile_controls_style": "hint",
             "thumbnail_position": "left",
             "thumbnail_width": 44,
             "aspect_ratio": "adapt",
