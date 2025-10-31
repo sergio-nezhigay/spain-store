@@ -5,106 +5,104 @@
 
 <section class="rocco-hero" id="hero-{{ section.id }}">
   <div class="hero-container">
-    
     {% if section.settings.background_image != blank or section.settings.background_video != blank %}
-    <div class="hero-media">
-      {% if section.settings.background_video != blank %}
-        <video 
-          class="hero-video" 
-          autoplay 
-          muted 
-          loop 
-          playsinline
-          {% if section.settings.background_image != blank %}
-          poster="{{ section.settings.background_image | img_url: '1920x1080', crop: 'center' }}"
-          {% endif %}
-        >
-          <source src="{{ section.settings.background_video }}" type="video/mp4">
-        </video>
-      {% elsif section.settings.background_image != blank %}
-        <img 
-          src="{{ section.settings.background_image | img_url: '1920x1080', crop: 'center' }}" 
-          alt="{{ section.settings.hero_title | escape }}"
-          class="hero-image"
-          loading="eager"
-        >
-      {% endif %}
-      
-      {% if section.settings.show_overlay %}
-      <div class="hero-overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
-      {% endif %}
-    </div>
+      <div class="hero-media">
+        {% if section.settings.background_video != blank %}
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            {% if section.settings.background_image != blank %}
+              poster="{{ section.settings.background_image | img_url: '1920x1080', crop: 'center' }}"
+            {% endif %}
+          >
+            <source src="{{ section.settings.background_video }}" type="video/mp4">
+          </video>
+        {% elsif section.settings.background_image != blank %}
+          <img
+            src="{{ section.settings.background_image | img_url: '1920x1080', crop: 'center' }}"
+            alt="{{ section.settings.hero_title | escape }}"
+            class="hero-image"
+            loading="eager"
+          >
+        {% endif %}
+
+        {% if section.settings.show_overlay %}
+          <div class="hero-overlay" style="opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+        {% endif %}
+      </div>
     {% endif %}
 
     <div class="hero-content">
       <div class="hero-text">
         {% if section.settings.show_badge and section.settings.badge_text != blank %}
-        <div class="hero-badge">{{ section.settings.badge_text }}</div>
+          <div class="hero-badge">{{ section.settings.badge_text }}</div>
         {% endif %}
 
         {% if section.settings.hero_title != blank %}
-        <h1 class="hero-title">{{ section.settings.hero_title }}</h1>
+          <h1 class="hero-title">{{ section.settings.hero_title }}</h1>
         {% endif %}
 
         {% if section.settings.hero_subtitle != blank %}
-        <p class="hero-subtitle">{{ section.settings.hero_subtitle }}</p>
+          <p class="hero-subtitle">{{ section.settings.hero_subtitle }}</p>
         {% endif %}
 
         {% if section.settings.show_cta %}
-        <div class="hero-cta">
-          {% if section.settings.cta_primary_text != blank %}
-          <a href="{{ section.settings.cta_primary_link }}" class="btn-primary">
-            {{ section.settings.cta_primary_text }}
-          </a>
-          {% endif %}
-          
-          {% if section.settings.show_secondary_cta and section.settings.cta_secondary_text != blank %}
-          <a href="{{ section.settings.cta_secondary_link }}" class="btn-secondary">
-            {{ section.settings.cta_secondary_text }}
-          </a>
-          {% endif %}
-        </div>
+          <div class="hero-cta">
+            {% if section.settings.cta_primary_text != blank %}
+              <a href="{{ section.settings.cta_primary_link }}" class="btn-primary">
+                {{ section.settings.cta_primary_text }}
+              </a>
+            {% endif %}
+
+            {% if section.settings.show_secondary_cta and section.settings.cta_secondary_text != blank %}
+              <a href="{{ section.settings.cta_secondary_link }}" class="btn-secondary">
+                {{ section.settings.cta_secondary_text }}
+              </a>
+            {% endif %}
+          </div>
         {% endif %}
 
         {% if section.settings.show_features %}
-        <div class="hero-features">
-          {% if section.settings.feature_1 != blank %}
-          <div class="feature-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>{{ section.settings.feature_1 }}</span>
+          <div class="hero-features">
+            {% if section.settings.feature_1 != blank %}
+              <div class="feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>{{ section.settings.feature_1 }}</span>
+              </div>
+            {% endif %}
+            {% if section.settings.feature_2 != blank %}
+              <div class="feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>{{ section.settings.feature_2 }}</span>
+              </div>
+            {% endif %}
+            {% if section.settings.feature_3 != blank %}
+              <div class="feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>{{ section.settings.feature_3 }}</span>
+              </div>
+            {% endif %}
           </div>
-          {% endif %}
-          {% if section.settings.feature_2 != blank %}
-          <div class="feature-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>{{ section.settings.feature_2 }}</span>
-          </div>
-          {% endif %}
-          {% if section.settings.feature_3 != blank %}
-          <div class="feature-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>{{ section.settings.feature_3 }}</span>
-          </div>
-          {% endif %}
-        </div>
         {% endif %}
       </div>
     </div>
 
     {% if section.settings.show_scroll_indicator %}
-    <div class="scroll-indicator">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
+      <div class="scroll-indicator">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     {% endif %}
-
   </div>
 </section>
 
@@ -177,7 +175,7 @@
     font-weight: 400;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    border-radius: 2px;
+    border-radius: 14px;
     animation: fadeInUp 0.6s ease-out;
   }
 

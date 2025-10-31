@@ -97,24 +97,34 @@
   assign tags = section.settings.customer_tags | default: 'newsletter'
 %}
 
-<section class="so-section so-section-{{ section.id }}" style="background: {{ section.settings.bg_color }}; padding: {{ section.settings.section_padding }}px 20px;">
+<section
+  class="so-section so-section-{{ section.id }}"
+  style="background: {{ section.settings.bg_color }}; padding: {{ section.settings.section_padding }}px 20px;"
+>
   <div class="so-container">
     <div class="so-card" style="background: {{ section.settings.card_bg }};">
-      
       <h2 class="so-heading">{{ section.settings.heading }}</h2>
       <p class="so-subheading">{{ section.settings.subheading }}</p>
 
       <div class="so-success" data-success style="display: none;">
-        <svg class="so-check" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg
+          class="so-check"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
-        
+
         <div class="so-code-box">
           <span class="so-code-label">Your discount code</span>
           <div class="so-code-value" data-code>{{ code }}</div>
-          <button 
-            type="button" 
-            class="so-copy-btn" 
+          <button
+            type="button"
+            class="so-copy-btn"
             data-copy
             data-label="{{ section.settings.copy_button_label }}"
             data-copied="{{ section.settings.copied_feedback_label }}"
@@ -132,7 +142,6 @@
 
       <div class="so-form-wrapper" data-form-wrapper>
         {% form 'customer' %}
-          
           {% if form.errors %}
             <div class="so-errors">
               {{ form.errors | default_errors }}
@@ -142,9 +151,9 @@
           <input type="hidden" name="contact[tags]" value="{{ tags }}">
 
           <div class="so-input-group">
-            <input 
-              type="email" 
-              name="contact[email]" 
+            <input
+              type="email"
+              name="contact[email]"
               class="so-input"
               placeholder="{{ section.settings.email_placeholder }}"
               required
@@ -155,14 +164,12 @@
               {{ section.settings.submit_button_label }}
             </button>
           </div>
-
         {% endform %}
 
         {% if section.settings.legal_text != blank %}
           <p class="so-legal">{{ section.settings.legal_text }}</p>
         {% endif %}
       </div>
-
     </div>
   </div>
 </section>
@@ -260,11 +267,13 @@
     background: #000;
     color: #FFF;
     border-color: #000;
+    letter-spacing: 1px;
   }
 
   .so-section-{{ section.id }} .so-btn-submit:hover {
-    background: #333;
-    border-color: #333;
+    background: #FFF;
+    color: #000 !important;
+    border-color: #000 !important;
   }
 
   .so-section-{{ section.id }} .so-legal {
@@ -384,57 +393,58 @@
 </style>
 
 <script>
-(function() {
-  var section = document.querySelector('.so-section-{{ section.id }}');
-  if (!section) return;
+  (function () {
+    var section = document.querySelector('.so-section-{{ section.id }}');
+    if (!section) return;
 
-  var successDiv = section.querySelector('[data-success]');
-  var formWrapper = section.querySelector('[data-form-wrapper]');
-  
-  var urlParams = new URLSearchParams(window.location.search);
-  var isSuccess = urlParams.get('contact_posted') === 'true' || 
-                  urlParams.get('customer_posted') === 'true' ||
-                  window.location.search.indexOf('contact_posted') > -1 ||
-                  window.location.search.indexOf('customer_posted') > -1;
+    var successDiv = section.querySelector('[data-success]');
+    var formWrapper = section.querySelector('[data-form-wrapper]');
 
-  if (isSuccess) {
-    formWrapper.style.display = 'none';
-    successDiv.style.display = 'block';
-    
-    setTimeout(function() {
-      var sectionTop = section.getBoundingClientRect().top + window.pageYOffset - 100;
-      window.scrollTo({
-        top: sectionTop,
-        behavior: 'smooth'
-      });
-    }, 100);
-    
-    var newUrl = window.location.pathname;
-    window.history.replaceState({}, '', newUrl);
-  }
+    var urlParams = new URLSearchParams(window.location.search);
+    var isSuccess =
+      urlParams.get('contact_posted') === 'true' ||
+      urlParams.get('customer_posted') === 'true' ||
+      window.location.search.indexOf('contact_posted') > -1 ||
+      window.location.search.indexOf('customer_posted') > -1;
 
-  section.addEventListener('click', function(e) {
-    var btn = e.target.closest('[data-copy]');
-    if (!btn) return;
+    if (isSuccess) {
+      formWrapper.style.display = 'none';
+      successDiv.style.display = 'block';
 
-    var codeEl = section.querySelector('[data-code]');
-    if (!codeEl) return;
+      setTimeout(function () {
+        var sectionTop = section.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({
+          top: sectionTop,
+          behavior: 'smooth',
+        });
+      }, 100);
 
-    var code = codeEl.textContent.trim();
-    var btnTextEl = btn.querySelector('[data-btn-text]');
-    var originalText = btn.getAttribute('data-label');
-    var copiedText = btn.getAttribute('data-copied');
-
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(code).then(function() {
-        if (btnTextEl) {
-          btnTextEl.textContent = copiedText;
-          setTimeout(function() {
-            btnTextEl.textContent = originalText;
-          }, 2000);
-        }
-      });
+      var newUrl = window.location.pathname;
+      window.history.replaceState({}, '', newUrl);
     }
-  });
-})();
+
+    section.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-copy]');
+      if (!btn) return;
+
+      var codeEl = section.querySelector('[data-code]');
+      if (!codeEl) return;
+
+      var code = codeEl.textContent.trim();
+      var btnTextEl = btn.querySelector('[data-btn-text]');
+      var originalText = btn.getAttribute('data-label');
+      var copiedText = btn.getAttribute('data-copied');
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(function () {
+          if (btnTextEl) {
+            btnTextEl.textContent = copiedText;
+            setTimeout(function () {
+              btnTextEl.textContent = originalText;
+            }, 2000);
+          }
+        });
+      }
+    });
+  })();
 </script>
