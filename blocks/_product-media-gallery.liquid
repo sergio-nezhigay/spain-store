@@ -608,6 +608,13 @@
 </media-gallery>
 
 {% stylesheet %}
+  /* Hide dots pagination on mobile since we have thumbnails */
+  @media screen and (max-width: 749px) {
+    .media-gallery__mobile-controls {
+      display: none !important;
+    }
+  }
+
   .mobile-thumbnails-controls {
     margin-top: 1rem;
     width: 100%;
