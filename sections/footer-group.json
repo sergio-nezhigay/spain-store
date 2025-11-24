@@ -138,10 +138,10 @@
                       "type": "logo",
                       "name": "Store Logo",
                       "settings": {
-                        "inverse": false,
+                        "inverse": true,
                         "font": "heading",
                         "unit": "percent",
-                        "percent_width": 100,
+                        "percent_width": 80,
                         "pixel_height": 48,
                         "custom_mobile_size": false,
                         "unit_mobile": "percent",

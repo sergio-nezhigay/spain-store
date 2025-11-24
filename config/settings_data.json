@@ -10,6 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/rocco_logo.jpg",
+    "logo_inverse": "shopify://shop_images/image_9.webp",
     "logo_height": 100,
     "logo_height_mobile": 64,
     "type_body_font": "sans_serif_n4",
