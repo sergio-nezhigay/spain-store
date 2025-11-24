@@ -4543,3 +4543,5 @@ button,
 .product-details .group-block {
   padding-bottom: 0 !important;
 }
+
+@media screen and (min-width: 750px) { .mega-menu__link { font-size: 16px !important; } }
