@@ -417,7 +417,7 @@
                       "type": "text",
                       "name": "Newsletter Heading",
                       "settings": {
-                        "text": "<h4><strong>Sign up for our email list</strong></h4>",
+                        "text": "<h4>Get 20% off your first order</h4>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -443,7 +443,7 @@
                       "type": "text",
                       "name": "Newsletter Description",
                       "settings": {
-                        "text": "<p>Get exclusive offers and early access to new products.</p>",
+                        "text": "<p>Subscribe and receive your exclusive promo code by email.</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",

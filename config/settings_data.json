@@ -9,13 +9,12 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/Header.jpg",
     "logo_height": 60,
     "logo_height_mobile": 28,
-    "type_body_font": "inter_n4",
-    "type_subheading_font": "inter_n5",
-    "type_heading_font": "inter_n7",
-    "type_accent_font": "inter_n7",
+    "type_body_font": "sans_serif_n4",
+    "type_subheading_font": "sans_serif_n4",
+    "type_heading_font": "sans_serif_n4",
+    "type_accent_font": "sans_serif_n4",
     "type_size_paragraph": "14",
     "type_line_height_paragraph": "body-loose",
     "type_font_h1": "heading",

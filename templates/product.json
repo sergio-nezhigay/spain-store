@@ -24,6 +24,7 @@
       "block_order": [
         "custom_liquid_wYJ3by"
       ],
+      "disabled": true,
       "custom_css": [
         ".layout-panel-flex--column {padding: 0 10px;}"
       ],
@@ -63,7 +64,7 @@
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
-            "media_presentation": "carousel",
+            "media_presentation": "grid",
             "media_columns": "two",
             "image_gap": 4,
             "large_first_image": false,
@@ -166,14 +167,14 @@
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h2",
+                    "type_preset": "h3",
                     "font": "var(--font-primary--family)",
                     "font_size": "",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "color": "",
+                    "color": "var(--color-foreground)",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -190,7 +191,7 @@
                     "show_sale_price_first": true,
                     "show_installments": false,
                     "show_tax_info": false,
-                    "type_preset": "h3",
+                    "type_preset": "h4",
                     "width": "100%",
                     "alignment": "left",
                     "font": "var(--font-body--family)",
@@ -227,109 +228,6 @@
                 "icon_size": 2
               }
             },
-            "accordion_7apytB": {
-              "type": "accordion",
-              "name": "t:names.accordion",
-              "settings": {
-                "icon": "plus",
-                "dividers": true,
-                "type_preset": "h4",
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "accordion_row_h6QJrN": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Description",
-                    "open_by_default": true,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_L4yfgX": {
-                      "type": "text",
-                      "settings": {
-                        "text": "{{ closest.product.description }}",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_L4yfgX"
-                  ]
-                },
-                "accordion_row_XDCrky": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Shipping & Returns",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "text_xqghAN": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<h5><strong>Canada</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ CAD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li><strong>Free in-store pickup</strong> available in <strong>Montréal</strong> and <strong>Toronto</strong><br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> PST/HST applied by province<br/></li><li><strong>No customs or import fees</strong> — orders ship from <strong>our Canadian warehouse</strong><br/></li></ul><h5><strong>United States</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ USD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> VAT applied by state<br/></li><li><strong>No surprise fees</strong> — customs and import charges are <strong>included</strong></li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_xqghAN"
-                  ]
-                }
-              },
-              "block_order": [
-                "accordion_row_h6QJrN",
-                "accordion_row_XDCrky"
-              ]
-            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -361,6 +259,7 @@
             },
             "ai_gen_block_1be31c2_AGzxDN": {
               "type": "ai_gen_block_1be31c2",
+              "disabled": true,
               "settings": {
                 "icon_1": "shipping",
                 "custom_svg_1": "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"#000000\" width=\"800px\" height=\"800px\" viewbox=\"0 0 100 100\" data-name=\"Layer 1\" id=\"Layer_1\"><path d=\"M69.11,81H22a1.49,1.49,0,0,1-1.14-.53,1.51,1.51,0,0,1-.34-1.21L29.54,24A1.49,1.49,0,0,1,31,22.74H90.55A1.5,1.5,0,0,1,92,24.48L85.19,66.17C83.79,74.75,77,81,69.11,81ZM23.73,78H69.11c6.44,0,12-5.16,13.12-12.28l6.55-39.95H32.29Z\"></path><path d=\"M63.78,45a1.51,1.51,0,0,1-1.51-1.5,1.49,1.49,0,0,1,.07-.43l2.94-17.36H54.46l-3,17.76v0A1.47,1.47,0,0,1,50,45a1.61,1.61,0,0,1-1.18-.53,1.52,1.52,0,0,1-.35-1.22L51.71,24a1.5,1.5,0,0,1,1.48-1.25H67.06a1.49,1.49,0,0,1,1.48,1.75L65.26,43.77A1.49,1.49,0,0,1,63.78,45Z\"></path><path d=\"M63.76,45a1.49,1.49,0,0,1-1.28-.72L57,35.3a1.5,1.5,0,1,1,2.56-1.56l5.49,9a1.5,1.5,0,0,1-.5,2.06A1.46,1.46,0,0,1,63.76,45Z\"></path><path d=\"M50,45a1.45,1.45,0,0,1-1-.4,1.5,1.5,0,0,1-.09-2.12l8.31-9a1.5,1.5,0,0,1,2.21,2l-8.31,9A1.51,1.51,0,0,1,50,45Z\"></path><path d=\"M36.35,34.52H15.64a1.5,1.5,0,0,1,0-3H36.35a1.5,1.5,0,0,1,0,3Z\"></path><path d=\"M19.41,41H5.6a1.5,1.5,0,0,1,0-3H19.41a1.5,1.5,0,1,1,0,3Z\"></path><path d=\"M30.91,50.49H18.36a1.5,1.5,0,1,1,0-3H30.91a1.5,1.5,0,0,1,0,3Z\"></path><path d=\"M18.71,65.49H9.5a1.5,1.5,0,0,1,0-3h9.21a1.5,1.5,0,0,1,0,3Z\"></path><path d=\"M40.75,65.49H23.8a1.5,1.5,0,0,1,0-3h17a1.5,1.5,0,1,1,0,3Z\"></path></svg>",
@@ -418,9 +317,242 @@
               },
               "block_order": []
             },
+            "accordion_7apytB": {
+              "type": "accordion",
+              "name": "t:names.accordion",
+              "settings": {
+                "icon": "plus",
+                "dividers": true,
+                "type_preset": "h4",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_h6QJrN": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Description",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_L4yfgX": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.description }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_L4yfgX"
+                  ]
+                },
+                "accordion_row_KLaUFe": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Model Parameters",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_UWcxne": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>{{ closest.product.metafields.custom.size_fit.value }}</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_UWcxne"
+                  ]
+                },
+                "accordion_row_XDCrky": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Shipping & Returns",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_xqghAN": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<h5><strong>Canada</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ CAD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li><strong>Free in-store pickup</strong> available in <strong>Montréal</strong> and <strong>Toronto</strong><br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> PST/HST applied by province<br/></li><li><strong>No customs or import fees</strong> — orders ship from <strong>our Canadian warehouse</strong><br/></li></ul><h5><strong>United States</strong></h5><ul><li><strong>Free shipping</strong> on orders <strong>$200+ USD</strong><br/></li><li><strong>Flat rate:</strong> $10 for orders under $199<br/></li><li>Delivery fees are <strong>non-refundable</strong><br/></li><li><strong>30-day free returns & exchanges</strong> on regular-price items (excluding shipping)<br/></li><li><strong>Archive & Sample Sale:</strong> Final sale<br/><br/>Discounted items may be exchanged or refunded to <strong>store credit</strong> within <strong>10 days</strong> (return costs apply)<br/></li><li><strong>Taxes:</strong> VAT applied by state<br/></li><li><strong>No surprise fees</strong> — customs and import charges are <strong>included</strong></li></ul>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_xqghAN"
+                  ]
+                },
+                "accordion_row_97g78i": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Washing instructions",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_YfAGyP": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Maximum wash 30°C</p><p>Do not bleach</p><p>Do not drum dry</p><p>Iron at maximum temperature 100 °C</p><p>Delicate dry</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_YfAGyP"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_h6QJrN",
+                "accordion_row_KLaUFe",
+                "accordion_row_XDCrky",
+                "accordion_row_97g78i"
+              ]
+            },
+            "addons_product_4HW7MF": {
+              "type": "addons-product",
+              "name": "Product Addons",
+              "disabled": true,
+              "settings": {
+                "addon_margin_top": 30,
+                "addon_margin_bottom": 30,
+                "addon_title": "Complete Your Look",
+                "addon_title_font_size": 20,
+                "addon_subtitle": "Hand-picked items that pair perfectly",
+                "addon_subtitle_font_size": 13,
+                "show_addon_notification": true,
+                "add_button_text": "Add to Cart",
+                "added_button_text": "In Cart",
+                "unavailable_button_text": "Sold Out",
+                "addon_success_message": "added to cart!",
+                "addon_error_message": "Could not add to cart",
+                "addon_title_color": "#1a1a1a",
+                "addon_subtitle_color": "#666666",
+                "addon_card_background": "#ffffff",
+                "addon_card_border": "#e5e5e5",
+                "addon_card_hover_border": "#1a1a1a",
+                "addon_product_title_color": "#1a1a1a",
+                "addon_price_color": "#1a1a1a",
+                "addon_sale_price_color": "#d32f2f",
+                "addon_compare_price_color": "#999999",
+                "addon_sale_badge_bg": "#d32f2f",
+                "addon_sale_badge_color": "#ffffff",
+                "addon_button_bg": "#1a1a1a",
+                "addon_button_text": "#ffffff",
+                "addon_button_border": "#1a1a1a",
+                "addon_button_hover_bg": "#ffffff",
+                "addon_button_hover_text": "#1a1a1a",
+                "addon_button_hover_border": "#1a1a1a",
+                "addon_button_incart_bg": "#ffffff",
+                "addon_button_incart_text": "#1a1a1a",
+                "addon_button_incart_border": "#1a1a1a",
+                "addon_nav_bg": "#ffffff",
+                "addon_nav_color": "#1a1a1a",
+                "addon_nav_border": "#e5e5e5",
+                "addon_nav_hover_bg": "#1a1a1a",
+                "addon_nav_hover_color": "#ffffff",
+                "addon_notif_bg": "#1a1a1a",
+                "addon_notif_color": "#ffffff"
+              },
+              "blocks": {}
+            },
             "payment_icons_pAy1c0": {
               "type": "payment-icons",
               "name": "Payment icons",
+              "disabled": true,
               "settings": {
                 "mode": "manual",
                 "horizontal_alignment": "center",
@@ -525,65 +657,19 @@
                 "payment_icon_g3MpKF",
                 "payment_icon_4YezFA"
               ]
-            },
-            "addons_product_cHejkz": {
-              "type": "addons-product",
-              "name": "Product Addons",
-              "settings": {
-                "addon_margin_top": 0,
-                "addon_margin_bottom": 40,
-                "addon_title": "Complete Your Look",
-                "addon_title_font_size": 20,
-                "addon_subtitle": "",
-                "addon_subtitle_font_size": 14,
-                "show_addon_notification": false,
-                "add_button_text": "Add",
-                "added_button_text": "In Cart",
-                "unavailable_button_text": "Out of Stock",
-                "addon_success_message": "added to cart",
-                "addon_error_message": "Please add main product to cart first",
-                "addon_title_color": "#1a1a1a",
-                "addon_subtitle_color": "#666666",
-                "addon_card_background": "#f8f8f8",
-                "addon_card_border": "#e5e5e5",
-                "addon_card_hover_border": "#1a1a1a",
-                "addon_product_title_color": "#1a1a1a",
-                "addon_price_color": "#1a1a1a",
-                "addon_sale_price_color": "#d32f2f",
-                "addon_compare_price_color": "#999999",
-                "addon_sale_badge_bg": "#d32f2f",
-                "addon_sale_badge_color": "#ffffff",
-                "addon_button_bg": "#1a1a1a",
-                "addon_button_text": "#ffffff",
-                "addon_button_border": "#1a1a1a",
-                "addon_button_hover_bg": "#ffffff",
-                "addon_button_hover_text": "#1a1a1a",
-                "addon_button_hover_border": "#1a1a1a",
-                "addon_button_incart_bg": "#ffffff",
-                "addon_button_incart_text": "#1a1a1a",
-                "addon_button_incart_border": "#1a1a1a",
-                "addon_nav_bg": "#ffffff",
-                "addon_nav_color": "#1a1a1a",
-                "addon_nav_border": "#e5e5e5",
-                "addon_nav_hover_bg": "#1a1a1a",
-                "addon_nav_hover_color": "#ffffff",
-                "addon_notif_bg": "#1a1a1a",
-                "addon_notif_color": "#ffffff"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "judge_me_reviews_preview_badge_hVrALg",
             "group_icgrde",
             "xb_wishlist_button_wishlist_aypCyG",
-            "accordion_7apytB",
             "variant_picker_R3rGDr",
             "product_size_chart_acHnde",
             "ai_gen_block_1be31c2_AGzxDN",
             "buy_buttons_eYQEYi",
-            "payment_icons_pAy1c0",
-            "addons_product_cHejkz"
+            "accordion_7apytB",
+            "addons_product_4HW7MF",
+            "payment_icons_pAy1c0"
           ]
         }
       },
@@ -593,7 +679,7 @@
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": true,
+        "equal_columns": false,
         "limit_details_width": false,
         "gap": 48,
         "color_scheme": "",
@@ -726,12 +812,12 @@
       "settings": {
         "product": "{{ closest.product }}",
         "recommendation_type": "related",
-        "layout_type": "grid",
+        "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "max_products": 4,
+        "max_products": 7,
         "columns": 4,
         "mobile_columns": "2",
-        "columns_gap": 12,
+        "columns_gap": 4,
         "rows_gap": 24,
         "icons_style": "arrow",
         "icons_shape": "none",
@@ -841,6 +927,7 @@
         "faq_item_qdFxgK",
         "faq_item_zDYrgQ"
       ],
+      "disabled": true,
       "name": "FAQ Section",
       "settings": {
         "section_padding_top": 48,
