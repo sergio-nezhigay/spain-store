@@ -62,7 +62,6 @@
           },
           "blocks": {}
         }
-
       },
       "block_order": [
         "text_HXFFdf",
@@ -74,7 +73,7 @@
         "image_1": "shopify://shop_images/upscalemedia-transformed_1_2.webp",
         "video_1": "shopify://files/videos/af8f25cab4f847ca9403a8d9ca721544.MOV",
         "media_type_2": "image",
-        "link": "",
+        "link": "shopify://collections/all",
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
