@@ -294,10 +294,10 @@
   {% render 'product-card-badges', product: selected_product %}
 
   {%- comment -%} Render model information if available {%- endcomment -%}
-  {% if selected_product.metafields.custom.model_information != blank %}
+  {% if selected_product.metafields.custom.size_fit != blank %}
     <div class="product-model-info">
       <div class="product-model-info__content">
-        {{ selected_product.metafields.custom.model_information }}
+        {{ selected_product.metafields.custom.size_fit }}
       </div>
     </div>
   {% endif %}
