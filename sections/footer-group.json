@@ -286,12 +286,64 @@
                     "link": "",
                     "open_in_new_tab": false,
                     "placeholder": "",
-                    "padding-block-start": 0,
+                    "padding-block-start": 5,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
                   "blocks": {
+                    "text_YF4tnb": {
+                      "type": "text",
+                      "name": "t:names.text",
+                      "settings": {
+                        "text": "<p>Company</p>",
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "h4",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_6V6yR9": {
+                      "type": "text",
+                      "name": "t:names.text",
+                      "settings": {
+                        "text": "<p>Steleobanus SL</p>",
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "h4",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 6,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
                     "heading_company": {
                       "type": "text",
                       "name": "Company Heading",
@@ -322,11 +374,12 @@
                     "menu_company": {
                       "type": "menu",
                       "name": "Company Menu",
+                      "disabled": true,
                       "settings": {
                         "menu": "footer",
-                        "heading": "Company",
+                        "heading": "Company:",
                         "menu_spacing": 12,
-                        "show_as_accordion": true,
+                        "show_as_accordion": false,
                         "accordion_icon": "caret",
                         "accordion_dividers": false,
                         "inherit_color_scheme": true,
@@ -359,7 +412,7 @@
                         "background": false,
                         "background_color": "#00000026",
                         "corner_radius": 0,
-                        "padding-block-start": 0,
+                        "padding-block-start": 28,
                         "padding-block-end": 0,
                         "padding-inline-start": 0,
                         "padding-inline-end": 0
@@ -368,6 +421,8 @@
                     }
                   },
                   "block_order": [
+                    "text_YF4tnb",
+                    "text_6V6yR9",
                     "heading_company",
                     "menu_company",
                     "text_policies"
