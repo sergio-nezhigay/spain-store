@@ -51,11 +51,7 @@
 
         {% if section.settings.show_cta %}
           <div class="hero-cta">
-            {% if section.settings.cta_primary_text != blank %}
-              <a href="{{ section.settings.cta_primary_link }}" class="btn-primary">
-                {{ section.settings.cta_primary_text }}
-              </a>
-            {% endif %}
+
 
             {% if section.settings.show_secondary_cta and section.settings.cta_secondary_text != blank %}
               <a href="{{ section.settings.cta_secondary_link }}" class="btn-secondary">

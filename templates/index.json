@@ -61,27 +61,12 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "button_AkGNqN": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Shop now",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
         }
+
       },
       "block_order": [
         "text_HXFFdf",
-        "text_QUGFhR",
-        "button_AkGNqN"
+        "text_QUGFhR"
       ],
       "name": "t:names.hero",
       "settings": {
