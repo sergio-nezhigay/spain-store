@@ -66,9 +66,6 @@
           id: 'media-gallery',
           closest.product: closest.product
         -%}
-        <div class="product-media-extra-info">
-          Info Block
-        </div>
       </div>
     {% endcapture %}
 
@@ -283,20 +280,6 @@
   /* If the header is sticky, make product details content stick underneath the header */
   body:has(#header-group #header-component[data-sticky-state='active']) .product-details.sticky-content--desktop {
     --sticky-header-offset: var(--header-height);
-  }
-
-  .product-media-extra-info {
-    padding: 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-    margin-top: 20px;
-    border: 1px dashed #ccc;
-  }
-
-  @media screen and (max-width: 749px) {
-    .product-information__media .sticky-content {
-      position: static;
-    }
   }
 {% endstylesheet %}
 

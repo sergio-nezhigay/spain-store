@@ -368,6 +368,40 @@
           pagination_position: 'center',
         -%}
       {% endif %}
+
+      {%- comment -%} Mobile thumbnails row {%- endcomment -%}
+      <slideshow-controls
+        ref="mobileThumbnails"
+        pagination-position="center"
+        scroll-mode="horizontal"
+        thumbnails
+        class="mobile-thumbnails-controls mobile:block desktop:hidden"
+      >
+        <scroll-hint
+          ref="thumbnailsContainer"
+          class="slideshow-controls__thumbnails-container"
+        >
+          <div class="slideshow-controls__thumbnails">
+            {% for media in sorted_media %}
+              <button
+                class="slideshow-control button button-unstyled slideshow-controls__thumbnail thumbnail-button"
+                aria-label="{{ 'accessibility.slide_status' | t: index: forloop.index, length: forloop.length }}"
+                on:click="/select/{{ forloop.index0 }}"
+                style="--aspect-ratio: {% if block_settings.aspect_ratio == 'adapt' %}{{ media.preview_image.aspect_ratio | default: 1.0 }}{% else %}{{ block_settings.aspect_ratio }}{% endif %};"
+                ref="thumbnails[]"
+                {% if forloop.first %}aria-selected="true"{% endif %}
+              >
+                {{
+                  media.preview_image
+                  | image_url: width: 144
+                  | image_tag: loading: 'lazy', alt: media.alt
+                  | escape
+                }}
+              </button>
+            {% endfor %}
+          </div>
+        </scroll-hint>
+      </slideshow-controls>
     {% endcapture %}
   {% endif %}
 
@@ -574,6 +608,47 @@
 </media-gallery>
 
 {% stylesheet %}
+  .mobile-thumbnails-controls {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .mobile-thumbnails-controls .slideshow-controls__thumbnails-container {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .mobile-thumbnails-controls .slideshow-controls__thumbnails {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-block: var(--padding-sm);
+    padding-inline: var(--padding-sm);
+    margin-inline: auto;
+    height: fit-content;
+  }
+
+  .mobile-thumbnails-controls .thumbnail-button {
+    flex: 0 0 auto;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--media-radius, 0);
+  }
+
+  .mobile-thumbnails-controls .thumbnail-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--media-radius, 0);
+  }
+
+  .mobile-thumbnails-controls .thumbnail-button[aria-selected="true"] {
+    outline: var(--focus-outline-width) solid currentcolor;
+    outline-offset: calc(var(--focus-outline-offset) / 2);
+  }
+
   .dialog-zoomed-gallery {
     cursor: zoom-out;
   }
