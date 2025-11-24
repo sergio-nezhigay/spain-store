@@ -158,7 +158,7 @@
                       "type": "text",
                       "name": "Contact Information",
                       "settings": {
-                        "text": "<p><strong>Contact Us</strong><br/>    <a href=\"https://www.google.com/maps?q=123+Store+Street,+Madrid,+Spain+28001\" target=\"_blank\"><br/>      123 Store Street Madrid, Spain 28001</a></p><p>Email: <a href=\"mailto:info@spain-store.com\">info@spain-store.com</a><br/>Phone: <a href=\"tel:+34123456789\">+34 123 456 789</a><br/></p><p>Mon–Fri: 9:00 – 18:00<br/>Sat: 10:00 – 14:00<br/>  </p>",
+                        "text": "<p><strong>Contact Us</strong><br/>    <a href=\"https://www.google.com/maps?q=Calle+Jesus+Puente+10,+29660+Marbella\" target=\"_blank\"><br/>      Calle Jesus Puente 10<br/>29660 Marbella</a></p><p>Email: <a href=\"mailto:steleobanus@gmail.com\">steleobanus@gmail.com</a><br/>Phone: <a href=\"tel:+34711099669\">+34 711 099 669</a><br/></p><p>Mon - Sat: 12:00 to 8:00 pm</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
