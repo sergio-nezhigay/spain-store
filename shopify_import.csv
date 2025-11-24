@@ -1,160 +1,283 @@
-Handle,Title,Body (HTML),Vendor,Product Category,Type,Tags,Published,Option1 Name,Option1 Value,Option1 Linked To,Option2 Name,Option2 Value,Option2 Linked To,Option3 Name,Option3 Value,Option3 Linked To,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Unit Price Total Measure,Unit Price Total Measure Unit,Unit Price Base Measure,Unit Price Base Measure Unit,Variant Barcode,Image Src,Image Position,Image Alt Text,Gift Card,SEO Title,SEO Description,Addon Products (product.metafields.custom.addon_products),Product rating count (product.metafields.reviews.rating_count),Color (product.metafields.shopify.color-pattern),Complementary products (product.metafields.shopify--discovery--product_recommendation.complementary_products),Related products (product.metafields.shopify--discovery--product_recommendation.related_products),Related products settings (product.metafields.shopify--discovery--product_recommendation.related_products_display),Search product boosts (product.metafields.shopify--discovery--product_search_boost.queries),Variant Image,Variant Weight Unit,Variant Tax Code,Cost per item,Status
-strick-kurz,Strick Kurz,<p>Stylish strick kurz from our collection. High-quality knitwear perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Knitwear,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D01.strick.kurz\DSC05126.jpg",1,Strick Kurz,false,,,,,,,,,,,kg,,,active
-strick-kurz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D01.strick.kurz\DSC05135.jpg",2,Strick Kurz - View 2,,,,,,,,,,,,,,,
-strick-kurz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D01.strick.kurz\DSC05143.jpg",3,Strick Kurz - View 3,,,,,,,,,,,,,,,
-strick-kurz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D01.strick.kurz\DSC05147.jpg",4,Strick Kurz - View 4,,,,,,,,,,,,,,,
-amerikana-khaki,Amerikana Khaki,<p>Stylish amerikana khaki from our collection. High-quality clothing perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Clothing,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.amerikana.khaki\DSC08474.jpg",1,Amerikana Khaki,false,,,,,,,,,,,kg,,,active
-amerikana-khaki,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.amerikana.khaki\DSC08475.jpg",2,Amerikana Khaki - View 2,,,,,,,,,,,,,,,
-amerikana-khaki,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.amerikana.khaki\DSC08483.jpg",3,Amerikana Khaki - View 3,,,,,,,,,,,,,,,
-amerikana-khaki,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.amerikana.khaki\DSC08485.jpg",4,Amerikana Khaki - View 4,,,,,,,,,,,,,,,
-barbie-dress,Barbie Dress,<p>Stylish barbie dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.barbie.dress\DSC08781.jpg",1,Barbie Dress,false,,,,,,,,,,,kg,,,active
-barbie-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.barbie.dress\DSC08789.jpg",2,Barbie Dress - View 2,,,,,,,,,,,,,,,
-barbie-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.barbie.dress\DSC08793.jpg",3,Barbie Dress - View 3,,,,,,,,,,,,,,,
-beige-set-skirt,Beige Set Skirt,<p>Stylish beige set skirt from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.set.skirt\DSC07642.jpg",1,Beige Set Skirt,false,,,,,,,,,,,kg,,,active
-beige-set-skirt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.set.skirt\DSC07652.jpg",2,Beige Set Skirt - View 2,,,,,,,,,,,,,,,
-beige-set-skirt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.set.skirt\DSC07657.jpg",3,Beige Set Skirt - View 3,,,,,,,,,,,,,,,
-beige-set-skirt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.set.skirt\DSC07665.jpg",4,Beige Set Skirt - View 4,,,,,,,,,,,,,,,
-beige-skirt-silk,Beige Skirt Silk,<p>Stylish beige skirt silk from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.skirt.silk\DSC08092.jpg",1,Beige Skirt Silk,false,,,,,,,,,,,kg,,,active
-beige-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.skirt.silk\DSC08095.jpg",2,Beige Skirt Silk - View 2,,,,,,,,,,,,,,,
-beige-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.skirt.silk\DSC08102.jpg",3,Beige Skirt Silk - View 3,,,,,,,,,,,,,,,
-beige-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.beige.skirt.silk\DSC08114.jpg",4,Beige Skirt Silk - View 4,,,,,,,,,,,,,,,
-black-body,Black Body,<p>Stylish black body from our collection. High-quality clothing perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Clothing,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.black.body\DSC07206.jpg",1,Black Body,false,,,,,,,,,,,kg,,,active
-black-body,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.body\DSC07229.jpg",2,Black Body - View 2,,,,,,,,,,,,,,,
-black-body,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.body\DSC07251.jpg",3,Black Body - View 3,,,,,,,,,,,,,,,
-black-rezinka,Black Rezinka,<p>Stylish black rezinka from our collection. High-quality clothing perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Clothing,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.black.rezinka\DSC07744.jpg",1,Black Rezinka,false,,,,,,,,,,,kg,,,active
-black-rezinka,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.rezinka\DSC07754.jpg",2,Black Rezinka - View 2,,,,,,,,,,,,,,,
-black-rezinka,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.rezinka\DSC07761.jpg",3,Black Rezinka - View 3,,,,,,,,,,,,,,,
-black-rezinka,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.rezinka\DSC07767.jpg",4,Black Rezinka - View 4,,,,,,,,,,,,,,,
-black-rezinka,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.rezinka\DSC07772.jpg",5,Black Rezinka - View 5,,,,,,,,,,,,,,,
-black-skirt-chanel,Black Skirt Chanel,<p>Stylish black skirt chanel from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.black.skirt.chanel\DSC07994.jpg",1,Black Skirt Chanel,false,,,,,,,,,,,kg,,,active
-black-skirt-chanel,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.skirt.chanel\DSC08002.jpg",2,Black Skirt Chanel - View 2,,,,,,,,,,,,,,,
-black-skirt-chanel,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.skirt.chanel\DSC08006.jpg",3,Black Skirt Chanel - View 3,,,,,,,,,,,,,,,
-black-skirt-silk,Black Skirt Silk,<p>Stylish black skirt silk from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.black.skirt.silk\DSC08025.jpg",1,Black Skirt Silk,false,,,,,,,,,,,kg,,,active
-black-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.skirt.silk\DSC08033.jpg",2,Black Skirt Silk - View 2,,,,,,,,,,,,,,,
-black-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.black.skirt.silk\DSC08037.jpg",3,Black Skirt Silk - View 3,,,,,,,,,,,,,,,
-blue-dress-short,Blue Dress Short,<p>Stylish blue dress short from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.blue.dress.short\DSC07674.jpg",1,Blue Dress Short,false,,,,,,,,,,,kg,,,active
-blue-dress-short,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.blue.dress.short\DSC07685.jpg",2,Blue Dress Short - View 2,,,,,,,,,,,,,,,
-blue-dress-short,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.blue.dress.short\DSC07688.jpg",3,Blue Dress Short - View 3,,,,,,,,,,,,,,,
-blue-dress-short,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.blue.dress.short\DSC07704.jpg",4,Blue Dress Short - View 4,,,,,,,,,,,,,,,
-blue-set-arfa,Blue Set Arfa,<p>Stylish blue set arfa from our collection. High-quality sets perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Outfit Sets,Sets,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.blue.set.arfa\DSC08194.jpg",1,Blue Set Arfa,false,,,,,,,,,,,kg,,,active
-blue-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.blue.set.arfa\DSC08214.jpg",2,Blue Set Arfa - View 2,,,,,,,,,,,,,,,
-blue-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.blue.set.arfa\DSC08219.jpg",3,Blue Set Arfa - View 3,,,,,,,,,,,,,,,
-bronz-short-dress,Bronz Short Dress,<p>Stylish bronz short dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.bronz.short.dress\DSC08344.jpg",1,Bronz Short Dress,false,,,,,,,,,,,kg,,,active
-bronz-short-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.bronz.short.dress\DSC08353.jpg",2,Bronz Short Dress - View 2,,,,,,,,,,,,,,,
-bronz-short-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.bronz.short.dress\DSC08360.jpg",3,Bronz Short Dress - View 3,,,,,,,,,,,,,,,
-brown-dress,Brown Dress,<p>Stylish brown dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress\DSC07499.jpg",1,Brown Dress,false,,,,,,,,,,,kg,,,active
-brown-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress\DSC07511.jpg",2,Brown Dress - View 2,,,,,,,,,,,,,,,
-brown-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress\DSC07515.jpg",3,Brown Dress - View 3,,,,,,,,,,,,,,,
-brown-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress\DSC07521.jpg",4,Brown Dress - View 4,,,,,,,,,,,,,,,
-brown-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress\DSC07529.jpg",5,Brown Dress - View 5,,,,,,,,,,,,,,,
-brown-dress-patata,Brown Dress Patata,<p>Stylish brown dress patata from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress.patata\DSC08498.jpg",1,Brown Dress Patata,false,,,,,,,,,,,kg,,,active
-brown-dress-patata,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress.patata\DSC08501.jpg",2,Brown Dress Patata - View 2,,,,,,,,,,,,,,,
-brown-dress-patata,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.dress.patata\DSC08504.jpg",3,Brown Dress Patata - View 3,,,,,,,,,,,,,,,
-brown-set-skirt,Brown Set Skirt,<p>Stylish brown set skirt from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.set.skirt\DSC07402.jpg",1,Brown Set Skirt,false,,,,,,,,,,,kg,,,active
-brown-set-skirt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.set.skirt\DSC07412.jpg",2,Brown Set Skirt - View 2,,,,,,,,,,,,,,,
-brown-set-skirt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.set.skirt\DSC07425.jpg",3,Brown Set Skirt - View 3,,,,,,,,,,,,,,,
-brown-skirt-chanel-amerikana,Brown Skirt Chanel Amerikana,<p>Stylish brown skirt chanel amerikana from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.skirt.chanel.amerikana\DSC07475.jpg",1,Brown Skirt Chanel Amerikana,false,,,,,,,,,,,kg,,,active
-brown-skirt-chanel-amerikana,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.skirt.chanel.amerikana\DSC07490.jpg",2,Brown Skirt Chanel Amerikana - View 2,,,,,,,,,,,,,,,
-brown-skirt-chanel-amerikana,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.skirt.chanel.amerikana\DSC07493.jpg",3,Brown Skirt Chanel Amerikana - View 3,,,,,,,,,,,,,,,
-brown-skirt-japan-khaki,Brown Skirt Japan Khaki,<p>Stylish brown skirt japan khaki from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.skirt.japan.khaki\DSC07276.jpg",1,Brown Skirt Japan Khaki,false,,,,,,,,,,,kg,,,active
-brown-skirt-japan-khaki,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.skirt.japan.khaki\DSC07282.jpg",2,Brown Skirt Japan Khaki - View 2,,,,,,,,,,,,,,,
-brown-skirt-japan-khaki,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.skirt.japan.khaki\DSC07286.jpg",3,Brown Skirt Japan Khaki - View 3,,,,,,,,,,,,,,,
-brown-skirt-japan-khaki,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.skirt.japan.khaki\DSC07290.jpg",4,Brown Skirt Japan Khaki - View 4,,,,,,,,,,,,,,,
-brown-white-rezinka,Brown White Rezinka,<p>Stylish brown white rezinka from our collection. High-quality clothing perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Clothing,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.white.rezinka\DSC07712.jpg",1,Brown White Rezinka,false,,,,,,,,,,,kg,,,active
-brown-white-rezinka,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.white.rezinka\DSC07727.jpg",2,Brown White Rezinka - View 2,,,,,,,,,,,,,,,
-brown-white-rezinka,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.white.rezinka\DSC07732.jpg",3,Brown White Rezinka - View 3,,,,,,,,,,,,,,,
-brown-white-rezinka,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.brown.white.rezinka\DSC07735.jpg",4,Brown White Rezinka - View 4,,,,,,,,,,,,,,,
-green-poncho-black,Green Poncho Black,<p>Stylish green poncho black from our collection. High-quality clothing perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Clothing,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.green.poncho.black\DSC07579.jpg",1,Green Poncho Black,false,,,,,,,,,,,kg,,,active
-green-poncho-black,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.green.poncho.black\DSC07592.jpg",2,Green Poncho Black - View 2,,,,,,,,,,,,,,,
-green-poncho-black,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.green.poncho.black\DSC07601.jpg",3,Green Poncho Black - View 3,,,,,,,,,,,,,,,
-green-poncho-black,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.green.poncho.black\DSC07602.jpg",4,Green Poncho Black - View 4,,,,,,,,,,,,,,,
-green-poncho-black,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.green.poncho.black\DSC07608.jpg",5,Green Poncho Black - View 5,,,,,,,,,,,,,,,
-izumrud-short-dress,Izumrud Short Dress,<p>Stylish izumrud short dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.izumrud.short.dress\DSC08647.jpg",1,Izumrud Short Dress,false,,,,,,,,,,,kg,,,active
-izumrud-short-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.izumrud.short.dress\DSC08658.jpg",2,Izumrud Short Dress - View 2,,,,,,,,,,,,,,,
-izumrud-short-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.izumrud.short.dress\DSC08664.jpg",3,Izumrud Short Dress - View 3,,,,,,,,,,,,,,,
-long-hippy-set,Long Hippy Set,<p>Stylish long hippy set from our collection. High-quality sets perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Outfit Sets,Sets,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.long.hippy.set\DSC07438.jpg",1,Long Hippy Set,false,,,,,,,,,,,kg,,,active
-long-hippy-set,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.long.hippy.set\DSC07446.jpg",2,Long Hippy Set - View 2,,,,,,,,,,,,,,,
-long-hippy-set,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.long.hippy.set\DSC07454.jpg",3,Long Hippy Set - View 3,,,,,,,,,,,,,,,
-pink-balerina-dress,Pink Balerina Dress,<p>Stylish pink balerina dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.balerina.dress\DSC08274.jpg",1,Pink Balerina Dress,false,,,,,,,,,,,kg,,,active
-pink-balerina-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.balerina.dress\DSC08294.jpg",2,Pink Balerina Dress - View 2,,,,,,,,,,,,,,,
-pink-balerina-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.balerina.dress\DSC08302.jpg",3,Pink Balerina Dress - View 3,,,,,,,,,,,,,,,
-pink-dress-noisy,Pink Dress Noisy,<p>Stylish pink dress noisy from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.dress.noisy\DSC08853.jpg",1,Pink Dress Noisy,false,,,,,,,,,,,kg,,,active
-pink-dress-noisy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.dress.noisy\DSC08855.jpg",2,Pink Dress Noisy - View 2,,,,,,,,,,,,,,,
-pink-dress-noisy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.dress.noisy\DSC08857.jpg",3,Pink Dress Noisy - View 3,,,,,,,,,,,,,,,
-pink-dress-noisy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.dress.noisy\DSC08867.jpg",4,Pink Dress Noisy - View 4,,,,,,,,,,,,,,,
-pink-dress-short,Pink Dress Short,<p>Stylish pink dress short from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.dress.short\DSC07533.jpg",1,Pink Dress Short,false,,,,,,,,,,,kg,,,active
-pink-dress-short,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.dress.short\DSC07555.jpg",2,Pink Dress Short - View 2,,,,,,,,,,,,,,,
-pink-dress-short,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.dress.short\DSC07560.jpg",3,Pink Dress Short - View 3,,,,,,,,,,,,,,,
-pink-set-arfa,Pink Set Arfa,<p>Stylish pink set arfa from our collection. High-quality sets perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Outfit Sets,Sets,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.set.arfa\DSC08163.jpg",1,Pink Set Arfa,false,,,,,,,,,,,kg,,,active
-pink-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.set.arfa\DSC08171.jpg",2,Pink Set Arfa - View 2,,,,,,,,,,,,,,,
-pink-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.pink.set.arfa\DSC08176.jpg",3,Pink Set Arfa - View 3,,,,,,,,,,,,,,,
-red-long-dress,Red Long Dress,<p>Stylish red long dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.red.long.dress\DSC08381.jpg",1,Red Long Dress,false,,,,,,,,,,,kg,,,active
-red-long-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.long.dress\DSC08392.jpg",2,Red Long Dress - View 2,,,,,,,,,,,,,,,
-red-long-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.long.dress\DSC08397.jpg",3,Red Long Dress - View 3,,,,,,,,,,,,,,,
-red-long-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.long.dress\DSC08408.jpg",4,Red Long Dress - View 4,,,,,,,,,,,,,,,
-red-skirt-japan-gris,Red Skirt Japan Gris,<p>Stylish red skirt japan gris from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.red.skirt.japan.gris\DSC07312.jpg",1,Red Skirt Japan Gris,false,,,,,,,,,,,kg,,,active
-red-skirt-japan-gris,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.skirt.japan.gris\DSC07323.jpg",2,Red Skirt Japan Gris - View 2,,,,,,,,,,,,,,,
-red-skirt-japan-gris,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.skirt.japan.gris\DSC07324.jpg",3,Red Skirt Japan Gris - View 3,,,,,,,,,,,,,,,
-red-skirt-silk,Red Skirt Silk,<p>Stylish red skirt silk from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.red.skirt.silk\DSC08044.jpg",1,Red Skirt Silk,false,,,,,,,,,,,kg,,,active
-red-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.skirt.silk\DSC08047.jpg",2,Red Skirt Silk - View 2,,,,,,,,,,,,,,,
-red-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.skirt.silk\DSC08064.jpg",3,Red Skirt Silk - View 3,,,,,,,,,,,,,,,
-red-skirt-silk,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.red.skirt.silk\DSC08066.jpg",4,Red Skirt Silk - View 4,,,,,,,,,,,,,,,
-short-dress-flower,Short Dress Flower,<p>Stylish short dress flower from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.short.dress.flower\DSC08690.jpg",1,Short Dress Flower,false,,,,,,,,,,,kg,,,active
-short-dress-flower,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.short.dress.flower\DSC08697.jpg",2,Short Dress Flower - View 2,,,,,,,,,,,,,,,
-short-dress-flower,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.short.dress.flower\DSC08698.jpg",3,Short Dress Flower - View 3,,,,,,,,,,,,,,,
-short-set-indy-hippy,Short Set Indy Hippy,<p>Stylish short set indy hippy from our collection. High-quality sets perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Outfit Sets,Sets,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.short.set.indy.hippy\DSC08733.jpg",1,Short Set Indy Hippy,false,,,,,,,,,,,kg,,,active
-short-set-indy-hippy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.short.set.indy.hippy\DSC08751.jpg",2,Short Set Indy Hippy - View 2,,,,,,,,,,,,,,,
-short-set-indy-hippy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.short.set.indy.hippy\DSC08757.jpg",3,Short Set Indy Hippy - View 3,,,,,,,,,,,,,,,
-sport-beige-straight,Sport Beige Straight,<p>Stylish sport beige straight from our collection. High-quality sportswear perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Activewear,Sportswear,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.beige.straight\DSC07782.jpg",1,Sport Beige Straight,false,,,,,,,,,,,kg,,,active
-sport-beige-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.beige.straight\DSC07808.jpg",2,Sport Beige Straight - View 2,,,,,,,,,,,,,,,
-sport-beige-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.beige.straight\DSC07817.jpg",3,Sport Beige Straight - View 3,,,,,,,,,,,,,,,
-sport-beige-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.beige.straight\DSC07826.jpg",4,Sport Beige Straight - View 4,,,,,,,,,,,,,,,
-sport-black-straight,Sport Black Straight,<p>Stylish sport black straight from our collection. High-quality sportswear perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Activewear,Sportswear,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.black.straight\DSC07829.jpg",1,Sport Black Straight,false,,,,,,,,,,,kg,,,active
-sport-black-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.black.straight\DSC07851.jpg",2,Sport Black Straight - View 2,,,,,,,,,,,,,,,
-sport-black-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.black.straight\DSC07855.jpg",3,Sport Black Straight - View 3,,,,,,,,,,,,,,,
-sport-black-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.black.straight\DSC07862.jpg",4,Sport Black Straight - View 4,,,,,,,,,,,,,,,
-sport-dark-beige-klesh,Sport Dark Beige Klesh,<p>Stylish sport dark beige klesh from our collection. High-quality sportswear perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Activewear,Sportswear,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.dark.beige.klesh\DSC07880.jpg",1,Sport Dark Beige Klesh,false,,,,,,,,,,,kg,,,active
-sport-dark-beige-klesh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.dark.beige.klesh\DSC07883.jpg",2,Sport Dark Beige Klesh - View 2,,,,,,,,,,,,,,,
-sport-dark-beige-klesh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.dark.beige.klesh\DSC07893.jpg",3,Sport Dark Beige Klesh - View 3,,,,,,,,,,,,,,,
-sport-dark-beige-straight,Sport Dark Beige Straight,<p>Stylish sport dark beige straight from our collection. High-quality sportswear perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Activewear,Sportswear,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.dark.beige.straight\DSC07908.jpg",1,Sport Dark Beige Straight,false,,,,,,,,,,,kg,,,active
-sport-dark-beige-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.dark.beige.straight\DSC07924.jpg",2,Sport Dark Beige Straight - View 2,,,,,,,,,,,,,,,
-sport-dark-beige-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.dark.beige.straight\DSC07928.jpg",3,Sport Dark Beige Straight - View 3,,,,,,,,,,,,,,,
-sport-dark-beige-straight,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.dark.beige.straight\DSC07932.jpg",4,Sport Dark Beige Straight - View 4,,,,,,,,,,,,,,,
-sport-green-klesh,Sport Green Klesh,<p>Stylish sport green klesh from our collection. High-quality sportswear perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Activewear,Sportswear,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.green.klesh\DSC07955.jpg",1,Sport Green Klesh,false,,,,,,,,,,,kg,,,active
-sport-green-klesh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.green.klesh\DSC07965.jpg",2,Sport Green Klesh - View 2,,,,,,,,,,,,,,,
-sport-green-klesh,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.sport.green.klesh\DSC07972.jpg",3,Sport Green Klesh - View 3,,,,,,,,,,,,,,,
-violetta-dress,Violetta Dress,<p>Stylish violetta dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.violetta.dress\DSC08588.jpg",1,Violetta Dress,false,,,,,,,,,,,kg,,,active
-violetta-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.violetta.dress\DSC08595.jpg",2,Violetta Dress - View 2,,,,,,,,,,,,,,,
-violetta-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.violetta.dress\DSC08612.jpg",3,Violetta Dress - View 3,,,,,,,,,,,,,,,
-violetta-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.violetta.dress\DSC08620.jpg",4,Violetta Dress - View 4,,,,,,,,,,,,,,,
-white-black-school,White Black School,<p>Stylish white black school from our collection. High-quality clothing perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Clothing,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.black.school\DSC08815.jpg",1,White Black School,false,,,,,,,,,,,kg,,,active
-white-black-school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.black.school\DSC08825.jpg",2,White Black School - View 2,,,,,,,,,,,,,,,
-white-black-school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.black.school\DSC08832.jpg",3,White Black School - View 3,,,,,,,,,,,,,,,
-white-black-school,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.black.school\DSC08836.jpg",4,White Black School - View 4,,,,,,,,,,,,,,,
-white-dress-patata,White Dress Patata,<p>Stylish white dress patata from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.dress.patata\DSC08521.jpg",1,White Dress Patata,false,,,,,,,,,,,kg,,,active
-white-dress-patata,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.dress.patata\DSC08529.jpg",2,White Dress Patata - View 2,,,,,,,,,,,,,,,
-white-dress-patata,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.dress.patata\DSC08532.jpg",3,White Dress Patata - View 3,,,,,,,,,,,,,,,
-white-long-dress,White Long Dress,<p>Stylish white long dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.dress\DSC08238.jpg",1,White Long Dress,false,,,,,,,,,,,kg,,,active
-white-long-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.dress\DSC08248.jpg",2,White Long Dress - View 2,,,,,,,,,,,,,,,
-white-long-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.dress\DSC08254.jpg",3,White Long Dress - View 3,,,,,,,,,,,,,,,
-white-long-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.dress\DSC08255.jpg",4,White Long Dress - View 4,,,,,,,,,,,,,,,
-white-long-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.dress\DSC08268.jpg",5,White Long Dress - View 5,,,,,,,,,,,,,,,
-white-long-unamanga,White Long Unamanga,<p>Stylish white long unamanga from our collection. High-quality clothing perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing,Clothing,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.unamanga\DSC08429.jpg",1,White Long Unamanga,false,,,,,,,,,,,kg,,,active
-white-long-unamanga,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.unamanga\DSC08432.jpg",2,White Long Unamanga - View 2,,,,,,,,,,,,,,,
-white-long-unamanga,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.unamanga\DSC08442.jpg",3,White Long Unamanga - View 3,,,,,,,,,,,,,,,
-white-long-unamanga,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.long.unamanga\DSC08444.jpg",4,White Long Unamanga - View 4,,,,,,,,,,,,,,,
-white-romashka-dress,White Romashka Dress,<p>Stylish white romashka dress from our collection. High-quality dresses perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Dresses,Dresses,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.romashka.dress\DSC08315.jpg",1,White Romashka Dress,false,,,,,,,,,,,kg,,,active
-white-romashka-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.romashka.dress\DSC08317.jpg",2,White Romashka Dress - View 2,,,,,,,,,,,,,,,
-white-romashka-dress,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.romashka.dress\DSC08325.jpg",3,White Romashka Dress - View 3,,,,,,,,,,,,,,,
-white-set-arfa,White Set Arfa,<p>Stylish white set arfa from our collection. High-quality sets perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Outfit Sets,Sets,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.arfa\DSC08128.jpg",1,White Set Arfa,false,,,,,,,,,,,kg,,,active
-white-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.arfa\DSC08133.jpg",2,White Set Arfa - View 2,,,,,,,,,,,,,,,
-white-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.arfa\DSC08138.jpg",3,White Set Arfa - View 3,,,,,,,,,,,,,,,
-white-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.arfa\DSC08142.jpg",4,White Set Arfa - View 4,,,,,,,,,,,,,,,
-white-set-arfa,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.arfa\DSC08145.jpg",5,White Set Arfa - View 5,,,,,,,,,,,,,,,
-white-set-blusa-skirt,White Set Blusa Skirt,<p>Stylish white set blusa skirt from our collection. High-quality skirts perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Skirts,Skirts,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.blusa.skirt\DSC08555.jpg",1,White Set Blusa Skirt,false,,,,,,,,,,,kg,,,active
-white-set-blusa-skirt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.blusa.skirt\DSC08568.jpg",2,White Set Blusa Skirt - View 2,,,,,,,,,,,,,,,
-white-set-blusa-skirt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.set.blusa.skirt\DSC08572.jpg",3,White Set Blusa Skirt - View 3,,,,,,,,,,,,,,,
-white-winter-set,White Winter Set,<p>Stylish white winter set from our collection. High-quality sets perfect for any occasion.</p>,ROCCO,Apparel & Accessories > Clothing > Outfit Sets,Sets,,true,Title,Default Title,,,,,,,,,0.0,shopify,50,deny,manual,19.99,,true,true,,,,,,"C:\Users\user\Downloads\Shop\D03.white.winter.set\DSC07355.jpg",1,White Winter Set,false,,,,,,,,,,,kg,,,active
-white-winter-set,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.winter.set\DSC07359.jpg",2,White Winter Set - View 2,,,,,,,,,,,,,,,
-white-winter-set,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.winter.set\DSC07362.jpg",3,White Winter Set - View 3,,,,,,,,,,,,,,,
-white-winter-set,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"C:\Users\user\Downloads\Shop\D03.white.winter.set\DSC07390.jpg",4,White Winter Set - View 4,,,,,,,,,,,,,,,
+Handle,Title
+short-6,Gym Shorts Khaki 6
+short-blk-black,Gym Shorts Khaki Black
+legens-10,Leggings White-Green
+white-set-2,Gym Set White-Green
+short-3,Gym Shorts Blue 3
+short-8,Gym Shorts Blue 8
+legens-9,Leggings Pink 9
+legens-6,Leggings Pink 6
+lavanda-set-1,Gym Set Pink 1 Lavanda
+pink-set-1,Gym Set Pink 1
+legens-8,Leggings Yellow
+yellow-set-1,Gym Set Yellow
+white-legens-1,Leggings White
+white-set-1,Gym Set White
+short-7,Gym Shorts Purple
+short-5,Gym Shorts Black
+short-4-set,Gym Set with Shorts White
+short-2,Gym Shorts Brown
+short-1,Gym Shorts Pink
+legens-7,Leggings Panna
+set-tina-panna,Gym Set TINA
+green-legens-1,Leggings Green 1
+legens-4,Leggings Green 4
+set-adva-green,Gym Set ADVA
+legens-5,Leggings Lavender
+lavanda-set-2,Gym Set Lavender
+izumrud-set-1,Gym Set Izumrud
+top-grey-1,Top..1 grey
+grey-legens-1,Leggings Grey
+grey-set-1,Gym Set Grey
+dress-seph-white-yellow,Sports Skirt SEPH Yellow
+dress-seph-white-black,Sports Skirt SEPH Black
+dress-seph-white-rose,Sports Dress SEPH
+dress-padel-brown,Sports Skirt Padel Brown
+dress-padel-black,Sports Skirt Padel Black
+dress-padel-white,Sports Skirt Padel White
+legens-3,Leggings Brown 3
+legens-2,Leggings Brown 2
+brown-set-2,Gym Set Brown 2
+brown-set-1,Gym Set Brown 1
+legens-1,Leggings Blue
+blue-set-1,Gym Set Blue
+legens,Leggings Black Legens
+black-legens-1,Leggings Black 1
+black-set-2,Gym Set Black 2
+black-set-1,Gym Set Black 1
+top-black-1,Top..1 black
+d03-winter-chaqueta,Jacket Montana Burgundy
+d03-white-school,Top ESCL White
+d03-leopard,Top Leopard Print
+d03-jersey-green,Sweater CEUR Green
+d03-jersey-black,D03.jersey. black
+d03-japon-khaki,Top JPN Khaki
+d03-japon-gray,Top JPN Grey
+d03-cup-tshirt,T-Shirt BLING White
+d03-chaqueta-green,Jacket Montana Green
+d03-chaqueta,Snake Print Jacket SPYTH
+d03-brown-short,Top BRONSK Brown
+d03-body-rose,Rose Body ROSTOA
+d03-body-black,Body PERMIA Black
+d03-blazer-gray,Blazer WOLY Grey
+d03-blazer-brown,Blazer WOLY Brown
+d03-black-long,Shirt TRANS Black
+d03-black-blusa,Blouse SPIT Black
+d03-amerikana-khaki,Blazer TROP Khaki
+dress-vlnbl-black,Dress VLNBL Black
+dress-setsumit-brown,Dress SUMT Brown
+dress-rosita-white,Dress ROSITA White
+dress-rosita-pink,Dress ROSITA Pink
+dress-pura-white,Dress PURA White
+dress-mary-black,Dress MARY Black
+dress-fortin-black,Dress FORTIN Black
+dress-dolphi-blue-diamant,Dress DOLPHY Blue
+dress-diana-white,Dress DIANA White
+d03-yellow-set,Dress SUN Yellow
+d03-wodopad,Dress ZRT Black
+d03-white-tulpan,Cream Dress DESUN
+d03-white-short-asimetryc,Dress SHINE White
+d03-white-set-winter,Cream Jacket Montana
+d03-white-set,Dress RAYE White
+d03-vaza,Dress FRYR Black
+d03-tulpan,Dress FINE Black
+d03-snake,Leopard Dress SNAKE
+d03-skatert-2,Dress BLOOM White
+d03-skatert,Set Dress GLIT Brown
+d03-sirena-blue,Dress ROSITA Blue
+d03-set-palma,Multicolor Set ACAPO
+d03-set-green,Turquoise Set TULUM
+d03-set-beige,Set Dress SOFT Brown
+d03-red,Dress ROJO Red
+d03-pink-volan,Dress VOLAN Pink
+d03-pink-dress-noisy,Dress Noisy Pink D03
+pink-dress-noisy,Dress Noisy Pink
+d03-pink-disko,Rose Dress RUBY
+d03-patata-white,Dress BOW White
+d03-patata-brown,D03.patata. brown
+d03-office-gray,Dress OFFICE Grey
+d03-office-black,Dress OFFICE Black
+d03-office-beige,Dress OFFICE Beige
+d03-nn-blue,Dress FLORA Blue
+d03-nn-black,Dress FLORA Black
+d03-long-rushi,Dress AIRE White
+d03-long-grey,Cream Dress NITE Black
+d03-jk-set-gray,Jacket WNTR Grey
+d03-jk-set-black,Jacket WNTR Black
+d03-izumrud,Emerald Dress IZUMRUD
+d03-gray-short,Dress GRY Grey
+d03-gold2,Brown Dress STONE Black
+d03-gold,Gold Dress KITTY Black
+d03-flower-rose,Rose Multicolor Dress FLOW
+d03-dalmatin,Dress DALMATIN Black
+d03-brown-long-gold,Dress AUTU Brown
+d03-bronze,Bronze Dress BRONZE
+d03-black-short,Dress DRK Black
+d03-black-set-winter,Winter Set Black
+d03-barbie,Dress Barbie Pink
+d03-straight-milk,Pants BGB White
+d03-straight-black,Pants BGB Black
+d03-straight-beige,Pants BGB Beige
+d03-silk-vine,Skirt STN Red
+d03-silk-milk,Cream Skirt STN
+d03-silk-black,Skirt STN Black
+d03-rezinka-white,D03.Rezinka. white
+d03-rezinka-vine,Pants ELEGT Red
+d03-rezinka-green,Pants ELEGT Green
+d03-rezinka-black,Pants ELEGT Black
+d03-klesh-green,Flare Pants BGB Green
+d03-klesh-beige,Flare Pants BGB Beige
+d03-falda-short-red,Skirt WNTR Red
+d03-falda-short-brown,Skirt WNTR Brown
+d03-chanl-black,Multicolor Skirt CHNCHN
+d03-chanel-brown,Multicolor Skirt COCO
+d03-black-school-skirt,Skirt ONX Black
+set-long-aeta-sand-grey-8,Set.long.AETA.sand. grey 8
+set-long-aeta-sand-grey-7,Set.long.AETA.sand. grey 7
+set-long-aeta-sand-grey-6,Set.long.AETA.sand. grey 6
+set-long-aeta-sand-grey-5,Set.long.AETA.sand. grey 5
+set-long-aeta-sand-grey-4,Set.long.AETA.sand. grey 4
+set-long-aeta-sand-grey-3,Set.long.AETA.sand. grey 3
+set-long-aeta-sand-grey-2,Set.long.AETA.sand. grey 2
+set-long-aeta-sand-grey-1,Set.long.AETA.sand. grey 1
+set-long-aeta-sand-grey,Set.long.AETA.sand. grey
+zelos2,Zelos2
+zelos1,Zelos1
+zelos,Zelos
+xerxes2,Xerxes2
+xerxes1,Xerxes1
+xerxes,Xerxes
+mulo1,Mulo1
+mulo,Mulo
+gala2,Gala2
+gala1,Gala1
+gala,Gala
+2404-c2s,2404 C2S
+2404-c1s,2404 C1S
+2403-c3s,2403 C3S
+2403-c2s,2403 C2S
+2403-c1s,2403 C1S
+2402-c3s,2402 C3S
+2402-c2s,2402 C2S
+2402-c1s,2402 C1S
+2401-c3s,2401 C3S
+2401-c2s,2401 C2S
+2401-c1s,2401 C1S
+do1-shirt-aeta-grey,Men's Shirt AETA Grey
+do1-shirt-aeta-black,Men's Shirt AETA Black
+d01-shirtsilk-circle-silver,Men's Silver Silk Shirt CIRCLE
+d01-shirt-xaxa-black,Men's Shirt XAXA Black
+d01-shirt-vegas-black,Men's Shirt VEGAS Black
+d01-shirt-rosario-burgunde,Men's Shirt ROSARIO Burgundy
+d01-shirt-remo-white,Men's Shirt REMO White
+d01-shirt-nazure-white-pink,Men's Pink Shirt NAZURE White
+d01-shirt-leblon-white-green-apricote,Men's Green Apricot Shirt LEBLON White
+d01-shirt-ipa-white-apricote,Men's Apricot Shirt IPA White
+d01-shirt-florino-white-black,Men's Black Shirt FLORINO White
+d01-shirt-aeta-white,Men's Shirt AETA White
+d01-pleatedshirt-luca-black,Men's Pleated Shirt LUCA Black
+d01-knit-shirt-crema-creamwhite,Men's Cream Knit Shirt CREMA White
+d01-knit-shirt-alpa-panna,Men's Knit Shirt ALPA Panna
+d01-knit-polo-angelo-panna,Men's Knit Polo ANGELO Panna
+tank-shirt-siffredi-black-1,Men's Tank Shirt SIFFREDI Black
+d01-tshirt-ripped-white,Men's T-Shirt RIPPED White
+d01-tshirt-ripped-black,Men's T-Shirt RIPPED Black
+d01-tshirt-lovedyou-black,Men's T-Shirt LOVEDYOU Black
+d01-tshirt-lovedmip-black,Men's T-Shirt LOVEDMIP Black
+d01-tshirt-lovechaos-black,Men's T-Shirt LOVECHAOS Black
+d01-tshirt-forte-white,Men's T-Shirt FORTE White
+d01-tshirt-direttore2-white,Men's T-Shirt DIRETTORE2 White
+d01-tshirt-direttore-white,Men's T-Shirt DIRETTORE White
+d01-tshirt-champagne-black,Men's T-Shirt CHAMPAGNE Black
+d01-tankshirt-siffredi-black,D01.TankShirt.SIFFREDI. black
+tank-shirt-siffredi-black,Tank.Shirt.SIFFREDI. white
+d01-knit-vest-zeus-green-white,Men's Green Knit Vest ZEUS White
+d01-sweater-florence-black-white,Sweater FLORENCE
+d01-sweater-cielo-white,Men's Sweater CIELO White
+d01-knitvest-capri-black-white,Men's Black Knit Vest CAPRI White
+d01-knitvest-amalfi-black-white-1,Men's Black Knit Vest AMALFI White
+d01-jacket-teddy-white-black,Men's Black Jacket TEDDY White
+d01-jacket-roma-black-gold,Men's Gold Jacket ROMA Black
+d01-blazer-sicily-white,Men's Blazer SICILY White
+d01-blazer-sicily-black,Men's Blazer SICILY Black
+d01-blazer-berlusconi-grey,Men's Blazer BERLUSCONI Grey
+do2-shorts-aeta-grey,Men's Shorts AETA Grey Do2
+d02-short-aeta-grey,Men's Shorts AETA Grey D02
+d01-shorts-aeta-grey,Men's Shorts AETA Grey D01
+do2-shorts-aeta-black,Men's Shorts AETA Black
+d02-shorts-aeta-white,Men's Shorts AETA White
+d02-pants-aeta-grey,Men's Pants AETA Grey
+d02-pants-aeta01-black-1,Men's Pants AETA Black 1
+do2-pants-aeta-black,Men's Pants AETA Black
+d02-pants-aeta-sand-grey-1,Men's Sand Pants AETA Grey
+d02-pants-bold-panna,Men's Pants BOLD Panna
+d02-pants-aeta01-white,Men's Pants AETA White
+d02-pants-aeta01-green,Men's Pants AETA Green
+d02-pants-aeta01-brown,Men's Pants AETA Brown
+d02-pants-aeta01-beige,Men's Pants AETA Beige
+d01-knit-vest-zeus-black-white,Men's Black Knit Vest ZEUS White
+d01-hoody-love-black,Men's Hoodie LOVE Black
+d01-hoody-artdirettore-black,Men's Hoodie ARTDIRETTORE Black
+white-winter-set,Winter Set White
+white-set-blusa-skirt,Set Blusa Skirt White
+white-set-arfa,Set Arfa White
+white-romashka-dress,Romashka Dress White
+white-long-unamanga,Long Unamanga White
+white-long-dress,Long Dress White
+white-dress-patata,Dress Patata White
+white-black-school,Black School White
+violetta-dress,Violetta Dress
+sport-green-klesh,Sport Klesh Green
+sport-dark-beige-straight,Sport Dark Straight Beige
+sport-dark-beige-klesh,Sport Dark Klesh Beige
+sport-black-straight,Sport Straight Black
+sport-beige-straight,Sport Straight Beige
+short-set-indy-hippy,Short Set Indy Hippy
+short-dress-flower,Short Dress Flower
+red-skirt-silk,Skirt Silk Red
+red-skirt-japan-gris,Skirt Japan Gris Red
+red-long-dress,Long Dress Red
+pink-set-arfa,Set Arfa Pink
+pink-dress-short,Dress Short Pink
+pink-balerina-dress,Balerina Dress Pink
+long-hippy-set,Long Hippy Set
+izumrud-short-dress,Izumrud Short Dress
+green-poncho-black,Green Poncho Black
+brown-white-rezinka,Brown Rezinka White
+brown-skirt-japan-khaki,Brown Skirt Japan Khaki
+brown-skirt-chanel-amerikana,Skirt Chanel Amerikana Brown
+brown-set-skirt,Set Skirt Brown
+brown-dress-patata,Dress Patata Brown
+brown-dress,Dress Brown
+bronz-short-dress,Bronz Short Dress
+blue-set-arfa,Set Arfa Blue
+blue-dress-short,Dress Short Blue
+black-skirt-silk,Skirt Silk Black
+black-skirt-chanel,Skirt Chanel Black
+black-rezinka,Rezinka Black
+black-body,Body Black
+beige-skirt-silk,Skirt Silk Beige
+beige-set-skirt,Set Skirt Beige
+barbie-dress,Barbie Dress
+amerikana-khaki,Amerikana Khaki
+strick-kurz,Strick kurz
+beige-set-long,.set.long Beige
+black-vest-ripped,vest ripped Black
+beige-set-short,set short Beige
+shirt-black-ripped,Shirt ripped black
+grey-set-short,set short Grey
+shirt-wnb-green-palm-1,Shirt WNB palm-1 green
+shirt-white-riped,Shirt riped white
+shirt-white-fishnet,Shirt fishnet white
+shirt-burgund-rose,Shirt burgund rose
+shirt-xagon-white,Shirt xagon white
+shirt-wnb-white-floral,Shirt WNB floral white
+shirt-wnb-pink2,Shirt WNB pink2
+shirt-wnb-pink,Shirt WNB pink
+black-set-long,set long Black
+black-set-short,set short Black
+white-set-short,set short White
+strick-green,Strick green
+strick-black,Strick black
+strick-beige-2,Strick 2 beige
+srick-fein-beige,Srick fein beige
