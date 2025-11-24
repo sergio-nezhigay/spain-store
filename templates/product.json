@@ -369,10 +369,37 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {}
+                    },
+                    "text_QQkfJN": {
+                      "type": "text",
+                      "name": "t:names.text",
+                      "settings": {
+                        "text": "<p>Washing instructions :</p><ul><li>Maximum wash 30°C</li><li>Do not bleach</li><li>Do not drum dry</li><li>Iron at maximum temperature 100 °C</li><li>Delicate dry</li></ul>",
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 24,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
-                    "text_L4yfgX"
+                    "text_L4yfgX",
+                    "text_QQkfJN"
                   ]
                 },
                 "accordion_row_KLaUFe": {
@@ -386,8 +413,35 @@
                     "width": 20
                   },
                   "blocks": {
+                    "text_HXyYhP": {
+                      "type": "text",
+                      "name": "t:names.text",
+                      "settings": {
+                        "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
                     "text_UWcxne": {
                       "type": "text",
+                      "disabled": true,
                       "settings": {
                         "text": "<p>{{ closest.product.metafields.custom.size_fit.value }}</p>",
                         "width": "100%",
@@ -413,6 +467,7 @@
                     }
                   },
                   "block_order": [
+                    "text_HXyYhP",
                     "text_UWcxne"
                   ]
                 },
@@ -458,6 +513,7 @@
                 "accordion_row_97g78i": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
+                  "disabled": true,
                   "settings": {
                     "heading": "Washing instructions",
                     "open_by_default": false,
