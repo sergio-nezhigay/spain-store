@@ -341,6 +341,7 @@
                   "settings": {
                     "heading": "Description",
                     "open_by_default": true,
+                    "hide_on_mobile": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -408,6 +409,7 @@
                   "settings": {
                     "heading": "Size & Fit",
                     "open_by_default": false,
+                    "hide_on_mobile": true,
                     "icon": "none",
                     "width": 20
                   },
@@ -449,6 +451,7 @@
                   "settings": {
                     "heading": "Model Parameters",
                     "open_by_default": false,
+                    "hide_on_mobile": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -516,6 +519,7 @@
                   "settings": {
                     "heading": "Shipping & Returns",
                     "open_by_default": false,
+                    "hide_on_mobile": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -557,6 +561,7 @@
                   "settings": {
                     "heading": "Washing instructions",
                     "open_by_default": false,
+                    "hide_on_mobile": false,
                     "icon": "none",
                     "width": 20
                   },

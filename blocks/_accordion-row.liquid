@@ -6,6 +6,9 @@
     open-by-default-on-desktop
     open-by-default-on-mobile
   {% endif %}
+  {% if block_settings.hide_on_mobile %}
+    class="accordion--mobile-hidden"
+  {% endif %}
 >
   <details
     class="details"
@@ -39,6 +42,12 @@
     height: auto;
     margin-inline-end: var(--margin-xs);
   }
+
+  @media screen and (max-width: 749px) {
+    .accordion--mobile-hidden {
+      display: none !important;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -64,6 +73,12 @@
       "type": "checkbox",
       "id": "open_by_default",
       "label": "t:settings.open_row_by_default",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile",
       "default": false
     },
     {
