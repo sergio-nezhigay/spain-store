@@ -241,6 +241,15 @@
               },
               "blocks": {}
             },
+            "size_selector_new": {
+              "type": "product-size-selector",
+              "settings": {
+                "padding-block-start": 0,
+                "padding-block-end": 16,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              }
+            },
             "product_size_chart_acHnde": {
               "type": "product-size-chart",
               "name": "t:names.product_size_chart",
@@ -768,6 +777,7 @@
             "xb_wishlist_button_wishlist_aypCyG",
             "variant_picker_R3rGDr",
             "product_size_chart_acHnde",
+            "size_selector_new",
             "ai_gen_block_1be31c2_AGzxDN",
             "buy_buttons_eYQEYi",
             "accordion_7apytB",
