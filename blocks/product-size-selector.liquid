@@ -5,7 +5,7 @@
 -%}
 
 <div class="product-size-selector spacing-style" style="{% render 'spacing-style', settings: block_settings %}">
-  <p class="product-size-selector__heading">{{ block_settings.heading }}</p>
+  <h3 class="product-size-selector__heading">{{ block_settings.heading }}</h3>
   <div class="product-size-selector__options">
     {% assign sizes = 'S,M,L,XL' | split: ',' %}
     {% for size in sizes %}
