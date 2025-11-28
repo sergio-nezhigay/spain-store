@@ -1,10 +1,11 @@
-<div id="section-{{ section.id }}" class="collections-grid-wrapper{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+<collections-grid-component>
+  <div id="section-{{ section.id }}" class="collections-grid-wrapper{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
   <div class="collections-grid-container">
     {% if section.blocks.size > 0 %}
       <div class="collections-grid">
         {% for block in section.blocks %}
           {% if block.type == 'collection_item' %}
-            <div class="collections-grid__item" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+            <div class="collections-grid__item" data-block-id="{{ block.id }}" ref="items[]" {{ block.shopify_attributes }}>
               {% if block.settings.collection_link != blank %}
                 <a href="{{ block.settings.collection_link }}" class="collections-grid__link">
               {% endif %}
@@ -17,7 +18,7 @@
                             {{ block.settings.collection_image | image_url: width: 800 }} 800w,
                             {{ block.settings.collection_image | image_url: width: 1200 }} 1200w,
                             {{ block.settings.collection_image | image_url: width: 1500 }} 1500w"
-                    sizes="(min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 750px) 50vw, 100vw"
                     alt="{{ block.settings.collection_title | escape }}"
                     class="collections-grid__image"
                     loading="lazy"
@@ -55,7 +56,10 @@
       </div>
     {% endif %}
   </div>
-</div>
+  </div>
+</collections-grid-component>
+
+<script src="{{ 'collections-grid.js' | asset_url }}" type="module" defer></script>
 
 <style>
   :root {
@@ -164,7 +168,7 @@
     transform: translateX(0);
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 749px) {
     .collections-grid {
       grid-template-columns: 1fr;
     }
@@ -175,6 +179,19 @@
 
     .collections-grid__content {
       padding: var(--collections-grid-content-padding-mobile, 20px);
+      /* Sticky title behavior - Mobile only */
+      position: fixed;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 10;
+      will-change: transform, opacity;
+      pointer-events: none;
+    }
+
+    .collections-grid__content * {
+      pointer-events: auto;
     }
 
     .collections-grid__item {
@@ -221,7 +238,7 @@
     color: {{ section.settings.arrow_color }};
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 750px) {
     #section-{{ section.id }} {
       padding-top: {{ section.settings.padding_top_desktop }}px;
       padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
@@ -237,7 +254,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 749px) {
     #section-{{ section.id }} .collections-grid__item {
       aspect-ratio: {{ section.settings.aspect_ratio_mobile }};
     }
@@ -260,7 +277,7 @@
         text-transform: {% if block.settings.title_uppercase %}uppercase{% else %}none{% endif %};
       }
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 749px) {
         #section-{{ section.id }} .collections-grid__item[data-block-id="{{ block.id }}"] .collections-grid__title {
           font-size: {{ block.settings.title_size_mobile }}px;
         }
