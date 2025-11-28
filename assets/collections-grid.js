@@ -153,28 +153,29 @@ class CollectionsGrid extends Component {
       // Process items
       for (const data of itemData) {
         const imageBottom = data.rect.bottom;
-        let visualBottom;
+        const imageTop = data.rect.top;
+        const viewportBottom = viewportHeight - 40;
+
+        // Calculate target visual bottom position
+        // 1. Start with sticky position at bottom of viewport (viewportBottom)
+        // 2. Clamp to image bottom (don't go below image) -> Math.min(viewportBottom, imageBottom)
+        // 3. Clamp to image top + content height (don't go above image) -> Math.max(..., imageTop + data.contentHeight)
+        let visualBottom = Math.max(
+          Math.min(viewportBottom, imageBottom),
+          imageTop + data.contentHeight
+        );
+
+        // Calculate transform needed to achieve this visual bottom
+        // Base position is fixed at bottom: 40px (which is at viewportBottom)
+        // We want to move it to visualBottom
+        // transformY = visualBottom - viewportBottom
+        const transformY = visualBottom - viewportBottom;
+
         let opacity = 1;
-        let transformY = 0;
 
-        if (imageBottom <= viewportHeight) {
-          // Image is in viewport - stick title to image
-          visualBottom = imageBottom;
-
-          // Calculate transform needed to place it there
-          // Default position is bottom: 40px (viewportHeight - 40)
-          // We want it at imageBottom
-          const offset = viewportHeight - imageBottom - 40;
-          transformY = -offset;
-
-          // Fade out when approaching the top
-          if (imageBottom < 150) {
-            opacity = Math.max(0, imageBottom / 150);
-          }
-        } else {
-          // Image below viewport - fixed position at bottom
-          visualBottom = viewportHeight - 40;
-          transformY = 0;
+        // Fade out when approaching the top
+        if (imageBottom < 150) {
+          opacity = Math.max(0, imageBottom / 150);
         }
 
         const visualTop = visualBottom - data.contentHeight;
@@ -183,7 +184,8 @@ class CollectionsGrid extends Component {
         let isOverlapping = false;
 
         // Only check collision if we are not already fading out due to scroll
-        if (opacity > 0.1) {
+        // And if the item is actually visible in the viewport
+        if (opacity > 0.1 && visualTop < viewportHeight && visualBottom > 0) {
            for (const rect of visibleRects) {
              // Check if rectangles overlap on Y axis
              // We add a small buffer (e.g. 5px) to avoid flickering when they are just touching
@@ -203,7 +205,7 @@ class CollectionsGrid extends Component {
           data.content.style.transform = `translateY(${transformY}px)`;
 
           // Register this space as occupied if it's visible
-          if (opacity > 0.1) {
+          if (opacity > 0.1 && visualTop < viewportHeight && visualBottom > 0) {
             visibleRects.push({ top: visualTop, bottom: visualBottom });
           }
         }
