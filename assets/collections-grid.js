@@ -5,14 +5,13 @@ import { isMobileBreakpoint } from '@theme/utilities';
  * CollectionsGrid component
  *
  * Handles sticky scrolling title behavior for collection grid items on mobile.
- * Coordinates globally across all instances to ensure only one title is visible at a time.
+ * Coordinates globally across all instances to ensure titles don't overlap.
  */
 class CollectionsGrid extends Component {
   requiredRefs = ['items'];
 
   // Global state shared across all instances
   static instances = [];
-  static activeTitle = null;
   static rafId = null;
 
   // Instance state
@@ -60,7 +59,6 @@ class CollectionsGrid extends Component {
         cancelAnimationFrame(CollectionsGrid.rafId);
         CollectionsGrid.rafId = null;
       }
-      CollectionsGrid.activeTitle = null;
     }
   }
 
@@ -71,7 +69,7 @@ class CollectionsGrid extends Component {
 
     if (this.#isActive) {
       requestAnimationFrame(() => {
-        this.#updateTitlePositions();
+        this.#updateAllInstances();
       });
     }
   }
@@ -133,71 +131,84 @@ class CollectionsGrid extends Component {
   };
 
   #updateAllInstances() {
-    // Process all registered instances
-    for (const instance of CollectionsGrid.instances) {
-      if (instance.#isActive) {
-        instance.#updateTitlePositions();
-      }
-    }
-  }
-
-  #updateTitlePositions() {
     const viewportHeight = window.innerHeight;
+    const visibleRects = []; // Keep track of occupied spaces {top, bottom}
 
-    // Batch read phase - get all DOM measurements
-    const itemData = (this.refs.items || []).map(item => {
-      const content = item.querySelector('.collections-grid__content');
-      return {
-        item,
-        content,
-        rect: item.getBoundingClientRect(),
-      };
-    });
+    // Collect all items from all active instances in DOM order
+    for (const instance of CollectionsGrid.instances) {
+      if (!instance.#isActive) continue;
 
-    // Batch write phase - apply all style changes
-    for (const data of itemData) {
-      if (!data.content) continue;
+      // Batch read phase for this instance
+      const itemData = (instance.refs.items || []).map(item => {
+        const content = item.querySelector('.collections-grid__content');
+        if (!content) return null;
 
-      const imageBottom = data.rect.bottom;
+        return {
+          content,
+          rect: item.getBoundingClientRect(),
+          contentHeight: content.offsetHeight
+        };
+      }).filter(Boolean);
 
-      if (imageBottom <= viewportHeight) {
-        // Image is in viewport - stick title to image
-        const translateY = viewportHeight - imageBottom - 40;
-        data.content.style.transform = `translateY(-${translateY}px)`;
+      // Process items
+      for (const data of itemData) {
+        const imageBottom = data.rect.bottom;
+        let visualBottom;
+        let opacity = 1;
+        let transformY = 0;
 
-        // Fade out when approaching the top
-        if (imageBottom < 150) {
-          const opacity = imageBottom / 150;
-          data.content.style.opacity = String(opacity);
+        if (imageBottom <= viewportHeight) {
+          // Image is in viewport - stick title to image
+          visualBottom = imageBottom;
 
-          // Clear active title if it's fading out
-          if (opacity < 0.1 && CollectionsGrid.activeTitle === data.content) {
-            CollectionsGrid.activeTitle = null;
+          // Calculate transform needed to place it there
+          // Default position is bottom: 40px (viewportHeight - 40)
+          // We want it at imageBottom
+          const offset = viewportHeight - imageBottom - 40;
+          transformY = -offset;
+
+          // Fade out when approaching the top
+          if (imageBottom < 150) {
+            opacity = Math.max(0, imageBottom / 150);
           }
         } else {
-          data.content.style.opacity = '1';
+          // Image below viewport - fixed position at bottom
+          visualBottom = viewportHeight - 40;
+          transformY = 0;
+        }
 
-          // Set as active title
-          if (CollectionsGrid.activeTitle !== data.content) {
-            this.#setActiveTitle(data.content);
+        const visualTop = visualBottom - data.contentHeight;
+
+        // Check collision with previously visible titles
+        let isOverlapping = false;
+
+        // Only check collision if we are not already fading out due to scroll
+        if (opacity > 0.1) {
+           for (const rect of visibleRects) {
+             // Check if rectangles overlap on Y axis
+             // We add a small buffer (e.g. 5px) to avoid flickering when they are just touching
+             if (visualTop < rect.bottom - 5 && visualBottom > rect.top + 5) {
+               isOverlapping = true;
+               break;
+             }
+           }
+        }
+
+        // Apply styles
+        if (isOverlapping) {
+          data.content.style.opacity = '0';
+          data.content.style.transform = `translateY(${transformY}px)`;
+        } else {
+          data.content.style.opacity = String(opacity);
+          data.content.style.transform = `translateY(${transformY}px)`;
+
+          // Register this space as occupied if it's visible
+          if (opacity > 0.1) {
+            visibleRects.push({ top: visualTop, bottom: visualBottom });
           }
         }
-      } else {
-        // Image below viewport - fixed position at bottom
-        data.content.style.transform = 'translateY(0)';
-        data.content.style.opacity = '1';
       }
     }
-  }
-
-  #setActiveTitle(newTitle) {
-    // Fade out previous title (may be from different section!)
-    if (CollectionsGrid.activeTitle && CollectionsGrid.activeTitle !== newTitle) {
-      CollectionsGrid.activeTitle.style.opacity = '0';
-    }
-
-    CollectionsGrid.activeTitle = newTitle;
-    newTitle.style.opacity = '1';
   }
 }
 
