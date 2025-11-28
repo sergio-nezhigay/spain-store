@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "shopify theme dev --store=spain-store-main.myshopify.com --theme 150159982763",
-    "push": "shopify theme push --store=spain-store-main.myshopify.com --theme 150159982763",
-    "pull": "shopify theme pull --store=spain-store-main.myshopify.com --theme 150159982763"
+    "dev": "shopify theme dev --store=spain-store-main.myshopify.com --theme 150295511211",
+    "push": "shopify theme push --store=spain-store-main.myshopify.com --theme 150295511211",
+    "pull": "shopify theme pull --store=spain-store-main.myshopify.com --theme 150295511211"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
     "url": "https://github.com/sergio-nezhigay/spain-store/issues"
   },
   "homepage": "https://github.com/sergio-nezhigay/spain-store#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "csv-parse": "^6.1.0",
+    "csv-stringify": "^6.6.0"
+  }
 }

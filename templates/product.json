@@ -241,15 +241,6 @@
               },
               "blocks": {}
             },
-            "size_selector_new": {
-              "type": "product-size-selector",
-              "settings": {
-                "padding-block-start": 0,
-                "padding-block-end": 16,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              }
-            },
             "product_size_chart_acHnde": {
               "type": "product-size-chart",
               "name": "t:names.product_size_chart",
@@ -261,6 +252,18 @@
                 "show_icon": true,
                 "padding-block-start": 8,
                 "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "size_selector_new": {
+              "type": "product-size-selector",
+              "disabled": true,
+              "settings": {
+                "heading": "Select a size",
+                "padding-block-start": 0,
+                "padding-block-end": 16,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },

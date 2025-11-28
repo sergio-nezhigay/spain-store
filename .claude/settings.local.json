@@ -19,7 +19,8 @@
       "Bash(echo:*)",
       "Bash(ls:*)",
       "Read(//c/Users/user/.claude/**)",
-      "Read(//c/Users/user/AppData/Roaming/Claude/**)"
+      "Read(//c/Users/user/AppData/Roaming/Claude/**)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
