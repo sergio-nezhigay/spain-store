@@ -256,7 +256,13 @@
 
   @media screen and (max-width: 749px) {
     #section-{{ section.id }} .collections-grid__item {
-      aspect-ratio: {{ section.settings.aspect_ratio_mobile }};
+      {% if section.settings.aspect_ratio_mobile == 'screen' %}
+        height: 100vh;
+        height: 100svh;
+        aspect-ratio: auto;
+      {% else %}
+        aspect-ratio: {{ section.settings.aspect_ratio_mobile }};
+      {% endif %}
     }
 
     #section-{{ section.id }} .collections-grid__content {
@@ -264,7 +270,11 @@
     }
 
     #section-{{ section.id }} .collections-grid {
-      grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+      {% if section.settings.aspect_ratio_mobile == 'screen' %}
+        grid-template-columns: 1fr;
+      {% else %}
+        grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+      {% endif %}
     }
   }
 
@@ -410,6 +420,10 @@
         {
           "value": "4/9",
           "label": "Portrait (4:9)"
+        },
+        {
+          "value": "screen",
+          "label": "Screen Height"
         }
       ],
       "default": "4/5"
