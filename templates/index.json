@@ -169,22 +169,7 @@
             "collection_image": "shopify://shop_images/tDup-hbw.jpg",
             "collection_link": "shopify://collections/t-shirts",
             "show_overlay": true,
-            "collection_title": "TShirts",
-            "title_size_desktop": 36,
-            "title_size_mobile": 24,
-            "title_color": "#ffffff",
-            "title_weight": "700",
-            "title_uppercase": true,
-            "show_arrow": true
-          }
-        },
-        "collection_item_ajkj9j": {
-          "type": "collection_item",
-          "settings": {
-            "collection_image": "shopify://shop_images/5_1.jpg",
-            "collection_link": "shopify://collections/tank-shirt",
-            "show_overlay": true,
-            "collection_title": "Tanks",
+            "collection_title": "T-Shirts/Tanks",
             "title_size_desktop": 36,
             "title_size_mobile": 24,
             "title_color": "#ffffff",
@@ -211,7 +196,6 @@
       },
       "block_order": [
         "collection_item_QGDX7Q",
-        "collection_item_ajkj9j",
         "collection_item_xm4nt6"
       ],
       "name": "Collections Grid",
@@ -219,7 +203,7 @@
         "section_max_width": "1920",
         "background_color": "#ffffff",
         "custom_class": "",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "columns_mobile": 1,
         "grid_gap": 0,
         "aspect_ratio_desktop": "3/4",
@@ -242,13 +226,28 @@
     "collections_custom_grid_V9GL3C": {
       "type": "collections-custom-grid",
       "blocks": {
-        "collection_item_8rzeEr": {
+        "collection_item_fecNiA": {
           "type": "collection_item",
           "settings": {
             "collection_image": "shopify://shop_images/dtnnmPUQ.jpg",
             "collection_link": "shopify://collections/sweaters",
             "show_overlay": true,
-            "collection_title": "Sweater",
+            "collection_title": "Sweaters",
+            "title_size_desktop": 36,
+            "title_size_mobile": 24,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        },
+        "collection_item_ymkcbH": {
+          "type": "collection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/LVSRf9Sg.jpg",
+            "collection_link": "shopify://collections/joggers",
+            "show_overlay": true,
+            "collection_title": "Pants/Joggers",
             "title_size_desktop": 36,
             "title_size_mobile": 24,
             "title_color": "#ffffff",
@@ -260,7 +259,7 @@
         "collection_item_UmC68f": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_3.jpg",
+            "collection_image": "shopify://shop_images/1_39580ee7-6154-4264-af7c-4d188f304411.jpg",
             "collection_link": "shopify://collections/knitwears",
             "show_overlay": true,
             "collection_title": "Knitwear",
@@ -274,8 +273,72 @@
         }
       },
       "block_order": [
-        "collection_item_8rzeEr",
+        "collection_item_fecNiA",
+        "collection_item_ymkcbH",
         "collection_item_UmC68f"
+      ],
+      "name": "Collections Grid",
+      "settings": {
+        "section_max_width": "1920",
+        "background_color": "#ffffff",
+        "custom_class": "",
+        "columns_desktop": 3,
+        "columns_mobile": 1,
+        "grid_gap": 0,
+        "aspect_ratio_desktop": "2/3",
+        "aspect_ratio_mobile": "screen",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20,
+        "overlay_hover_opacity": 40,
+        "arrow_color": "#ffffff",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_horizontal_desktop": 0,
+        "content_padding_desktop": 40,
+        "grid_gap_mobile": 4,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 4,
+        "padding_horizontal_mobile": 0,
+        "content_padding_mobile": 24
+      }
+    },
+    "collections_custom_grid_CBenUN": {
+      "type": "collections-custom-grid",
+      "blocks": {
+        "collection_item_ammyGH": {
+          "type": "collection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/1_9fc1ee58-29a5-4a80-86f8-5ea89bdd066b.jpg",
+            "collection_link": "shopify://collections/shorts",
+            "show_overlay": true,
+            "collection_title": "Shorts",
+            "title_size_desktop": 38,
+            "title_size_mobile": 24,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        },
+        "collection_item_ECWd4A": {
+          "type": "collection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/1_4.jpg",
+            "collection_link": "shopify://collections/jackets",
+            "show_overlay": true,
+            "collection_title": "Jackets/Blazers",
+            "title_size_desktop": 36,
+            "title_size_mobile": 24,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_ammyGH",
+        "collection_item_ECWd4A"
       ],
       "name": "Collections Grid",
       "settings": {
@@ -302,46 +365,31 @@
         "content_padding_mobile": 24
       }
     },
-    "collections_custom_grid_CBenUN": {
+    "collections_custom_grid_q6fhzq": {
       "type": "collections-custom-grid",
       "blocks": {
-        "collection_item_ammyGH": {
+        "collection_item_eBwfHx": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_5.jpg",
-            "collection_link": "shopify://collections/shorts",
+            "collection_image": "shopify://shop_images/1_3d421a87-bda9-4f7c-a319-433719bac5c4.jpg",
+            "collection_link": "shopify://collections/jackets-blazers-women",
             "show_overlay": true,
-            "collection_title": "Shorts",
-            "title_size_desktop": 38,
-            "title_size_mobile": 24,
+            "collection_title": "Jackets/Blazers",
+            "title_size_desktop": 48,
+            "title_size_mobile": 32,
             "title_color": "#ffffff",
             "title_weight": "700",
             "title_uppercase": true,
             "show_arrow": true
           }
         },
-        "collection_item_aHtXFG": {
+        "collection_item_XBh8yQ": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/LVSRf9Sg.jpg",
-            "collection_link": "shopify://collections/joggers",
+            "collection_image": "shopify://shop_images/1_ac50cfa0-1320-4e8f-bb92-efaea1b58a0e.jpg",
+            "collection_link": "shopify://collections/dresses",
             "show_overlay": true,
-            "collection_title": "Jogger",
-            "title_size_desktop": 36,
-            "title_size_mobile": 24,
-            "title_color": "#ffffff",
-            "title_weight": "700",
-            "title_uppercase": true,
-            "show_arrow": true
-          }
-        },
-        "collection_item_ECWd4A": {
-          "type": "collection_item",
-          "settings": {
-            "collection_image": "shopify://shop_images/1_4.jpg",
-            "collection_link": "shopify://collections/jackets",
-            "show_overlay": true,
-            "collection_title": "Jackets",
+            "collection_title": "Dresses",
             "title_size_desktop": 36,
             "title_size_mobile": 24,
             "title_color": "#ffffff",
@@ -352,9 +400,87 @@
         }
       },
       "block_order": [
-        "collection_item_ammyGH",
-        "collection_item_aHtXFG",
-        "collection_item_ECWd4A"
+        "collection_item_eBwfHx",
+        "collection_item_XBh8yQ"
+      ],
+      "name": "Collections Grid",
+      "settings": {
+        "section_max_width": "1920",
+        "background_color": "#ffffff",
+        "custom_class": "",
+        "columns_desktop": 2,
+        "columns_mobile": 1,
+        "grid_gap": 0,
+        "aspect_ratio_desktop": "2/3",
+        "aspect_ratio_mobile": "screen",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20,
+        "overlay_hover_opacity": 40,
+        "arrow_color": "#ffffff",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "padding_horizontal_desktop": 0,
+        "content_padding_desktop": 40,
+        "grid_gap_mobile": 4,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 4,
+        "padding_horizontal_mobile": 0,
+        "content_padding_mobile": 24
+      }
+    },
+    "collections_custom_grid_3PTxaL": {
+      "type": "collections-custom-grid",
+      "blocks": {
+        "collection_item_7rFybm": {
+          "type": "collection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/1_fc365a08-44b0-4008-a848-f700eacb1812.jpg",
+            "collection_link": "shopify://collections/women-gymwear",
+            "show_overlay": true,
+            "collection_title": "Women Gymwear",
+            "title_size_desktop": 36,
+            "title_size_mobile": 24,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        },
+        "collection_item_maTWyJ": {
+          "type": "collection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/1_6531f166-8ef0-46ea-9491-b73f5d50a9e7.jpg",
+            "collection_link": "shopify://collections/top",
+            "show_overlay": true,
+            "collection_title": "Top",
+            "title_size_desktop": 36,
+            "title_size_mobile": 24,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        },
+        "collection_item_Ycgtdj": {
+          "type": "collection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/1_bea05e82-5048-4038-b93f-9335fbf89810.jpg",
+            "collection_link": "shopify://collections/women-bottoms",
+            "show_overlay": true,
+            "collection_title": "Bottom",
+            "title_size_desktop": 36,
+            "title_size_mobile": 24,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_7rFybm",
+        "collection_item_maTWyJ",
+        "collection_item_Ycgtdj"
       ],
       "name": "Collections Grid",
       "settings": {
@@ -381,16 +507,16 @@
         "content_padding_mobile": 24
       }
     },
-    "collections_custom_grid_q6fhzq": {
+    "collections_custom_grid_XteqbW": {
       "type": "collections-custom-grid",
       "blocks": {
-        "collection_item_eLFyiz": {
+        "collection_item_7RXJkd": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/5_b19f171b-acca-49f7-8423-94becd66532b.jpg",
-            "collection_link": "shopify://collections/women-bottoms",
+            "collection_image": "shopify://shop_images/IMG_0032.jpg",
+            "collection_link": "shopify://collections/sunglasses",
             "show_overlay": true,
-            "collection_title": "Bottom",
+            "collection_title": "Sunglasses",
             "title_size_desktop": 36,
             "title_size_mobile": 24,
             "title_color": "#ffffff",
@@ -399,43 +525,13 @@
             "show_arrow": true
           }
         },
-        "collection_item_XBh8yQ": {
+        "collection_item_fxUKbt": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_ac50cfa0-1320-4e8f-bb92-efaea1b58a0e.jpg",
-            "collection_link": "shopify://collections/dresses",
+            "collection_image": "shopify://shop_images/DSC06709-2.jpg",
+            "collection_link": "shopify://collections/shoes",
             "show_overlay": true,
-            "collection_title": "Dresses",
-            "title_size_desktop": 36,
-            "title_size_mobile": 24,
-            "title_color": "#ffffff",
-            "title_weight": "700",
-            "title_uppercase": true,
-            "show_arrow": true
-          }
-        },
-        "collection_item_rwmNPT": {
-          "type": "collection_item",
-          "settings": {
-            "collection_image": "shopify://shop_images/1_6531f166-8ef0-46ea-9491-b73f5d50a9e7.jpg",
-            "collection_link": "shopify://collections/top",
-            "show_overlay": true,
-            "collection_title": "Top",
-            "title_size_desktop": 36,
-            "title_size_mobile": 24,
-            "title_color": "#ffffff",
-            "title_weight": "700",
-            "title_uppercase": true,
-            "show_arrow": true
-          }
-        },
-        "collection_item_tawVjW": {
-          "type": "collection_item",
-          "settings": {
-            "collection_image": "shopify://shop_images/1_fc365a08-44b0-4008-a848-f700eacb1812.jpg",
-            "collection_link": "shopify://collections/women-gymwear",
-            "show_overlay": true,
-            "collection_title": "Women Gymwear",
+            "collection_title": "Shoes",
             "title_size_desktop": 36,
             "title_size_mobile": 24,
             "title_color": "#ffffff",
@@ -446,10 +542,8 @@
         }
       },
       "block_order": [
-        "collection_item_eLFyiz",
-        "collection_item_XBh8yQ",
-        "collection_item_rwmNPT",
-        "collection_item_tawVjW"
+        "collection_item_7RXJkd",
+        "collection_item_fxUKbt"
       ],
       "name": "Collections Grid",
       "settings": {
@@ -826,6 +920,68 @@
         "button_hover_background": "#ffffff",
         "button_hover_text": "#1a1a1a"
       }
+    },
+    "collections_custom_grid_YdhPXA": {
+      "type": "collections-custom-grid",
+      "blocks": {
+        "collection_item_kyz7ip": {
+          "type": "collection_item",
+          "settings": {
+            "collection_link": "",
+            "show_overlay": true,
+            "collection_title": "TEES",
+            "title_size_desktop": 48,
+            "title_size_mobile": 32,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        },
+        "collection_item_7xjnzr": {
+          "type": "collection_item",
+          "settings": {
+            "collection_link": "",
+            "show_overlay": true,
+            "collection_title": "DENIMS",
+            "title_size_desktop": 48,
+            "title_size_mobile": 32,
+            "title_color": "#ffffff",
+            "title_weight": "700",
+            "title_uppercase": true,
+            "show_arrow": true
+          }
+        }
+      },
+      "block_order": [
+        "collection_item_kyz7ip",
+        "collection_item_7xjnzr"
+      ],
+      "disabled": true,
+      "name": "Collections Grid",
+      "settings": {
+        "section_max_width": "1920",
+        "background_color": "#ffffff",
+        "custom_class": "",
+        "columns_desktop": 2,
+        "columns_mobile": 1,
+        "grid_gap": 0,
+        "aspect_ratio_desktop": "3/4",
+        "aspect_ratio_mobile": "4/5",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20,
+        "overlay_hover_opacity": 40,
+        "arrow_color": "#ffffff",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_horizontal_desktop": 0,
+        "content_padding_desktop": 40,
+        "grid_gap_mobile": 4,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_horizontal_mobile": 0,
+        "content_padding_mobile": 24
+      }
     }
   },
   "order": [
@@ -835,8 +991,11 @@
     "collections_custom_grid_V9GL3C",
     "collections_custom_grid_CBenUN",
     "collections_custom_grid_q6fhzq",
+    "collections_custom_grid_3PTxaL",
+    "collections_custom_grid_XteqbW",
     "revies_custom_bpMWdQ",
     "instafeed_MEYRVB",
-    "blog_post_xUkiNi"
+    "blog_post_xUkiNi",
+    "collections_custom_grid_YdhPXA"
   ]
 }

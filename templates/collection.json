@@ -16,7 +16,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
-            "text": "<p>{{ closest.collection.title }}</p>",
+            "text": "<p>{{ closest.collection.title }}/Blazers</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
