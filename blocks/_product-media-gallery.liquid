@@ -80,6 +80,36 @@
 -%}
 
 {%- liquid
+  # Check if product belongs to collections that need mobile-specific aspect ratio
+  assign should_use_mobile_aspect_ratio = false
+  assign mobile_collection_handles_setting = block_settings.mobile_collection_handles | strip | downcase
+
+  if mobile_collection_handles_setting != blank
+    assign mobile_collection_handles_array = mobile_collection_handles_setting | split: ','
+
+    for collection in selected_product.collections
+      assign collection_handle = collection.handle | downcase
+
+      for mobile_handle in mobile_collection_handles_array
+        assign mobile_handle_clean = mobile_handle | strip
+
+        if collection_handle == mobile_handle_clean
+          assign should_use_mobile_aspect_ratio = true
+          break
+        endif
+      endfor
+
+      if should_use_mobile_aspect_ratio
+        break
+      endif
+    endfor
+  endif
+
+  # Store the mobile aspect ratio setting for use in styles
+  assign mobile_aspect_ratio = block_settings.mobile_collection_aspect_ratio
+-%}
+
+{%- liquid
   assign sorted_media = '' | split: ','
   if selected_variant_media
     assign sorted_media = sorted_media | concat: selected_product.media | where: 'id', selected_variant_media.id
@@ -238,6 +268,32 @@
       background-color: var(--color-background);
     }
   {% endif %}
+
+  {% if should_use_mobile_aspect_ratio %}
+    {%- comment -%} Mobile-only aspect ratio override for specific collections {%- endcomment -%}
+    @media screen and (max-width: 749px) {
+      {% if mobile_aspect_ratio == 'adapt' %}
+        .product-media-container {
+          --media-preview-ratio: auto;
+        }
+
+        .product-media-container.media-fit-cover {
+          --product-media-fit: contain;
+        }
+
+        .media-fit-cover :is(img, video, iframe, .deferred-media__poster-image) {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      {% else %}
+        {%- comment -%} mobile_aspect_ratio is "1" (square) {%- endcomment -%}
+        .product-media-container {
+          --media-preview-ratio: {{ mobile_aspect_ratio }};
+        }
+      {% endif %}
+    }
+  {% endif %}
 {% endstyle %}
 
 {% liquid
@@ -253,7 +309,16 @@
     assign product_media_container_class = product_media_container_class | append: ' media-fit-contain'
   endif
 
+  # Determine if we should use adapt mode (either from main setting or mobile override)
+  assign use_adapt_mode = false
   if block.settings.aspect_ratio == 'adapt'
+    assign use_adapt_mode = true
+  endif
+  if should_use_mobile_aspect_ratio and mobile_aspect_ratio == 'adapt'
+    assign use_adapt_mode = true
+  endif
+
+  if use_adapt_mode
     assign lowest_aspect_ratio = 50
     assign lowest_aspect_ratio_index = 0
 
@@ -321,9 +386,9 @@
         {% endif %}
       {% endcapture %}
       {% capture class %}
-        {{ product_media_container_class }} product-media-container--{{ media.media_type }}{% if block.settings.zoom %} product-media-container--zoomable{% endif %}{% if forloop.index0 == lowest_aspect_ratio_index and block.settings.aspect_ratio == 'adapt' %} product-media-container--tallest{% endif %}
+        {{ product_media_container_class }} product-media-container--{{ media.media_type }}{% if block.settings.zoom %} product-media-container--zoomable{% endif %}{% if forloop.index0 == lowest_aspect_ratio_index and use_adapt_mode %} product-media-container--tallest{% endif %}
       {% endcapture %}
-      {% if block_settings.aspect_ratio == 'adapt' %}
+      {% if use_adapt_mode %}
         {% capture style %}
           --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};
         {% endcapture %}
@@ -430,7 +495,7 @@
         <li
           ref="media[]"
           class="{{ product_media_container_class }} product-media-container--{{ media.media_type }}"
-          style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
+          style="{% if use_adapt_mode %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
           {% if settings.transition_to_main_product and forloop.first %}
             data-view-transition-type="product-image-transition"
           {% endif %}
@@ -536,7 +601,7 @@
             <li
               id="product-{{ media.id}}-{{ forloop.index }}"
               class="{{ product_media_container_class | remove: 'media-fit-cover' }} product-media-container--{{ media.media_type }}{% if media.media_type == 'image' %} product-media-container--zoomable{% endif %}"
-              style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
+              style="{% if use_adapt_mode %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
               ref="media[]"
               {% if media.media_type == 'image' %}
                 on:click="/close"
@@ -1030,6 +1095,34 @@
         }
       ],
       "default": "adapt"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Collection-Specific Aspect Ratio"
+    },
+    {
+      "type": "text",
+      "id": "mobile_collection_handles",
+      "label": "Collection handles for mobile aspect ratio",
+      "default": "sunglasses,shoes",
+      "info": "Comma-separated collection handles. Products in these collections will use the mobile aspect ratio below on mobile devices only."
+    },
+    {
+      "type": "select",
+      "id": "mobile_collection_aspect_ratio",
+      "label": "Mobile aspect ratio for specified collections",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Auto (natural image ratio)"
+        },
+        {
+          "value": "1",
+          "label": "Square (1:1)"
+        }
+      ],
+      "default": "adapt",
+      "info": "Aspect ratio to use on mobile ONLY for products in the collections specified above."
     },
     {
       "type": "checkbox",
