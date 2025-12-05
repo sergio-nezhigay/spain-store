@@ -1,6 +1,21 @@
 
 
-{% render 'text', block: block %}
+{% assign exclude_collections = block.settings.exclude_collections | split: ',' %}
+{% assign show_block = true %}
+{% if exclude_collections.size > 0 and product %}
+  {% assign product_collection_handles = product.collections | map: 'handle' %}
+  {% for handle in exclude_collections %}
+    {% assign clean_handle = handle | strip %}
+    {% if product_collection_handles contains clean_handle %}
+      {% assign show_block = false %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if show_block %}
+  {% render 'text', block: block %}
+{% endif %}
 
 {% schema %}
 {
@@ -11,6 +26,12 @@
       "type": "richtext",
       "id": "text",
       "label": "t:settings.text"
+    },
+    {
+      "type": "text",
+      "id": "exclude_collections",
+      "label": "Exclude from collections",
+      "info": "Comma-separated list of collection handles (e.g. 'eyeglasses, shoes')"
     },
     {
       "type": "header",

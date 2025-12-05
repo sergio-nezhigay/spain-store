@@ -74,6 +74,8 @@
             "thumbnail_position": "left",
             "thumbnail_width": 44,
             "aspect_ratio": "8/12",
+            "mobile_collection_handles": "sunglasses,shoes",
+            "mobile_collection_aspect_ratio": "adapt",
             "constrain_to_viewport": false,
             "media_fit": "contain",
             "media_radius": 0,
@@ -164,6 +166,7 @@
                   "name": "Product title",
                   "settings": {
                     "text": "<h1>{{ closest.product.title }}</h1>",
+                    "exclude_collections": "",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -363,6 +366,7 @@
                       "type": "text",
                       "settings": {
                         "text": "{{ closest.product.description }}",
+                        "exclude_collections": "",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -389,6 +393,7 @@
                       "name": "t:names.text",
                       "settings": {
                         "text": "<p>Washing instructions :</p><ul><li>Maximum wash 30°C</li><li>Do not bleach</li><li>Do not drum dry</li><li>Iron at maximum temperature 100 °C</li><li>Delicate dry</li></ul>",
+                        "exclude_collections": "sunglasses, shoes",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -431,6 +436,7 @@
                       "type": "text",
                       "settings": {
                         "text": "<p>{{ closest.product.metafields.custom.size_fit.value }}</p>",
+                        "exclude_collections": "",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -474,6 +480,7 @@
                       "name": "t:names.text",
                       "settings": {
                         "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -500,6 +507,7 @@
                       "disabled": true,
                       "settings": {
                         "text": "<p>{{ closest.product.metafields.custom.size_fit.value }}</p>",
+                        "exclude_collections": "",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -541,6 +549,7 @@
                       "type": "text",
                       "settings": {
                         "text": "<p><strong>Delivery time</strong></p><ul><li>Delivery time: 5 to 7 working days after<br/>     receipt of order.</li><li>As soon as your order is on its way to you,<br/>     you will receive a separate shipping confirmation by e-mail.</li><li>Worldwide shipping</li></ul><p> </p><p><strong>Shipping costs</strong></p><ul><li>Germany, Austria, Netherlands, Italy,<br/>     France, Spain, Belgium & Luxembourg: 5,90 € - free delivery from an<br/>     order value of 150 €</li><li>Switzerland: CHF 9.90 (duty-free delivery)</li><li>Other countries within the EU: 9.90 € up to<br/>     14.90 €</li><li>Other countries outside the EU: 24.90 € (no<br/>     duty-free delivery)</li></ul><p><strong>Returns</strong></p><ul><li>For orders from Germany, Austria,<br/>     Switzerland, the Netherlands, and the UK, you can create a return label<br/>     via our returns portal within 14 days. </li><li>The return shipping costs are $5.90 and will<br/>     be deducted from the refund amount.</li><li>An exception applies if your order is worth<br/>     less than $150.00 and you keep part of the order. </li><li>For returns from other countries, ROCCOMARBELLA<br/>     does not cover any costs. In these cases, customers must bear the return<br/>     shipping expenses themselves.</li></ul>",
+                        "exclude_collections": "",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -583,6 +592,7 @@
                       "type": "text",
                       "settings": {
                         "text": "<p>Maximum wash 30°C</p><p>Do not bleach</p><p>Do not drum dry</p><p>Iron at maximum temperature 100 °C</p><p>Delicate dry</p>",
+                        "exclude_collections": "",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -812,6 +822,7 @@
           "name": "t:names.header",
           "settings": {
             "text": "<h3>You may also like </h3>",
+            "exclude_collections": "",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
