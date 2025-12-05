@@ -19,6 +19,27 @@
     assign has_content = false
   endif
 
+  # Check if product belongs to excluded collections
+  assign should_hide_for_collection = false
+  assign exclude_collections_setting = block_settings.exclude_collections | strip | downcase
+
+  if exclude_collections_setting != blank
+    assign excluded_handles = exclude_collections_setting | split: ','
+    for collection in closest.product.collections
+      assign collection_handle = collection.handle | downcase
+      for excluded_handle in excluded_handles
+        assign excluded_handle_clean = excluded_handle | strip
+        if collection_handle == excluded_handle_clean
+          assign should_hide_for_collection = true
+          break
+        endif
+      endfor
+      if should_hide_for_collection
+        break
+      endif
+    endfor
+  endif
+
   # Determine display mode
   assign display_mode = block_settings.display_mode
 
@@ -31,7 +52,7 @@
   assign show_icon = block_settings.show_icon
 %}
 
-{% if has_content %}
+{% if has_content and should_hide_for_collection == false %}
   <div
     class="size-chart-wrapper spacing-style"
     style="{% render 'spacing-style', settings: block_settings %}"
@@ -431,6 +452,13 @@
     {
       "type": "paragraph",
       "content": "t:content.size_chart_info"
+    },
+    {
+      "type": "text",
+      "id": "exclude_collections",
+      "label": "Hide for collections (handles)",
+      "default": "sunglasses,shoes",
+      "info": "Enter collection handles separated by commas (e.g., glasses,shoes). The size guide will be hidden for products in these collections."
     },
     {
       "type": "select",

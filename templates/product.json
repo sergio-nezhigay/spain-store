@@ -245,6 +245,7 @@
               "type": "product-size-chart",
               "name": "t:names.product_size_chart",
               "settings": {
+                "exclude_collections": "sunglasses,shoes",
                 "display_mode": "modal",
                 "button_text": "Size Guide",
                 "modal_title": "Size Chart",
