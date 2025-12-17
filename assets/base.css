@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+.product-media{
+  aspect-ratio: unset !important;
+}
+:not(.dialog-zoomed-gallery)>.product-media-container{
+  aspect-ratio: auto !important;
+}
+
 body {
   color: var(--color-foreground);
   background: var(--color-background);

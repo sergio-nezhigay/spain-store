@@ -16,6 +16,7 @@
           "type": "text",
           "settings": {
             "text": "<h1>DREAMED IN PARADISE</h1>",
+            "exclude_collections": "",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -41,6 +42,7 @@
           "type": "text",
           "settings": {
             "text": "<p>MADE IN ITALY</p>",
+            "exclude_collections": "",
             "width": "fit-content",
             "max_width": "narrow",
             "alignment": "left",
@@ -103,7 +105,7 @@
         "collection_item_Fm83HA": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_6.jpg",
+            "collection_image": "shopify://shop_images/1_66804fd8-1f00-49cc-90e7-b850243b4068.jpg",
             "collection_link": "shopify://collections/new-arrivals",
             "show_overlay": true,
             "collection_title": "New arrivals",
@@ -118,7 +120,7 @@
         "collection_item_yArbez": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_2caf2642-90aa-4fdc-a540-93a2bee9ac82.jpg",
+            "collection_image": "shopify://shop_images/1_1_f069a7da-9899-4371-89da-f0ce40849a00.jpg",
             "collection_link": "shopify://collections/hoodys-zipper",
             "show_overlay": true,
             "collection_title": "Hoodys & Zipper",
@@ -166,7 +168,7 @@
         "collection_item_QGDX7Q": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/tDup-hbw.jpg",
+            "collection_image": "shopify://shop_images/1_b7384d83-9cae-46e9-918f-c4f20ee31a26.jpg",
             "collection_link": "shopify://collections/t-shirts",
             "show_overlay": true,
             "collection_title": "T-Shirts/Tanks",
@@ -181,7 +183,7 @@
         "collection_item_xm4nt6": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_33c4839d-58a4-4ae2-a9af-cf910deede09.jpg",
+            "collection_image": "shopify://shop_images/3_66f4af3d-a408-4a34-adac-82dace068a84.jpg",
             "collection_link": "shopify://collections/shirts",
             "show_overlay": true,
             "collection_title": "Shirts",
@@ -229,7 +231,7 @@
         "collection_item_fecNiA": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/dtnnmPUQ.jpg",
+            "collection_image": "shopify://shop_images/1_0b04e412-456c-463e-85f1-cf46148119ea.jpg",
             "collection_link": "shopify://collections/sweaters",
             "show_overlay": true,
             "collection_title": "Sweaters",
@@ -244,7 +246,7 @@
         "collection_item_ymkcbH": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/LVSRf9Sg.jpg",
+            "collection_image": "shopify://shop_images/1_6a0d1822-6558-483b-92e6-5d75499a4f2f.jpg",
             "collection_link": "shopify://collections/joggers",
             "show_overlay": true,
             "collection_title": "Pants/Joggers",
@@ -259,7 +261,7 @@
         "collection_item_UmC68f": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_39580ee7-6154-4264-af7c-4d188f304411.jpg",
+            "collection_image": "shopify://shop_images/1_4f2655e5-5242-441f-aa10-3012a293e1d4.jpg",
             "collection_link": "shopify://collections/knitwears",
             "show_overlay": true,
             "collection_title": "Knitwear",
@@ -323,7 +325,7 @@
         "collection_item_ECWd4A": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_4.jpg",
+            "collection_image": "shopify://shop_images/1_1d31e831-9f1f-4e28-9f38-79218e0e992d.jpg",
             "collection_link": "shopify://collections/jackets",
             "show_overlay": true,
             "collection_title": "Jackets/Blazers",
@@ -513,7 +515,7 @@
         "collection_item_7RXJkd": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/IMG_0032.jpg",
+            "collection_image": "shopify://shop_images/IMG_0032.webp",
             "collection_link": "shopify://collections/sunglasses",
             "show_overlay": true,
             "collection_title": "Sunglasses",
@@ -544,6 +546,9 @@
       "block_order": [
         "collection_item_7RXJkd",
         "collection_item_fxUKbt"
+      ],
+      "custom_css": [
+        "@media (max-width: 600px) {.collections-grid__item {height: auto; } .collections-grid__image {object-fit: contain; }}"
       ],
       "name": "Collections Grid",
       "settings": {
