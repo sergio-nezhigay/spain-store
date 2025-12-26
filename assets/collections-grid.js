@@ -91,11 +91,17 @@ class CollectionsGrid extends Component {
 
     if (!isMobile) {
       this.#stickyTitle.classList.remove('is-visible');
+      // Show all original titles on desktop
+      for (const item of this.refs.items || []) {
+        const content = item.querySelector('.collections-grid__content');
+        if (content) content.classList.remove('is-overlapping');
+      }
       return;
     }
 
     const viewportHeight = window.innerHeight;
     const stickyPosition = viewportHeight - 40; // 40px from bottom
+    const overlapThreshold = 100; // Hide original title when within 100px of sticky position
 
     let activeItem = null;
     let maxOverlap = 0;
@@ -103,6 +109,7 @@ class CollectionsGrid extends Component {
     // Find which collection item is most visible at the sticky position
     for (const item of this.refs.items || []) {
       const rect = item.getBoundingClientRect();
+      const content = item.querySelector('.collections-grid__content');
 
       // Check if the item is visible in viewport
       if (rect.bottom > 0 && rect.top < viewportHeight) {
@@ -117,6 +124,19 @@ class CollectionsGrid extends Component {
           if (overlap > maxOverlap) {
             maxOverlap = overlap;
             activeItem = item;
+          }
+        }
+
+        // Check if original content overlaps with sticky title area
+        if (content) {
+          const contentRect = content.getBoundingClientRect();
+          const distanceFromBottom = viewportHeight - contentRect.bottom;
+
+          // Hide original title if it's close to the sticky position
+          if (Math.abs(distanceFromBottom) < overlapThreshold && contentRect.bottom > 0) {
+            content.classList.add('is-overlapping');
+          } else {
+            content.classList.remove('is-overlapping');
           }
         }
       }
