@@ -140,18 +140,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-        opacity: 1;
-    transform: translateY(0px);
-    position: fixed;
-    bottom: 40px;
-    left: 0px;
-    right: 0px;
-    {% comment %} width: 100%; {% endcomment %}
-    z-index: 10;
-    will-change: transform, opacity;
-    pointer-events: none;
-    left: auto;
-    right: auto;
   }
 
   .collections-grid__title {
@@ -191,19 +179,6 @@
 
     .collections-grid__content {
       padding: var(--collections-grid-content-padding-mobile, 20px);
-      /* Sticky title behavior - Mobile only */
-      position: fixed;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      width: 100%;
-      z-index: 10;
-      will-change: transform, opacity;
-      pointer-events: none;
-    }
-
-    .collections-grid__content * {
-      pointer-events: auto;
     }
 
     .collections-grid__item {

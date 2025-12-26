@@ -1,22 +1,18 @@
 import { Component } from '@theme/component';
-import { isMobileBreakpoint } from '@theme/utilities';
 
 /**
  * CollectionsGrid component
  *
- * Handles sticky scrolling title behavior for collection grid items on mobile.
- * Coordinates globally across all instances to ensure titles don't overlap.
+ * Tracks when titles approach the screen bottom for future repositioning.
  */
 class CollectionsGrid extends Component {
   requiredRefs = ['items'];
 
-  // Global state shared across all instances
-  static instances = [];
-  static rafId = null;
+  // Threshold distance from bottom (in pixels) to trigger logging
+  static BOTTOM_THRESHOLD = 100;
 
-  // Instance state
-  #isActive = false;
-  #resizeObserver = null;
+  #rafId = null;
+  #itemStates = new WeakMap(); // Track whether each item is in the zone
 
   connectedCallback() {
     super.connectedCallback();
@@ -25,189 +21,78 @@ class CollectionsGrid extends Component {
       itemCount: this.refs.items?.length
     });
 
-    // Register this instance globally
-    CollectionsGrid.instances.push(this);
+    // Start tracking scroll
+    window.addEventListener('scroll', this.#handleScroll, { passive: true });
 
-    // Monitor breakpoint changes
-    // this.#resizeObserver = new ResizeObserver(this.#handleResize);
-    // this.#resizeObserver.observe(document.body);
-
-    // Initialize on mobile
-    // if (isMobileBreakpoint()) {
-      this.#enable();
-    // }
+    // Initial check
+    this.#checkTitlePositions();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-
     console.log('[CollectionsGrid] Disconnected');
 
-    // Unregister this instance
-    const index = CollectionsGrid.instances.indexOf(this);
-    if (index > -1) {
-      CollectionsGrid.instances.splice(index, 1);
-    }
+    window.removeEventListener('scroll', this.#handleScroll);
 
-    this.#disable();
-    this.#resizeObserver?.disconnect();
-
-    // Clean up global state if this was the last instance
-    if (CollectionsGrid.instances.length === 0) {
-      window.removeEventListener('scroll', this.#handleScroll);
-      if (CollectionsGrid.rafId) {
-        cancelAnimationFrame(CollectionsGrid.rafId);
-        CollectionsGrid.rafId = null;
-      }
+    if (this.#rafId) {
+      cancelAnimationFrame(this.#rafId);
     }
   }
 
   updatedCallback() {
     super.updatedCallback();
-
     console.log('[CollectionsGrid] Updated');
-
-    if (this.#isActive) {
-      requestAnimationFrame(() => {
-        this.#updateAllInstances();
-      });
-    }
   }
-
-  #enable() {
-    if (this.#isActive) return;
-    this.#isActive = true;
-
-    console.log('[CollectionsGrid] Enabled');
-
-    // First instance sets up the scroll listener
-    if (CollectionsGrid.instances[0] === this) {
-      window.addEventListener('scroll', this.#handleScroll, { passive: true });
-    }
-
-    // Initial calculation
-    this.#handleScroll();
-  }
-
-  #disable() {
-    if (!this.#isActive) return;
-    this.#isActive = false;
-
-    console.log('[CollectionsGrid] Disabled');
-
-    // Reset all styles
-    for (const item of this.refs.items || []) {
-      const content = item.querySelector('.collections-grid__content');
-      if (content) {
-        content.style.transform = '';
-        // content.style.opacity = '';
-      }
-    }
-  }
-
-#handleResize = () => {
-  if (!this.#isActive) return;
-
-  requestAnimationFrame(() => {
-    this.#updateAllInstances();
-  });
-};
-
 
   #handleScroll = () => {
-    // if (!isMobileBreakpoint()) return;
-
     // Cancel previous frame
-    if (CollectionsGrid.rafId) {
-      cancelAnimationFrame(CollectionsGrid.rafId);
+    if (this.#rafId) {
+      cancelAnimationFrame(this.#rafId);
     }
 
-    // Schedule new frame
-    CollectionsGrid.rafId = requestAnimationFrame(() => {
-      this.#updateAllInstances();
-      CollectionsGrid.rafId = null;
+    // Schedule new check
+    this.#rafId = requestAnimationFrame(() => {
+      this.#checkTitlePositions();
+      this.#rafId = null;
     });
   };
 
-  #updateAllInstances() {
+  #checkTitlePositions() {
     const viewportHeight = window.innerHeight;
-    const visibleRects = []; // Keep track of occupied spaces {top, bottom}
+    const screenBottom = viewportHeight;
 
-    // Collect all items from all active instances in DOM order
-    for (const instance of CollectionsGrid.instances) {
-      if (!instance.#isActive) continue;
+    for (const item of this.refs.items || []) {
+      const content = item.querySelector('.collections-grid__content');
+      if (!content) continue;
 
-      // Batch read phase for this instance
-      const itemData = (instance.refs.items || []).map(item => {
-        const content = item.querySelector('.collections-grid__content');
-        if (!content) return null;
+      const contentRect = content.getBoundingClientRect();
+      const contentBottom = contentRect.bottom;
+      const distanceFromScreenBottom = screenBottom - contentBottom;
 
-        return {
-          content,
-          rect: item.getBoundingClientRect(),
-          contentHeight: content.offsetHeight
-        };
-      }).filter(Boolean);
+      // Check if title is in the bottom zone
+      const isInZone = Math.abs(distanceFromScreenBottom) < CollectionsGrid.BOTTOM_THRESHOLD;
+      const wasInZone = this.#itemStates.get(item) || false;
 
-      // Process items
-      for (const data of itemData) {
-        const imageBottom = data.rect.bottom;
-        const imageTop = data.rect.top;
-        const viewportBottom = viewportHeight - 40;
+      // Only log on state change (entering or exiting zone)
+      if (isInZone !== wasInZone) {
+        const titleElement = content.querySelector('.collections-grid__title');
+        const titleText = titleElement ? titleElement.textContent.trim() : 'Unknown';
 
-        // Calculate target visual bottom position
-        // 1. Start with sticky position at bottom of viewport (viewportBottom)
-        // 2. Clamp to image bottom (don't go below image) -> Math.min(viewportBottom, imageBottom)
-        // 3. Clamp to image top + content height (don't go above image) -> Math.max(..., imageTop + data.contentHeight)
-        let visualBottom = Math.max(
-          Math.min(viewportBottom, imageBottom),
-          imageTop + data.contentHeight
-        );
-
-        // Calculate transform needed to achieve this visual bottom
-        // Base position is fixed at bottom: 40px (which is at viewportBottom)
-        // We want to move it to visualBottom
-        // transformY = visualBottom - viewportBottom
-        const transformY = visualBottom - viewportBottom;
-
-        let opacity = 1;
-
-        // Fade out when approaching the top
-        if (imageBottom < 150) {
-          opacity = Math.max(0, imageBottom / 150);
-        }
-
-        const visualTop = visualBottom - data.contentHeight;
-
-        // Check collision with previously visible titles
-        let isOverlapping = false;
-
-        // Only check collision if we are not already fading out due to scroll
-        // And if the item is actually visible in the viewport
-        if (opacity > 0.1 && visualTop < viewportHeight && visualBottom > 0) {
-           for (const rect of visibleRects) {
-             // Check if rectangles overlap on Y axis
-             // We add a small buffer (e.g. 5px) to avoid flickering when they are just touching
-             if (visualTop < rect.bottom - 5 && visualBottom > rect.top + 5) {
-               isOverlapping = true;
-               break;
-             }
-           }
-        }
-
-        // Apply styles
-        if (isOverlapping) {
-          // data.content.style.opacity = '0';
-          data.content.style.transform = `translateY(${transformY}px)`;
+        if (isInZone) {
+          console.log('[CollectionsGrid] ✅ Title ENTERED bottom zone:', {
+            title: titleText,
+            contentBottom: Math.round(contentBottom),
+            screenBottom: Math.round(screenBottom),
+            distanceFromBottom: Math.round(distanceFromScreenBottom)
+          });
         } else {
-          // data.content.style.opacity = String(opacity);
-          data.content.style.transform = `translateY(${transformY}px)`;
-
-          // Register this space as occupied if it's visible
-          if (opacity > 0.1 && visualTop < viewportHeight && visualBottom > 0) {
-            visibleRects.push({ top: visualTop, bottom: visualBottom });
-          }
+          console.log('[CollectionsGrid] ❌ Title EXITED bottom zone:', {
+            title: titleText
+          });
         }
+
+        // Update state
+        this.#itemStates.set(item, isInZone);
       }
     }
   }
