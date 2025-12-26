@@ -29,13 +29,13 @@ class CollectionsGrid extends Component {
     CollectionsGrid.instances.push(this);
 
     // Monitor breakpoint changes
-    this.#resizeObserver = new ResizeObserver(this.#handleResize);
-    this.#resizeObserver.observe(document.body);
+    // this.#resizeObserver = new ResizeObserver(this.#handleResize);
+    // this.#resizeObserver.observe(document.body);
 
     // Initialize on mobile
-    if (isMobileBreakpoint()) {
+    // if (isMobileBreakpoint()) {
       this.#enable();
-    }
+    // }
   }
 
   disconnectedCallback() {
@@ -100,23 +100,22 @@ class CollectionsGrid extends Component {
       const content = item.querySelector('.collections-grid__content');
       if (content) {
         content.style.transform = '';
-        content.style.opacity = '';
+        // content.style.opacity = '';
       }
     }
   }
 
-  #handleResize = () => {
-    const isMobile = isMobileBreakpoint();
+#handleResize = () => {
+  if (!this.#isActive) return;
 
-    if (isMobile && !this.#isActive) {
-      this.#enable();
-    } else if (!isMobile && this.#isActive) {
-      this.#disable();
-    }
-  };
+  requestAnimationFrame(() => {
+    this.#updateAllInstances();
+  });
+};
+
 
   #handleScroll = () => {
-    if (!isMobileBreakpoint()) return;
+    // if (!isMobileBreakpoint()) return;
 
     // Cancel previous frame
     if (CollectionsGrid.rafId) {
@@ -198,10 +197,10 @@ class CollectionsGrid extends Component {
 
         // Apply styles
         if (isOverlapping) {
-          data.content.style.opacity = '0';
+          // data.content.style.opacity = '0';
           data.content.style.transform = `translateY(${transformY}px)`;
         } else {
-          data.content.style.opacity = String(opacity);
+          // data.content.style.opacity = String(opacity);
           data.content.style.transform = `translateY(${transformY}px)`;
 
           // Register this space as occupied if it's visible

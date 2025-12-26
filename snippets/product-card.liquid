@@ -226,3 +226,28 @@
     display: block;
   }
 {% endstylesheet %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.product-card').forEach(card => {
+    const slideshow = card.querySelector('slideshow-component');
+    if (!slideshow) return;
+
+    const slides = slideshow.querySelectorAll('slideshow-slide');
+    if (!slides.length) return;
+
+    // Сховати всі слайди
+    slides.forEach(slide => {
+      slide.setAttribute('hidden', true);
+      slide.classList.remove('is-active');
+    });
+
+    // Показати перший
+    slides[0].removeAttribute('hidden');
+    slides[0].classList.add('is-active');
+
+    // Якщо є атрибут активного індексу
+    slideshow.setAttribute('data-active-index', '0');
+  });
+});
+
+</script>

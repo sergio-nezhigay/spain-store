@@ -12,14 +12,10 @@ This is a Shopify theme based on the **Horizon** theme (v3.0.1). It's a custom i
 # Start local development server
 npm run dev
 
-# Push changes to Shopify store
-npm run push
+do not use pull/push
+debug locally via "npm run dev"
 
-# Pull latest changes from Shopify store
-npm run pull
-```
-
-Store connection details are configured in package.json for `spain-store-main.myshopify.com` (theme ID: 149090992299).
+Store connection details are configured in package.json for `spain-store-main.myshopify.com` (theme ID: 151121363115).
 
 ## Architecture Overview
 
