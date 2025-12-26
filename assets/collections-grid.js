@@ -4,8 +4,8 @@ import { isMobileBreakpoint } from '@theme/utilities';
 /**
  * CollectionsGrid component
  *
- * Handles sticky scrolling title behavior for collection grid items on mobile.
- * Coordinates globally across all instances to ensure titles don't overlap.
+ * Tracks collection grid scroll position and logs debug information
+ * when content elements are near the screen bottom on mobile.
  */
 class CollectionsGrid extends Component {
   requiredRefs = ['items'];
@@ -17,6 +17,7 @@ class CollectionsGrid extends Component {
   // Instance state
   #isActive = false;
   #resizeObserver = null;
+  #hasLogged = new Map(); // Track if item has already logged in current zone
 
   connectedCallback() {
     super.connectedCallback();
@@ -28,14 +29,10 @@ class CollectionsGrid extends Component {
     // Register this instance globally
     CollectionsGrid.instances.push(this);
 
-    // Monitor breakpoint changes
-    // this.#resizeObserver = new ResizeObserver(this.#handleResize);
-    // this.#resizeObserver.observe(document.body);
-
-    // Initialize on mobile
-    // if (isMobileBreakpoint()) {
+    // Enable scroll tracking for debug logs on mobile
+    if (isMobileBreakpoint()) {
       this.#enable();
-    // }
+    }
   }
 
   disconnectedCallback() {
@@ -94,15 +91,6 @@ class CollectionsGrid extends Component {
     this.#isActive = false;
 
     console.log('[CollectionsGrid] Disabled');
-
-    // Reset all styles
-    for (const item of this.refs.items || []) {
-      const content = item.querySelector('.collections-grid__content');
-      if (content) {
-        content.style.transform = '';
-        // content.style.opacity = '';
-      }
-    }
   }
 
 #handleResize = () => {
@@ -115,7 +103,7 @@ class CollectionsGrid extends Component {
 
 
   #handleScroll = () => {
-    // if (!isMobileBreakpoint()) return;
+    if (!isMobileBreakpoint()) return;
 
     // Cancel previous frame
     if (CollectionsGrid.rafId) {
@@ -131,81 +119,53 @@ class CollectionsGrid extends Component {
 
   #updateAllInstances() {
     const viewportHeight = window.innerHeight;
-    const visibleRects = []; // Keep track of occupied spaces {top, bottom}
+    const viewportBottom = viewportHeight;
+    const bottomThreshold = 100; // Log when content is within 100px of screen bottom
 
     // Collect all items from all active instances in DOM order
     for (const instance of CollectionsGrid.instances) {
       if (!instance.#isActive) continue;
 
       // Batch read phase for this instance
-      const itemData = (instance.refs.items || []).map(item => {
+      const itemData = (instance.refs.items || []).map((item, index) => {
         const content = item.querySelector('.collections-grid__content');
         if (!content) return null;
 
         return {
           content,
           rect: item.getBoundingClientRect(),
-          contentHeight: content.offsetHeight
+          contentRect: content.getBoundingClientRect(),
+          contentHeight: content.offsetHeight,
+          index
         };
       }).filter(Boolean);
 
-      // Process items
+      // Process items and add debug logs
       for (const data of itemData) {
-        const imageBottom = data.rect.bottom;
-        const imageTop = data.rect.top;
-        const viewportBottom = viewportHeight - 40;
+        const contentBottom = data.contentRect.bottom;
+        const contentTop = data.contentRect.top;
+        const distanceFromBottom = viewportBottom - contentBottom;
 
-        // Calculate target visual bottom position
-        // 1. Start with sticky position at bottom of viewport (viewportBottom)
-        // 2. Clamp to image bottom (don't go below image) -> Math.min(viewportBottom, imageBottom)
-        // 3. Clamp to image top + content height (don't go above image) -> Math.max(..., imageTop + data.contentHeight)
-        let visualBottom = Math.max(
-          Math.min(viewportBottom, imageBottom),
-          imageTop + data.contentHeight
-        );
+        const isInZone = contentBottom > 0 && distanceFromBottom >= 0 && distanceFromBottom <= bottomThreshold;
 
-        // Calculate transform needed to achieve this visual bottom
-        // Base position is fixed at bottom: 40px (which is at viewportBottom)
-        // We want to move it to visualBottom
-        // transformY = visualBottom - viewportBottom
-        const transformY = visualBottom - viewportBottom;
-
-        let opacity = 1;
-
-        // Fade out when approaching the top
-        if (imageBottom < 150) {
-          opacity = Math.max(0, imageBottom / 150);
-        }
-
-        const visualTop = visualBottom - data.contentHeight;
-
-        // Check collision with previously visible titles
-        let isOverlapping = false;
-
-        // Only check collision if we are not already fading out due to scroll
-        // And if the item is actually visible in the viewport
-        if (opacity > 0.1 && visualTop < viewportHeight && visualBottom > 0) {
-           for (const rect of visibleRects) {
-             // Check if rectangles overlap on Y axis
-             // We add a small buffer (e.g. 5px) to avoid flickering when they are just touching
-             if (visualTop < rect.bottom - 5 && visualBottom > rect.top + 5) {
-               isOverlapping = true;
-               break;
-             }
-           }
-        }
-
-        // Apply styles
-        if (isOverlapping) {
-          // data.content.style.opacity = '0';
-          data.content.style.transform = `translateY(${transformY}px)`;
+        if (isInZone) {
+          // Log only once when entering the zone
+          if (!instance.#hasLogged.get(data.index)) {
+            console.log('[CollectionsGrid] Content near screen bottom:', {
+              itemIndex: data.index,
+              contentBottom: Math.round(contentBottom),
+              viewportBottom: Math.round(viewportBottom),
+              distanceFromBottom: Math.round(distanceFromBottom),
+              contentTop: Math.round(contentTop),
+              contentHeight: data.contentHeight,
+              isVisible: contentTop < viewportHeight && contentBottom > 0
+            });
+            instance.#hasLogged.set(data.index, true);
+          }
         } else {
-          // data.content.style.opacity = String(opacity);
-          data.content.style.transform = `translateY(${transformY}px)`;
-
-          // Register this space as occupied if it's visible
-          if (opacity > 0.1 && visualTop < viewportHeight && visualBottom > 0) {
-            visibleRects.push({ top: visualTop, bottom: visualBottom });
+          // Reset when leaving the zone so it can log again next time
+          if (instance.#hasLogged.get(data.index)) {
+            instance.#hasLogged.set(data.index, false);
           }
         }
       }
