@@ -100,8 +100,9 @@ class CollectionsGrid extends Component {
     }
 
     const viewportHeight = window.innerHeight;
-    const stickyPosition = viewportHeight - 40; // 40px from bottom
-    const overlapThreshold = 100; // Hide original title when within 100px of sticky position
+    const stickyBottomOffset = 0; // Match CSS: bottom: 0
+    const stickyPosition = viewportHeight - stickyBottomOffset; // Position where sticky title appears
+    const hideThreshold = 120; // Start hiding original title when within 120px of sticky position
 
     let activeItem = null;
     let maxOverlap = 0;
@@ -127,13 +128,16 @@ class CollectionsGrid extends Component {
           }
         }
 
-        // Check if original content overlaps with sticky title area
+        // Hide original title when it's at or below the hide threshold
         if (content) {
           const contentRect = content.getBoundingClientRect();
-          const distanceFromBottom = viewportHeight - contentRect.bottom;
+          const hideStartPosition = stickyPosition - hideThreshold;
 
-          // Hide original title if it's close to the sticky position
-          if (Math.abs(distanceFromBottom) < overlapThreshold && contentRect.bottom > 0) {
+          // Hide if content bottom is at or below the hide threshold line
+          // This keeps it hidden even after it scrolls below the sticky position
+          const shouldHide = contentRect.bottom >= hideStartPosition;
+
+          if (shouldHide) {
             content.classList.add('is-overlapping');
           } else {
             content.classList.remove('is-overlapping');
