@@ -140,6 +140,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .collections-grid__content.is-sticky {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .collections-grid__content.is-hidden {
+    opacity: 0;
+    visibility: hidden;
   }
 
   .collections-grid__title {
