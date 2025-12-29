@@ -114,8 +114,17 @@ export class Slideshow extends Component {
    * @param {boolean} [options.animate=true] - Whether to animate the selection.
    */
   async select(input, event, options = {}) {
-    if (this.#disabled || !this.refs.slides?.length) return;
-    if (!this.#scroll) return;
+    const scroller = this.refs.scroller;
+
+
+    if (this.#disabled || !this.refs.slides?.length) {
+        console.log('Slideshow disabled or no slides', { disabled: this.#disabled, slidesLength: this.refs.slides?.length });
+        return;
+    }
+    if (!this.#scroll) {
+        console.log('Slideshow no scroll instance');
+        return;
+    }
 
     // Store the actual current slide before any mutations
     const currentSlide = this.slides?.[this.current];
@@ -145,6 +154,8 @@ export class Slideshow extends Component {
         return this.slides.indexOf(requestedSlide);
       }
     })();
+
+    console.log('Slideshow requestedIndex', requestedIndex);
 
     const { current } = this;
     const { slides } = this;
@@ -240,6 +251,7 @@ export class Slideshow extends Component {
    * @param {boolean} [options.animate=true] - Whether to animate the next slide.
    */
   next(event, options) {
+    console.log('Slideshow.next called');
     event?.preventDefault();
     this.select(this.nextIndex, event, options);
   }
@@ -251,6 +263,7 @@ export class Slideshow extends Component {
    * @param {boolean} [options.animate=true] - Whether to animate the previous slide.
    */
   previous(event, options) {
+    console.log('Slideshow.previous called');
     event?.preventDefault();
     this.select(this.previousIndex, event, options);
   }
@@ -716,7 +729,7 @@ export class Slideshow extends Component {
   };
 
   get slides() {
-    return this.refs.slides?.filter((slide) => !slide.hasAttribute('hidden') || slide.hasAttribute('reveal'));
+    return this.refs.slides;
   }
 
   /**
