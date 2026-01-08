@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "shopify theme dev --store=spain-store-main.myshopify.com --theme 151121363115",
-    "push": "shopify theme push --store=spain-store-main.myshopify.com --theme 151121363115",
-    "pull": "shopify theme pull --store=spain-store-main.myshopify.com --theme 151121363115"
+    "dev": "shopify theme dev --store=spain-store-main.myshopify.com --theme 151528112299",
+    "push": "shopify theme push --store=spain-store-main.myshopify.com --theme 151528112299",
+    "pull": "shopify theme pull --store=spain-store-main.myshopify.com --theme 151528112299"
   },
   "repository": {
     "type": "git",
