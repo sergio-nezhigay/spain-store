@@ -106,7 +106,7 @@
         "collection_item_Fm83HA": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_66804fd8-1f00-49cc-90e7-b850243b4068.jpg",
+            "collection_image": "shopify://shop_images/DSC09992.jpg",
             "collection_link": "shopify://collections/new-arrivals",
             "show_overlay": true,
             "collection_title": "New arrivals",
@@ -121,7 +121,7 @@
         "collection_item_yArbez": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_1_f069a7da-9899-4371-89da-f0ce40849a00.jpg",
+            "collection_image": "shopify://shop_images/DSC00344-2.jpg",
             "collection_link": "shopify://collections/hoodys-zipper",
             "show_overlay": true,
             "collection_title": "Hoodys & Zipper",
@@ -169,10 +169,10 @@
         "collection_item_QGDX7Q": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_b7384d83-9cae-46e9-918f-c4f20ee31a26.jpg",
+            "collection_image": "shopify://shop_images/DSC00626.jpg",
             "collection_link": "shopify://collections/t-shirts",
             "show_overlay": true,
-            "collection_title": "T-Shirts&Tanks",
+            "collection_title": "T-Shirts",
             "title_size_desktop": 36,
             "title_size_mobile": 24,
             "title_color": "#ffffff",
@@ -184,7 +184,7 @@
         "collection_item_xm4nt6": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/3_66f4af3d-a408-4a34-adac-82dace068a84.jpg",
+            "collection_image": "shopify://shop_images/DSC00556.jpg",
             "collection_link": "shopify://collections/shirts",
             "show_overlay": true,
             "collection_title": "Shirts",
@@ -232,7 +232,7 @@
         "collection_item_fecNiA": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_0b04e412-456c-463e-85f1-cf46148119ea.jpg",
+            "collection_image": "shopify://shop_images/2025-12-30_21.10.37.jpg",
             "collection_link": "shopify://collections/sweaters",
             "show_overlay": true,
             "collection_title": "Sweaters",
@@ -247,7 +247,7 @@
         "collection_item_ymkcbH": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_6a0d1822-6558-483b-92e6-5d75499a4f2f.jpg",
+            "collection_image": "shopify://shop_images/DSC00281.jpg",
             "collection_link": "shopify://collections/joggers",
             "show_overlay": true,
             "collection_title": "Pants&Joggers",
@@ -262,7 +262,7 @@
         "collection_item_UmC68f": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_4f2655e5-5242-441f-aa10-3012a293e1d4.jpg",
+            "collection_image": "shopify://shop_images/DSC01053_b3a21e57-516f-4633-a5cf-e37929f324ad.jpg",
             "collection_link": "shopify://collections/knitwears",
             "show_overlay": true,
             "collection_title": "Knitwear",
@@ -310,6 +310,7 @@
       "blocks": {
         "collection_item_ammyGH": {
           "type": "collection_item",
+          "disabled": true,
           "settings": {
             "collection_image": "shopify://shop_images/1_9fc1ee58-29a5-4a80-86f8-5ea89bdd066b.jpg",
             "collection_link": "shopify://collections/shorts",
@@ -326,7 +327,7 @@
         "collection_item_ECWd4A": {
           "type": "collection_item",
           "settings": {
-            "collection_image": "shopify://shop_images/1_1d31e831-9f1f-4e28-9f38-79218e0e992d.jpg",
+            "collection_image": "shopify://shop_images/2025-12-30_21.13.37.jpg",
             "collection_link": "shopify://collections/jackets",
             "show_overlay": true,
             "collection_title": "Jacket & Blazer",

@@ -159,6 +159,7 @@
                       "name": "Contact Information",
                       "settings": {
                         "text": "<p><strong>Contact Us</strong><br/>    <a href=\"https://www.google.com/maps?q=Calle+Jesus+Puente+10,+29660+Marbella\" target=\"_blank\"><br/>      Calle Jesus Puente 10<br/>29660 Marbella</a></p><p>Email: <a href=\"mailto:steleobanus@gmail.com\">steleobanus@gmail.com</a><br/>Phone: <a href=\"tel:+34711099669\">+49 175 716 1300</a><br/></p><p>Mon - Sat: 12:00 to 20:00</p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -297,6 +298,7 @@
                       "name": "t:names.text",
                       "settings": {
                         "text": "<p>Company</p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -323,6 +325,7 @@
                       "name": "t:names.text",
                       "settings": {
                         "text": "<p>Steleobanus SL</p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -350,6 +353,7 @@
                       "disabled": true,
                       "settings": {
                         "text": "<p><strong>Company</strong></p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -398,6 +402,7 @@
                       "name": "Privacy Policies",
                       "settings": {
                         "text": "<p><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Privacy Policy</a></p><p><a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms of Service</a></p><p><a href=\"/policies/refund-policy\" title=\"Refund Policy\">Refund Policy</a></p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -473,6 +478,7 @@
                       "name": "Newsletter Heading",
                       "settings": {
                         "text": "<h4>Get 20% off your first order</h4>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -499,6 +505,7 @@
                       "name": "Newsletter Description",
                       "settings": {
                         "text": "<p>Subscribe and receive your exclusive promo code by email.</p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -551,6 +558,7 @@
                       "name": "Privacy Notice",
                       "settings": {
                         "text": "<p>By subscribing, you agree to our <a href=\"/policies/privacy-policy\">Privacy Policy</a> and consent to receive updates from our store.</p>",
+                        "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -732,11 +740,11 @@
         "social_links_Ew63Kq": {
           "type": "social-links",
           "settings": {
-            "facebook_url": "https://www.facebook.com/",
-            "instagram_url": "https://www.instagram.com/",
-            "youtube_url": "https://www.youtube.com/",
-            "tiktok_url": "https://www.tiktok.com/",
-            "twitter_url": "https://x.com/",
+            "facebook_url": "",
+            "instagram_url": "https://www.instagram.com/rocco.marbella?igsh=MW52NnlkMnp6ZTNwYQ==",
+            "youtube_url": "",
+            "tiktok_url": "https://www.tiktok.com/@rocco.marbella?_r=1&_t=ZG-92uDnwjNNbs",
+            "twitter_url": "",
             "threads_url": "",
             "linkedin_url": "",
             "bluesky_url": "",
