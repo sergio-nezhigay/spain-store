@@ -11,6 +11,40 @@
   "type": "header",
   "name": "Header",
   "sections": {
+    "header_announcements_BpdRiJ": {
+      "type": "header-announcements",
+      "blocks": {
+        "announcement_GXEcqm": {
+          "type": "_announcement",
+          "settings": {
+            "text": "30% off the entire collection",
+            "link": "",
+            "font": "var(--font-heading--family)",
+            "font_size": "1rem",
+            "weight": "",
+            "letter_spacing": "loose",
+            "case": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "announcement_GXEcqm"
+      ],
+      "custom_css": [
+        ".announcement-bar__text {color: #dc2626; text-transform: uppercase;}",
+        ".announcement-bar {background-color: #f9fafb; border: 1px solid #e5e7eb;}"
+      ],
+      "name": "t:names.announcement_bar",
+      "settings": {
+        "speed": 5,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "divider_width": 0,
+        "padding-block-start": 15,
+        "padding-block-end": 15
+      }
+    },
     "header_section": {
       "type": "header",
       "blocks": {
@@ -86,6 +120,7 @@
     }
   },
   "order": [
+    "header_announcements_BpdRiJ",
     "header_section"
   ]
 }

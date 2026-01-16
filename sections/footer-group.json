@@ -158,7 +158,7 @@
                       "type": "text",
                       "name": "Contact Information",
                       "settings": {
-                        "text": "<p><strong>Contact Us</strong><br/>    <a href=\"https://www.google.com/maps?q=Calle+Jesus+Puente+10,+29660+Marbella\" target=\"_blank\"><br/>      Calle Jesus Puente 10<br/>29660 Marbella</a></p><p>Email: <a href=\"mailto:steleobanus@gmail.com\">steleobanus@gmail.com</a><br/>Phone: <a href=\"tel:+34711099669\">+49 175 716 1300</a><br/></p><p>Mon - Sat: 12:00 to 20:00</p>",
+                        "text": "<p>    <a href=\"https://www.google.com/maps?q=Calle+Jesus+Puente+10,+29660+Marbella\" target=\"_blank\"><br/>      Calle Jesus Puente 10<br/>29660 Marbella</a></p><p>Mon - Sat: 12:00 to 20:00</p>",
                         "exclude_collections": "",
                         "width": "fit-content",
                         "max_width": "normal",
